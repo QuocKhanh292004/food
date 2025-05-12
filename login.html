@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- link css -->
+    <link rel="stylesheet" href="/css/login.css" />
+
+    <!-- link icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+      integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+<!---------- Header ---------->
+<header>
+  <div class="header-block">
+    <a href="index.html" class="logo-header"
+      ><h1>Beer<span>.</span></h1></a
+    >
+    <nav class="nav-header">
+      <ul>
+        <li><a href="index.html#">Home</a></li>
+        <li><a href="index.html#about-us">About</a></li>
+        <li><a href="/menu.html">Menu</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#chefs">Chefs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="user-cart">
+      <a href="/login.html" class="user"
+        ><i class="bx bx-user bx-sm"></i
+      ></a>
+      <a href="/cart.html" class="cart"
+        ><i class="bx bx-cart bx-sm"></i
+      ></a>
+    </div>
+  </div>
+</header>
+<!---------- Header ---------->
+    <div class="container">
+      <div class="box">
+        <div class="form sign_in">
+          <h3>Sign In</h3>
+          <span>or use your account</span>
+
+          <form action="#" id="form_input">
+            <div class="type">
+              <input type="email" placeholder="Email" name="" id="email" />
+            </div>
+            <div class="type">
+              <input
+                type="password"
+                placeholder="Password"
+                name=""
+                id="password"
+              />
+            </div>
+
+            <div class="forgot">
+              <span>Forgot your password?</span>
+            </div>
+            <button class="btn bkg">Sign In</button>
+          </form>
+          <div class="link-icon">
+            <h4>Or Connect with</h4>
+          </div>
+          <div class="icon">
+            <i class="bx bxl-facebook bx-sm" id="fb"></i>
+            <i class="bx bxl-google bx-sm" id="gg"></i>
+            <i class="bx bxl-twitter bx-sm" id="tw"></i>
+          </div>
+        </div>
+
+        <div class="form sign_up">
+          <h3>Sign Up</h3>
+          <span>or use your email for register</span>
+
+          <form action="#" id="form_input">
+            <div class="type">
+              <input type="text" name="" placeholder="Name" id="name" />
+            </div>
+            <div class="type">
+              <input type="email" name="" placeholder="Email" id="email" />
+            </div>
+            <div class="type">
+              <input
+                type="password"
+                name=""
+                placeholder="Password"
+                id="password"
+              />
+            </div>
+
+            <button class="btn bkg">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="overlay">
+        <div class="page page_signIn">
+          <h3>Welcome Back!</h3>
+          <p>To keep with us please login with your personal info</p>
+
+          <button class="btn btnSign-in">
+            Sign Up <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="page page_signUp">
+          <h3>Hello Friend!</h3>
+          <p>Enter your personal details and start journey with us</p>
+
+          <button class="btn btnSign-up">
+            <i class="bi bi-arrow-left"></i> Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- link script -->
+    <script src="/js/login.js"></script>
+  </body>
+</html>

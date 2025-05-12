@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beer</title>
+    <!-- Link Css -->
+    <link rel="stylesheet" href="/css/card.css" />
+    <!-- Link Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!---------- Header ---------->
+    <header>
+      <div class="header-block">
+        <a href="index.html" class="logo-header"
+          ><h1>Beer<span>.</span></h1></a
+        >
+        <nav class="nav-header">
+          <ul>
+            <li><a href="index.html#">Home</a></li>
+            <li><a href="index.html#about-us">About</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="index.html#events">Events</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#chefs">Chefs</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="user-cart">
+          <a href="/login.html" class="user"
+            ><i class="bx bx-user bx-sm"></i
+          ></a>
+          <a href="/cart.html" class="cart"
+            ><i class="bx bx-cart bx-sm"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+    <!---------- Header ---------->
+
+    <!---------- card ---------->
+    <div class="container">
+      <form action="">
+        <div class="row">
+          <div class="col">
+            <h3 class="title">billing address</h3>
+
+            <div class="inputBox">
+              <span>full name :</span>
+              <input type="text" placeholder="john deo" />
+            </div>
+            <div class="inputBox">
+              <span>email :</span>
+              <input type="email" placeholder="example@example.com" />
+            </div>
+            <div class="inputBox">
+              <span>address :</span>
+              <input type="text" placeholder="room - street - locality" />
+            </div>
+            <div class="inputBox">
+              <span>city :</span>
+              <input type="text" placeholder="mumbai" />
+            </div>
+
+            <div class="flex">
+              <div class="inputBox">
+                <span>state :</span>
+                <input type="text" placeholder="india" />
+              </div>
+              <div class="inputBox">
+                <span>zip code :</span>
+                <input type="text" placeholder="123 456" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <h3 class="title">payment</h3>
+
+            <div class="inputBox">
+              <span>cards accepted :</span>
+              <img src="/img/card_img.png" alt="" />
+            </div>
+            <div class="inputBox">
+              <span>name on card :</span>
+              <input type="text" placeholder="mr. john deo" />
+            </div>
+            <div class="inputBox">
+              <span>credit card number :</span>
+              <input type="number" placeholder="1111-2222-3333-4444" />
+            </div>
+            <div class="inputBox">
+              <span>exp month :</span>
+              <input type="text" placeholder="january" />
+            </div>
+
+            <div class="flex">
+              <div class="inputBox">
+                <span>exp year :</span>
+                <input type="number" placeholder="2022" />
+              </div>
+              <div class="inputBox">
+                <span>CVV :</span>
+                <input type="text" placeholder="1234" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn" />
+      </form>
+    </div>
+    <!---------- card ---------->
+
+    <!---------- footer---------->
+    <footer class="footer">
+      <div class="footer-block">
+        <div class="footer-content">
+          <div class="footer-infor">
+            <i class="bx bx-map bx-sm"></i>
+            <div>
+              <h4>Address</h4>
+              <p>
+                79 Royal Hospital Rd<br />
+                London SW3 4AN<br />
+              </p>
+            </div>
+          </div>
+          <div class="footer-infor">
+            <i class="bx bx-phone bx-sm"></i>
+            <div>
+              <h4>Reservations</h4>
+              <p>
+                <strong>Phone:</strong> +1 5555 180520 04<br />
+                <strong>Email:</strong> Beerlovehuy@gmail.com<br />
+              </p>
+            </div>
+          </div>
+          <div class="footer-infor">
+            <i class="bx bx-time-five bx-sm"></i>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>
+                <strong>Mon-Sat: 11AM</strong> - 23PM<br />
+                <strong>Sunday: </strong>Closed
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-infor-icon-block">
+          <h4>Follow Us</h4>
+          <div class="footer-infor-icon">
+            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
+            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
+            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
+            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="copyright">
+          Copyright <strong><span>Beer</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!---------- footer---------->
+  </body>
+</html>

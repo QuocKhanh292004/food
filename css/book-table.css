@@ -1,0 +1,353 @@
+:root {
+  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-secondary: "Inter", sans-serif;
+}
+/*---------- Font ----------*/
+
+/*---------- Color ----------*/
+:root {
+  --color-default: #212529;
+  --color-primary: #ce1212;
+  --color-primary-hover: #ec2727;
+  --color-secondary: #37373f;
+}
+/*---------- Color ----------*/
+
+/*---------- Smooth scroll behavior ----------*/
+:root {
+  :target {
+    scroll-margin-top: 40px;
+  }
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  /* Thiết lập màu nền cho thanh cuộn */
+  ::-webkit-scrollbar-track {
+    margin: 5px 0px;
+    background-color: #f1f1f1;
+  }
+  /* Thiết lập màu nền cho nút cuộn */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: var(--color-primary-hover);
+  }
+}
+/*---------- General ----------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-default);
+  color: var(--color-default);
+  height: auto;
+  background-color: #eee;
+}
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-default);
+}
+/*---------- General ----------*/
+
+/*---------- Header ----------*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  height: 60px;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 0px 120px 0px 120px;
+}
+/*---------- Header ----------*/
+
+/*---------- Logo-header ----------*/
+.logo-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-secondary);
+  color: #000;
+}
+.logo-header h1 span {
+  color: var(--color-primary);
+}
+/*---------- Logo-header ----------*/
+
+/*---------- Nav-header ----------*/
+.nav-header {
+  padding: 0;
+}
+.nav-header ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-header li {
+  position: relative;
+}
+.nav-header > ul > li {
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+.nav-header a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-family: var(--font-secondary);
+  color: var(--color-secondary);
+  white-space: nowrap;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 3px;
+}
+.nav-header a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+  height: 2px;
+  width: 0px;
+  bottom: -6px;
+  left: 0px;
+}
+.nav-header a:hover::before {
+  width: 100%;
+}
+/*---------- Nav-header ----------*/
+
+/*---------- user-cart ----------*/
+.user-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-cart > a {
+  margin: 0px 10px;
+  color: #000;
+}
+.user-cart > a:hover {
+  scale: 1.2;
+}
+/*---------- user-cart ----------*/
+
+/*---------- book-table ----------*/
+.container {
+	background-color: #fafafa;
+	max-width: 1000px;
+	margin: 100px auto;
+	box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
+	display: flex;
+	
+}
+
+.container-time {
+	padding: 50px;
+	outline: 3px dashed #cfcfcf;
+	outline-offset: -30px;
+	text-align: center;
+}
+.heading {
+	font-size: 35px;
+	text-transform: uppercase;
+}
+
+.heading-days {
+	color:var(--color-primary);
+	font-size: 30px;
+
+}
+
+.heading-phone {
+	font-size: 20px;
+}
+.container-form {
+	padding: 20px 0;
+	margin: 0 auto;
+	color: #000;
+}
+form {
+	display: grid;
+	grid-row-gap: 20px;
+}
+form p {
+	font-weight: 600;
+}
+.form-field {
+	display: flex;
+	justify-content: space-between;
+}
+.form-field input{
+  height: 30px;
+  width: 200px;
+}
+.form-field select{
+  height: 30px;
+  width: 200px;
+}
+input,select {
+	pad: 10px 15px;
+}
+
+.btn {
+	background-color: var(--color-primary);
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	font-size: 18px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-ms-border-radius: 100px;
+	-o-border-radius: 100px;
+	box-shadow: 7px 10px 12px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+}
+
+.btn:hover {
+	transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
+}
+.btn:active{
+  scale: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+	.container-form  {
+		padding: 10px;
+	}
+	.heading-phone {
+		font-size: 17px;
+	}
+	
+}
+
+@media screen and (min-width: 768px) and (max-width: 880px) {
+	.container-time {
+		padding: 30px;
+	}
+	.container-form  {
+		padding: 10px;
+	}
+	
+	
+}
+/*---------- book-table ----------*/
+
+/*---------- footer ----------*/
+.footer {
+  font-size: 14px;
+  background-color: #1f1f24;
+  padding: 50px 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer-block h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 5px;
+  color: #fff;
+}
+.footer-block {
+  display: flex;
+  justify-content: center;
+  margin: 0px 120px;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: auto;
+}
+.footer-infor {
+  display: flex;
+  height: 120px;
+  width: 320px;
+}
+.footer-infor i {
+  margin-right: 15px;
+}
+.footer-infor h4 {
+  margin-bottom: 5px;
+}
+.footer-infor p {
+  line-height: 1.5;
+}
+.footer-infor-icon-block {
+  height: 120px;
+  width: 320px;
+}
+.footer-infor-icon {
+  display: flex;
+  margin-top: 10px;
+}
+.footer-infor-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+.footer-infor-icon a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+.footer .copyright {
+  margin: 0px 120px;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/*---------- footer ----------*/

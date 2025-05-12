@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beer</title>
+    <!-- Link Css -->
+    <link rel="stylesheet" href="/css/book-table.css" />
+    <!-- Link Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!---------- Header ---------->
+    <header>
+      <div class="header-block">
+        <a href="index.html" class="logo-header"
+          ><h1>Beer<span>.</span></h1></a
+        >
+        <nav class="nav-header">
+          <ul>
+            <li><a href="index.html#">Home</a></li>
+            <li><a href="index.html#about-us">About</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="index.html#events">Events</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#chefs">Chefs</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="user-cart">
+          <a href="/login.html" class="user"
+            ><i class="bx bx-user bx-sm"></i
+          ></a>
+          <a href="/card.html" class="cart"
+            ><i class="bx bx-cart bx-sm"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+    <!---------- Header ---------->
+
+    <!---------- book-table ---------->
+    <div class="wrapper">
+      <div class="container">
+        <div class="container-time">
+          <h2 class="heading">Time Open</h2>
+          <h3 class="heading-days">Monday-Friday</h3>
+          <p>7am - 11am (breakfast)</p>
+          <p>11am - 10pm (lunch/dinner)</p>
+
+          <h3 class="heading-days">Saturday and sunday</h3>
+          <p>9am - 1am (breakfast)</p>
+          <p style="margin-bottom: 20px">1am - 10pm (lunch/dinner)</p>
+
+          <hr />
+
+          <h4 class="heading-phone">Call Us: (123) 45-45-456</h4>
+        </div>
+
+        <div class="container-form">
+          <form action="#">
+            <h2 class="heading heading-yellow">Reservation Online</h2>
+
+            <div class="form-field">
+              <p>Your Name</p>
+              <input type="text" placeholder="Your Name" />
+            </div>
+            <div class="form-field">
+              <p>Your email</p>
+              <input type="email" placeholder="Your email" />
+            </div>
+            <div class="form-field">
+              <p>Date</p>
+              <input type="date" />
+            </div>
+            <div class="form-field">
+              <p>Time</p>
+              <input type="time" />
+            </div>
+            <div class="form-field">
+              <p>How many people?</p>
+              <select name="select" id="#">
+                <option value="1">1 person</option>
+                <option value="2">2 persons</option>
+                <option value="3">3 persosn</option>
+                <option value="4">4 persons</option>
+                <option value="5">5 persons</option>
+                <option value="5+">5+ persons</option>
+              </select>
+            </div>
+
+            <button class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!---------- book-table ---------->
+
+    <!---------- footer---------->
+    <footer class="footer">
+      <div class="footer-block">
+        <div class="footer-content">
+          <div class="footer-infor">
+            <i class="bx bx-map bx-sm"></i>
+            <div>
+              <h4>Address</h4>
+              <p>
+                79 Royal Hospital Rd<br />
+                London SW3 4AN<br />
+              </p>
+            </div>
+          </div>
+          <div class="footer-infor">
+            <i class="bx bx-phone bx-sm"></i>
+            <div>
+              <h4>Reservations</h4>
+              <p>
+                <strong>Phone:</strong> +1 5555 180520 04<br />
+                <strong>Email:</strong> Beerlovehuy@gmail.com<br />
+              </p>
+            </div>
+          </div>
+          <div class="footer-infor">
+            <i class="bx bx-time-five bx-sm"></i>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>
+                <strong>Mon-Sat: 11AM</strong> - 23PM<br />
+                <strong>Sunday: </strong>Closed
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-infor-icon-block">
+          <h4>Follow Us</h4>
+          <div class="footer-infor-icon">
+            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
+            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
+            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
+            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="copyright">
+          Copyright <strong><span>Beer</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!---------- footer---------->
+  </body>
+</html>

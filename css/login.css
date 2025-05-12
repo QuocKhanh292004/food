@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap");
+:root {
+  --color-default: #212529;
+  --color-primary: #ce1212;
+  --color-primary-hover: #ec2727;
+  --color-secondary: #37373f;
+}
+:root {
+  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-secondary: "Inter", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+a{
+  text-decoration: none;
+}
+/*---------- Header ----------*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  height: 60px;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 0px 120px 0px 120px;
+}
+/*---------- Header ----------*/
+
+/*---------- Logo-header ----------*/
+.logo-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-secondary);
+  color: #000;
+}
+.logo-header h1 span {
+  color: var(--color-primary);
+}
+/*---------- Logo-header ----------*/
+
+/*---------- Nav-header ----------*/
+.nav-header {
+  padding: 0;
+}
+.nav-header ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-header li {
+  position: relative;
+}
+.nav-header > ul > li {
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+.nav-header a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-family: var(--font-secondary);
+  color: var(--color-secondary);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 3px;
+}
+.nav-header a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+  height: 2px;
+  width: 0px;
+  bottom: -6px;
+  left: 0px;
+}
+.nav-header a:hover::before {
+  width: 100%;
+}
+/*---------- Nav-header ----------*/
+
+/*---------- user-cart ----------*/
+.user-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-cart > a {
+  margin: 0px 10px;
+  color: #000;
+}
+.user-cart > a:hover {
+  scale: 1.2;
+}
+/*---------- user-cart ----------*/
+
+.container {
+  width: 60%;
+  display: flex;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+.container .box {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  transition: all 0.8s;
+  transform: translateX(0);
+  background-color: #fff;
+  z-index: 1;
+  overflow: hidden;
+}
+.container.active .box {
+  transform: translateX(100%);
+}
+.container .box .form {
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container .box .form.sign_up {
+  transition: all 1.15s;
+  z-index: 1;
+  opacity: 0;
+  background-color: #fff;
+}
+.container .box .form.sign_in {
+  opacity: 1;
+  transition: all 1.15s;
+  z-index: 5;
+  background-color: #fff;
+}
+.container.active .box .form.sign_in {
+  z-index: 1;
+  opacity: 0;
+}
+.container.active .box .form.sign_up {
+  z-index: 5;
+  opacity: 1;
+}
+.container.active .box .form.sign_up {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.container .box .form.sign_in {
+  transition: all 0.5s;
+  opacity: 1;
+  transform: translateX(0%);
+}
+.container .overlay {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  transition: all 0.8s;
+  transform: translateX(0);
+  background-image: url(/img/restaurant-690x460.png);
+  background-size: cover;
+  z-index: 1;
+  overflow: hidden;
+  z-index: 5;
+  opacity: 1;
+}
+.container.active .overlay {
+  transform: translateX(-100%);
+}
+.container .overlay .page {
+  height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s;
+  opacity: 1;
+}
+.container.active .overlay .page.page_signIn {
+  opacity: 0;
+  margin-left: -100%;
+}
+.container.active .overlay .page.page_signUp {
+  margin-left: 0%;
+}
+.overlay .page h3 {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.overlay .page p {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+.btn {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 550;
+  background-color: transparent;
+  transform: translateX(0);
+  padding: 12px 45px;
+  border-radius: 22px;
+  border: 1.5px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.btn:active {
+  scale: 0.9;
+}
+.form h3 {
+  color: #222;
+  font-size: 40px;
+}
+.form span {
+  color: #3a3838;
+}
+#form_input .type {
+  width: 330px;
+  height: 48px;
+  background-color: #eeedef;
+  margin: 30px 0 10px 0;
+}
+#form_input .type input {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+#form_input .type input::placeholder {
+  color: #a9a8a9;
+}
+#form_input .forgot {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.forgot {
+  display: flex;
+  justify-content: end;
+}
+.bkg {
+  background-color: #ce1212;
+}
+
+.link-icon {
+  margin: 20px 0px;
+}
+.icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 150px;
+  cursor: pointer;
+}
+.icon i {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.icon i:hover {
+  -webkit-box-shadow: 0 -1px 12px -2.5px #000000;
+  -moz-box-shadow: 0 -1px 12px -2.5px #000000;
+  box-shadow: 0 -1px 12px -2.5px #000000;
+  transition: box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động mượt mà */
+}
+#fb {
+  background-color: #0866ff;
+}
+#gg {
+  background-color: #ea4335;
+}
+#tw {
+  background-color: #1d9bf0;
+}
