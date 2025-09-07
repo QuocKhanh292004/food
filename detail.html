@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm - Kobe Beef</title>
+    <link rel="stylesheet" href="./css/detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Product Image -->
+      <div class="product-image">
+        <img src="./img/menu/menu-item-2.png" alt="Kobe Beef" />
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <h1>Kobe Beef</h1>
+
+        <!-- Rating & Sold -->
+        <div class="meta">
+          <span class="rating"
+            ><i class="fa fa-star"></i> 4.9 (120 đánh giá)</span
+          >
+          <span class="sold">Đã bán: 350+</span>
+        </div>
+
+        <p class="price">$389</p>
+
+        <p class="description">
+          Kobe Beef hảo hạng được chế biến tinh tế, mang đến hương vị đậm đà,
+          mềm ngọt, phù hợp cho những bữa tiệc sang trọng.
+        </p>
+
+        <!-- Stock -->
+        <p class="stock"><strong>Tình trạng:</strong> Còn hàng</p>
+
+        <!-- Quantity -->
+        <div class="quantity">
+          <label for="qty">Số lượng:</label>
+          <div class="qty-control">
+            <button class="qty-btn">-</button>
+            <input type="number" id="qty" value="1" min="1" />
+            <button class="qty-btn">+</button>
+          </div>
+        </div>
+
+        <!-- Shipping -->
+        <div class="shipping">
+          <p><i class="fa fa-truck"></i> Vận chuyển: Miễn phí toàn quốc</p>
+          <p><i class="fa fa-sync-alt"></i> Đổi trả trong vòng 7 ngày</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+          <button class="btn btn-primary">Mua Ngay</button>
+          <button class="btn btn-cart">
+            <i class="fa fa-shopping-cart"></i> Thêm vào giỏ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra Info Sections -->
+    <div class="extra-info">
+      <!-- Mô tả sản phẩm -->
+      <section class="section">
+        <h2>Mô tả sản phẩm</h2>
+        <p>
+          Thịt bò Kobe nổi tiếng với độ mềm mịn và hương vị đặc trưng, cung cấp
+          nhiều protein và dưỡng chất cần thiết cho sức khỏe. Đây là lựa chọn
+          tuyệt vời cho những bữa tiệc sang trọng hoặc làm quà tặng cao cấp.
+        </p>
+      </section>
+
+      <!-- Thông tin dinh dưỡng -->
+      <section class="section">
+        <h2>Thông tin dinh dưỡng</h2>
+        <table class="nutrition-table">
+          <tr>
+            <th>Thành phần</th>
+            <th>Giá trị</th>
+          </tr>
+          <tr>
+            <td>Năng lượng</td>
+            <td>250 kcal / 100g</td>
+          </tr>
+          <tr>
+            <td>Protein</td>
+            <td>20g</td>
+          </tr>
+          <tr>
+            <td>Chất béo</td>
+            <td>18g</td>
+          </tr>
+          <tr>
+            <td>Vitamin & Khoáng chất</td>
+            <td>Vitamin B12, Sắt, Kẽm</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Đánh giá -->
+      <section class="section">
+        <h2>Đánh giá</h2>
+
+        <div class="review">
+          <div class="review-header">
+            <img src="https://i.pravatar.cc/40?img=1" alt="User" />
+            <div>
+              <strong>Nguyễn Văn A</strong>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>Thịt rất mềm và ngon, đáng tiền!</p>
+        </div>
+
+        <div class="review">
+          <div class="review-header">
+            <img src="https://i.pravatar.cc/40?img=2" alt="User" />
+            <div>
+              <strong>Trần Thị B</strong>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>Giao hàng nhanh, chất lượng tuyệt vời.</p>
+        </div>
+
+        <!-- Form viết đánh giá -->
+        <form class="review-form">
+          <h3>Viết đánh giá của bạn</h3>
+          <textarea placeholder="Chia sẻ cảm nhận của bạn..."></textarea>
+          <button type="submit" class="btn btn-submit">Gửi đánh giá</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

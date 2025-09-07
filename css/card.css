@@ -324,3 +324,58 @@ header {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 /*---------- footer ----------*/
+/* Tối ưu footer responsive */
+@media (max-width: 992px) {
+  .footer-block {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    gap: 24px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .footer-infor-icon {
+    justify-content: center;
+  }
+  .footer-block h4 {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .footer .copyright {
+    margin: 0 10px;
+    font-size: 13px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-block {
+    margin: 0 5px;
+    gap: 16px;
+  }
+  .footer-content {
+    gap: 10px;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+  }
+  .footer .copyright {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+}

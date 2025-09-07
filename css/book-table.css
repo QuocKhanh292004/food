@@ -167,116 +167,112 @@ header {
 
 /*---------- book-table ----------*/
 .container {
-	background-color: #fafafa;
-	max-width: 1000px;
-	margin: 100px auto;
-	box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
-	display: flex;
-	
+  background-color: #fafafa;
+  max-width: 1000px;
+  margin: 100px auto;
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
 
 .container-time {
-	padding: 50px;
-	outline: 3px dashed #cfcfcf;
-	outline-offset: -30px;
-	text-align: center;
+  padding: 50px;
+  outline: 3px dashed #cfcfcf;
+  outline-offset: -30px;
+  text-align: center;
 }
 .heading {
-	font-size: 35px;
-	text-transform: uppercase;
+  font-size: 35px;
+  text-transform: uppercase;
 }
 
 .heading-days {
-	color:var(--color-primary);
-	font-size: 30px;
-
+  color: var(--color-primary);
+  font-size: 30px;
 }
 
 .heading-phone {
-	font-size: 20px;
+  font-size: 20px;
 }
 .container-form {
-	padding: 20px 0;
-	margin: 0 auto;
-	color: #000;
+  padding: 20px 0;
+  margin: 0 auto;
+  color: #000;
 }
 form {
-	display: grid;
-	grid-row-gap: 20px;
+  display: grid;
+  grid-row-gap: 20px;
 }
 form p {
-	font-weight: 600;
+  font-weight: 600;
 }
 .form-field {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-.form-field input{
+.form-field input {
   height: 30px;
   width: 200px;
 }
-.form-field select{
+.form-field select {
   height: 30px;
   width: 200px;
 }
-input,select {
-	pad: 10px 15px;
+input,
+select {
+  pad: 10px 15px;
 }
 
 .btn {
-	background-color: var(--color-primary);
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	font-size: 18px;
-	border-radius: 100px;
-	-webkit-border-radius: 100px;
-	-moz-border-radius: 100px;
-	-ms-border-radius: 100px;
-	-o-border-radius: 100px;
-	box-shadow: 7px 10px 12px rgba(0, 0, 0, .1);
-	cursor: pointer;
-	transition: all .3s;
-	-webkit-transition: all .3s;
-	-moz-transition: all .3s;
-	-ms-transition: all .3s;
-	-o-transition: all .3s;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  box-shadow: 7px 10px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 
 .btn:hover {
-	transform: scale(1.03);
-	-webkit-transform: scale(1.03);
-	-moz-transform: scale(1.03);
-	-ms-transform: scale(1.03);
-	-o-transform: scale(1.03);
+  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
   box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
 }
-.btn:active{
+.btn:active {
   scale: 0.9;
 }
 
 @media screen and (max-width: 768px) {
-	.container {
-		flex-direction: column;
-	}
-	.container-form  {
-		padding: 10px;
-	}
-	.heading-phone {
-		font-size: 17px;
-	}
-	
+  .container {
+    flex-direction: column;
+  }
+  .container-form {
+    padding: 10px;
+  }
+  .heading-phone {
+    font-size: 17px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 880px) {
-	.container-time {
-		padding: 30px;
-	}
-	.container-form  {
-		padding: 10px;
-	}
-	
-	
+  .container-time {
+    padding: 30px;
+  }
+  .container-form {
+    padding: 10px;
+  }
 }
 /*---------- book-table ----------*/
 
@@ -351,3 +347,58 @@ input,select {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 /*---------- footer ----------*/
+/* Tối ưu footer responsive */
+@media (max-width: 992px) {
+  .footer-block {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    gap: 24px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .footer-infor-icon {
+    justify-content: center;
+  }
+  .footer-block h4 {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .footer .copyright {
+    margin: 0 10px;
+    font-size: 13px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-block {
+    margin: 0 5px;
+    gap: 16px;
+  }
+  .footer-content {
+    gap: 10px;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+  }
+  .footer .copyright {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+}

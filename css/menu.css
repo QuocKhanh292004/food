@@ -374,4 +374,177 @@ header {
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* menu  */
+/* Responsive menu đẹp hơn */
+@media (max-width: 1200px) {
+  .menu-block {
+    margin: 0px 24px;
+    padding: 24px 0px;
+  }
+  .menu-content-block {
+    padding: 16px 6px;
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-block {
+    margin: 0px 16px;
+    padding: 8px 0px;
+  }
+  .menu-content-block {
+    padding: 8px 16px;
+  }
+  .menu-content-header {
+    flex-direction: column;
+    gap: 18px;
+    height: auto;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    border-width: 3px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu {
+    padding: 64px 0px 12px 0px;
+  }
+  .menu-block {
+    margin: 0px 12px;
+    padding: 3px 0px;
+  }
+  .menu-header p {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .menu-content-block {
+    padding: 3px 12px;
+  }
+  .menu-content-header {
+    flex-direction: column;
+    gap: 8px;
+    height: auto;
+    margin-bottom: 12px;
+    border-width: 2px;
+    border-radius: 12px;
+    padding: 8px;
+    background: #fafafa;
+  }
+  .menu-content-select select {
+    width: 100%;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    padding: 4px 8px;
+  }
+  .menu-content-infor-block {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0;
+  }
+  .menu-content-infor-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    object-fit: cover;
+    transition: scale 0.3s;
+  }
+  .menu-content-infor-img img:hover {
+    scale: 1.08;
+    box-shadow: 0 4px 16px rgba(206, 18, 18, 0.15);
+  }
+  .menu-content-infor {
+    padding: 12px 4px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s;
+  }
+  .menu-content-infor:hover {
+    box-shadow: 0 4px 16px rgba(206, 18, 18, 0.1);
+  }
+  .menu-content-infor-text h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #ce1212;
+    font-weight: 600;
+  }
+  .menu-content-infor-text-btn button {
+    width: 70px;
+    font-size: 13px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ce1212 60%, #ec2727 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(206, 18, 18, 0.1);
+    font-weight: 500;
+    transition: background 0.3s, scale 0.3s;
+  }
+  .menu-content-infor-text-btn button:hover {
+    background: linear-gradient(90deg, #ec2727 60%, #ce1212 100%);
+    scale: 1.08;
+    box-shadow: 0 4px 16px rgba(206, 18, 18, 0.18);
+  }
+  .menu-content-infor-text-btn button:active {
+    scale: 0.95;
+  }
+}
 /*---------- footer ----------*/
+/* Tối ưu footer responsive */
+@media (max-width: 992px) {
+  .footer-block {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    gap: 24px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .footer-infor-icon {
+    justify-content: center;
+  }
+  .footer-block h4 {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .footer .copyright {
+    margin: 0 10px;
+    font-size: 13px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-block {
+    margin: 0 5px;
+    gap: 16px;
+  }
+  .footer-content {
+    gap: 10px;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+  }
+  .footer .copyright {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+}

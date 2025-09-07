@@ -96,12 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // ---------- swiper gallery-content----------//
 
 // ---------- scroll----------//
-window.addEventListener('scroll', function() {
-  var scrollButton = document.querySelector('.scroll');
+window.addEventListener("scroll", function () {
+  var scrollButton = document.querySelector(".scroll");
   if (window.scrollY > 150) {
-    scrollButton.classList.add('show'); // Thêm class "show" để hiển thị
+    scrollButton.classList.add("show"); // Thêm class "show" để hiển thị
   } else {
-    scrollButton.classList.remove('show'); // Loại bỏ class "show" để ẩn
+    scrollButton.classList.remove("show"); // Loại bỏ class "show" để ẩn
   }
 });
 // ---------- scroll----------//
+//-----menu-------//
+function toggleMenu() {
+  document.getElementById("menuList").classList.toggle("show");
+}

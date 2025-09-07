@@ -31,10 +31,11 @@
     <header>
       <div class="header-block">
         <a href="index.html" class="logo-header">
-          <h1>Khanh<span>.</span></h1>
+          <h1>KhanhFood<span>.</span></h1>
         </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav class="nav-header">
-          <ul>
+          <ul id="menuList">
             <li><a href="#">Home</a></li>
             <li><a href="#about-us">About</a></li>
             <li><a href="/menu.html">Menu</a></li>
@@ -59,11 +60,11 @@
       <div class="intro-block">
         <div class="intro-text">
           <h2 data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            Celebrate Healthy<br />Delicious Food
+            Hãy ăn uống lành mạnh<br />Món ăn ngon
           </h2>
           <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            Celebrate the Pleasures of Delight. So it follows that he seeks the
-            blessed ones with whom to savor the joys.
+            Chúng tôi cam kết mang đến cho bạn những món ăn ngon nhất, được chế
+            biến từ nguyên liệu tươi ngon và an toàn.
           </p>
           <a
             class="text-book-table"
@@ -71,7 +72,7 @@
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-duration="1000"
-            >Book a Table</a
+            >Đặt Bàn</a
           >
         </div>
         <div
@@ -96,8 +97,8 @@
             data-aos-delay="150"
             data-aos-duration="1000"
           >
-            <h2>ABOUT US</h2>
-            <p>learn more <span>About Us</span></p>
+            <h2>VỀ CHÚNG TÔI</h2>
+            <p>Tìm hiểu thêm <span>Về Chúng Tôi</span></p>
           </div>
           <div class="about-us-img-text">
             <div
@@ -108,8 +109,8 @@
             >
               <img src="/img/about.jpg" alt="" />
               <div class="img-book-table">
-                <h4>Book a Table</h4>
-                <p>+1 5555 180520 04</p>
+                <h4>Đặt Bàn</h4>
+                <p>Gọi ngay : 0973756592</p>
               </div>
             </div>
             <div
@@ -118,28 +119,31 @@
               data-aos-delay="250"
               data-aos-duration="1000"
             >
-              <p>Welcome to Our Restaurant</p>
+              <p>Chào mừng bạn đến với Nhà hàng của chúng tôi</p>
               <p>
-                We take great pride in introducing ourselves as a place where we
-                seamlessly blend the art of culinary excellence with a warm and
-                inviting ambiance, accompanied by top-notch professional
-                service. Our aim is to offer you a dining experience that is
-                truly extraordinary.
+                Chúng tôi tự hào giới thiệu mình là một nơi mà chúng tôi kết hợp
+                hoàn hảo giữa nghệ thuật ẩm thực xuất sắc với không gian ấm cúng
+                và mời gọi, kèm theo dịch vụ chuyên nghiệp hàng đầu. Mục tiêu
+                của chúng tôi là mang đến cho bạn một trải nghiệm ẩm thực thực
+                sự khác biệt.
               </p>
               <p>
-                Our restaurant is more than just a destination for savoring
-                delectable dishes; it's a haven for those seeking the perfect
-                setting for important business meetings and romantic rendezvous
-                alike. Our dedicated staff is always at your service, ready to
-                provide the warmest and most attentive care.
+                Nhà hàng của chúng tôi không chỉ là một điểm đến để thưởng thức
+                những món ăn ngon; mà còn là nơi lý tưởng cho những cuộc họp
+                quan trọng và những buổi hẹn hò lãng mạn. Đội ngũ nhân viên tận
+                tâm của chúng tôi luôn sẵn sàng phục vụ bạn, mang đến sự chăm
+                sóc chu đáo và ấm áp nhất.
               </p>
               <p>
-                We invite you to embark on a culinary journey at our restaurant.
-                We promise to deliver an unforgettable and enjoyable experience
-                that will stay with you for years to come.
+                Chúng tôi mời bạn bắt đầu một hành trình ẩm thực tại nhà hàng
+                của chúng tôi. Chúng tôi hứa hẹn sẽ mang đến cho bạn một trải
+                nghiệm khó quên và thú vị sẽ ở lại với bạn trong nhiều năm tới.
               </p>
               <div class="about-us-text-video">
-                <video id="about-us-text-video-1" src="/video/Food.mp4"></video>
+                <video
+                  id="about-us-text-video-1"
+                  src="/video/Food1.mp4"
+                ></video>
                 <button id="about-us-text-video-button">
                   <i class="bx bx-play bx-md"></i>
                 </button>
@@ -159,16 +163,16 @@
             data-aos-delay="150"
             data-aos-duration="1000"
           >
-            <h3>Why Choose Beer?</h3>
+            <h3>Tại Sao Chọn Chúng Tôi?</h3>
             <p>
-              In a restaurant, the well-being of our customers is our top
-              priority, and we consistently strive to meet their preferences and
-              unique needs. Our unwavering commitment is to provide an
-              outstanding dining experience where we respect and prioritize our
-              customers' choices in all circumstances.
+              Trong một nhà hàng, sự hài lòng của khách hàng là ưu tiên hàng đầu
+              của chúng tôi, và chúng tôi luôn nỗ lực để đáp ứng sở thích và nhu
+              cầu độc đáo của họ. Cam kết không ngừng của chúng tôi là cung cấp
+              một trải nghiệm ẩm thực xuất sắc, nơi chúng tôi tôn trọng và ưu
+              tiên lựa chọn của khách hàng trong mọi hoàn cảnh.
             </p>
             <div class="why-us-learn-more-block">
-              <a href="#" class="why-us-learn-more">Learn More</a>
+              <a href="#" class="why-us-learn-more">Tìm Hiểu Thêm</a>
             </div>
           </div>
           <div class="why-us-box-icon-block">
@@ -179,10 +183,10 @@
               data-aos-duration="1000"
             >
               <i class="bx bx-wine bx-lg"></i>
-              <h4>Enjoying Culinary Delights</h4>
+              <h4>Thưởng Thức Ẩm Thực Tuyệt Vời</h4>
               <p>
-                In a restaurant, customers seek delightful dishes and culinary
-                pleasures
+                Trong một nhà hàng, khách hàng tìm kiếm những món ăn ngon miệng
+                và những trải nghiệm ẩm thực thú vị.
               </p>
             </div>
             <div
@@ -192,10 +196,10 @@
               data-aos-duration="1000"
             >
               <i class="bx bx-trophy bx-lg"></i>
-              <h4>Quality Service Matters</h4>
+              <h4>Dịch Vụ Chất Lượng Quan Trọng</h4>
               <p>
-                Restaurants aim for exceptional guest experiences with focused
-                staf
+                Trong một nhà hàng, dịch vụ chất lượng là yếu tố then chốt để
+                tạo ra trải nghiệm ẩm thực tuyệt vời cho khách hàng.
               </p>
             </div>
             <div
@@ -205,10 +209,10 @@
               data-aos-duration="1000"
             >
               <i class="bx bx-heart bx-lg"></i>
-              <h4>The Effort Behind the Cuisine</h4>
+              <h4>Những Nỗ Lực Đằng Sau Ẩm Thực</h4>
               <p>
-                Our labor creates unique, flavorful experiences, leaving guests
-                satisfied
+                Công sức của chúng tôi tạo ra những trải nghiệm độc đáo, đầy
+                hương vị, khiến khách hàng hài lòng.
               </p>
             </div>
           </div>
@@ -231,7 +235,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Clients</p>
+            <p>Khách Hàng</p>
           </div>
           <div
             class="start-counter-block-1"
@@ -245,7 +249,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Projects</p>
+            <p>Dự Án</p>
           </div>
           <div
             class="start-counter-block-1"
@@ -259,7 +263,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Workers</p>
+            <p>Nhân Viên</p>
           </div>
           <div
             class="start-counter-block-1"
@@ -273,7 +277,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Hours Of Suppor</p>
+            <p>Giờ Hỗ Trợ</p>
           </div>
         </div>
       </section>
@@ -288,8 +292,8 @@
             data-aos-delay="100"
             data-aos-duration="1000"
           >
-            <h2>EVENTS</h2>
-            <p>Share <span>Your Moments </span>In Our Restaurant</p>
+            <h2>CHƯƠNG TRÌNH SỰ KIỆN</h2>
+            <p>Chia sẻ <span>Khoảnh Khắc Của Bạn</span> Tại Nhà Hàng</p>
           </div>
           <div
             class="events-content"
@@ -304,15 +308,11 @@
                     <img src="/img/events-1.jpg" />
                   </div>
                   <div class="events-item-text">
-                    <h3>Custom Parties</h3>
+                    <h3>Tiệc Tùy Chỉnh</h3>
                     <h3>$99</h3>
                     <p>
-                      Enjoy a custom party experience tailored to your
-                      preferences. Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit. Sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip
-                      ex ea commodo consequat.
+                      Thưởng thức một trải nghiệm tiệc tùng được thiết kế riêng
+                      theo sở thích của bạn.
                     </p>
                   </div>
                 </div>
@@ -324,11 +324,7 @@
                     <h3>Private Parties</h3>
                     <h3>$289</h3>
                     <p>
-                      Host a private party with an exclusive experience. Lorem
-                      ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                      eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Tổ chức một bữa tiệc riêng tư với trải nghiệm độc quyền.
                     </p>
                   </div>
                 </div>
@@ -337,15 +333,11 @@
                     <img src="/img/events-3.jpg" />
                   </div>
                   <div class="events-item-text">
-                    <h3>Birthday Parties</h3>
+                    <h3>Tiệc Sinh Nhật</h3>
                     <h3>$499</h3>
                     <p>
-                      Celebrate your special day with a fantastic birthday
-                      party. Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                      magna aliqua. Ut enim ad minim veniam, quis nostrud
-                      exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat.
+                      Chúc mừng ngày đặc biệt của bạn với một bữa tiệc sinh nhật
+                      tuyệt vời.
                     </p>
                   </div>
                 </div>
@@ -366,8 +358,8 @@
       >
         <div class="testimonials-block">
           <div class="testimonials-header">
-            <h2>Testimonials</h2>
-            <p>What Are They <span>Saying About Us</span></p>
+            <h2>Những Lời Chứng Thực</h2>
+            <p>Khách Hàng <span>Nói Gì Về Chúng Tôi</span></p>
           </div>
           <div
             class="testimonials-content"
@@ -380,13 +372,12 @@
                 <div class="swiper-slide testimonials-item">
                   <div class="testimonials-item-text">
                     <p>
-                      <span>"</span> This restaurant is truly impressive! The
-                      menu is diverse, the food is delicious, and the service is
-                      professional. I love how they take care of their
-                      customers.
+                      <span>"</span> Nhà hàng này thực sự ấn tượng! Thực đơn rất
+                      đa dạng, món ăn ngon và dịch vụ chuyên nghiệp. Tôi rất
+                      thích cách họ chăm sóc khách hàng.
                       <span>"</span>
                     </p>
-                    <h3>Saul Goodman</h3>
+                    <h3>Quốc Khánh</h3>
                     <h4>Ceo</h4>
                     <div class="stars">
                       <i class="bx bxs-star"></i>
@@ -403,12 +394,12 @@
                 <div class="swiper-slide testimonials-item">
                   <div class="testimonials-item-text">
                     <p>
-                      <span>"</span> The ambiance here is very cozy and warm.
-                      The food is great, and the prices are reasonable. I had a
-                      fantastic dining experience.
+                      <span>"</span>Không gian ở đây rất ấm cúng và dễ chịu.
+                      Thức ăn ngon, giá cả hợp lý. Tôi đã có một trải nghiệm ẩm
+                      thực tuyệt vời.
                       <span>"</span>
                     </p>
-                    <h3>Sara Wilsson</h3>
+                    <h3>Đỡ Khải</h3>
                     <h4>Designer</h4>
                     <div class="stars">
                       <i class="bx bxs-star"></i>
@@ -425,12 +416,12 @@
                 <div class="swiper-slide testimonials-item">
                   <div class="testimonials-item-text">
                     <p>
-                      <span>"</span> Even during peak hours, the service here is
-                      fast and top-notch. The drinks are unique, and the food is
-                      delicious. I'll definitely be coming back.
+                      <span>"</span> Ngay cả trong giờ cao điểm, dịch vụ ở đây
+                      vẫn nhanh chóng và chuyên nghiệp. Đồ uống độc đáo, món ăn
+                      ngon. Tôi chắc chắn sẽ quay lại.
                       <span>"</span>
                     </p>
-                    <h3>Jena Karlis</h3>
+                    <h3>Minh Thư</h3>
                     <h4>Store Owner</h4>
                     <div class="stars">
                       <i class="bx bxs-star"></i>
@@ -447,9 +438,9 @@
                 <div class="swiper-slide testimonials-item">
                   <div class="testimonials-item-text">
                     <p>
-                      <span>"</span> Very disappointed with the service here.
-                      Despite the diverse menu, the wait times are too long, and
-                      the food is not really worth the money you have to pay.
+                      <span>"</span> Rất thất vọng với dịch vụ ở đây. Mặc dù
+                      thực đơn đa dạng, nhưng thời gian chờ quá lâu và đồ ăn
+                      thực sự không xứng đáng với số tiền bạn phải trả.
                       <span>"</span>
                     </p>
                     <h3>John Larson</h3>
@@ -484,7 +475,7 @@
             data-aos-duration="1000"
           >
             <h2>GALLERY</h2>
-            <p>Check <span>Our Gallery </span>Chefs</p>
+            <p>Kiểm tra <span>Ảnh</span> của các Đầu Bếp</p>
           </div>
           <div
             class="gallery-content"
@@ -561,8 +552,8 @@
             data-aos-delay="100"
             data-aos-duration="1000"
           >
-            <h2>CHEFS</h2>
-            <p>Our <span>Proffesional </span>Chefs</p>
+            <h2>ĐẦU BẾP</h2>
+            <p>Đầu bếp <span>Chuyên Nghiệp</span> Của Chúng Tôi</p>
           </div>
           <div class="chefs-content">
             <div
@@ -582,10 +573,10 @@
               </div>
               <div class="chefs-infor-text">
                 <h4>Anthony Bourdain</h4>
-                <span>Master Chef</span>
+                <span>Đầu Bếp Trưởng</span>
                 <p>
-                  Your body is not a temple, it's an amusement park. Enjoy the
-                  ride.
+                  Cơ thể bạn không phải là một ngôi đền, nó là một công viên
+                  giải trí. Hãy tận hưởng chuyến đi.
                 </p>
               </div>
             </div>
@@ -606,11 +597,11 @@
               </div>
               <div class="chefs-infor-text">
                 <h4>Julia Child</h4>
-                <span>Master Chef</span>
+                <span>Đầu Bếp Trưởng</span>
                 <p>
-                  Cooking for me has always been an 'I love you.' When I was a
-                  kid, if I wanted time with my dad, I had to be with him in the
-                  kitchen.
+                  Nấu ăn đối với tôi luôn là một cách nói 'Tôi yêu bạn.' Khi tôi
+                  còn nhỏ, nếu tôi muốn có thời gian với bố, tôi phải ở bên ông
+                  trong bếp.
                 </p>
               </div>
             </div>
@@ -631,10 +622,10 @@
               </div>
               <div class="chefs-infor-text">
                 <h4>Gordon Ramsay</h4>
-                <span>Master Chef</span>
+                <span>Đầu Bếp Trưởng</span>
                 <p>
-                  If you want to become a great chef, you have to work with
-                  great chefs. And that's exactly what I did.
+                  Nếu bạn muốn trở thành một đầu bếp giỏi, bạn phải làm việc với
+                  những đầu bếp giỏi. Và đó chính xác là những gì tôi đã làm.
                 </p>
               </div>
             </div>
@@ -652,8 +643,8 @@
             data-aos-delay="100"
             data-aos-duration="1000"
           >
-            <h2>CONTACT</h2>
-            <p>Need Help? <span>Contact Us </span>Chefs</p>
+            <h2>Liên Hệ</h2>
+            <p>Cần giúp đỡ? <span>Liên hệ với chúng tôi</span> các Đầu Bếp</p>
           </div>
           <div
             class="contact-map"
@@ -681,31 +672,32 @@
               <div class="contact-icon">
                 <i class="bx bx-map-alt bx-md"></i>
                 <div class="contact-icon-text">
-                  <h3>Our Address</h3>
-                  <p>79 Royal Hospital Rd, London SW3 4AN</p>
+                  <h3>Địa Chỉ Của Chúng Tôi</h3>
+                  <p>Địa Chỉ Cầu Diễn ,Nguyên Xá 134/51</p>
                 </div>
               </div>
               <div class="contact-icon">
                 <i class="bx bx-envelope bx-md"></i>
                 <div class="contact-icon-text">
                   <h3>Email Us</h3>
-                  <p>Beerlovehuy@gmail.com</p>
+                  <p>contactkhanh@gmail.com</p>
                 </div>
               </div>
               <div class="contact-icon">
                 <i class="bx bx-phone bx-md"></i>
                 <div class="contact-icon-text">
                   <h3>Call Us</h3>
-                  <p>+1 5555 180520 04</p>
+                  <p>+84 0973756592</p>
                 </div>
               </div>
               <div class="contact-icon">
                 <i class="bx bx-git-compare bx-md"></i>
                 <div class="contact-icon-text">
-                  <h3>Opening Hours</h3>
+                  <h3>Giờ Mở Cửa</h3>
                   <p>
-                    <span>Mon-Sat</span>: 11AM - 23PM;<span> Sunday</span>:
-                    Closed
+                    <span>Thứ Hai - Thứ Bảy</span>: 11AM - 23PM;<span>
+                      Chủ Nhật</span
+                    >: Đóng Cửa
                   </p>
                 </div>
               </div>
@@ -722,19 +714,19 @@
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder="Tên Của Bạn"
                   required
                 />
-                <input type="email" placeholder="Your Email" required />
+                <input type="email" placeholder="Email Của Bạn" required />
               </div>
               <div class="contact-input-subject">
-                <input type="text" placeholder="Subject" required />
+                <input type="text" placeholder="Chủ Đề" required />
               </div>
               <div class="contact-input-message">
-                <textarea rows="5" placeholder="Message" required></textarea>
+                <textarea rows="5" placeholder="Tin Nhắn" required></textarea>
               </div>
               <div class="contact-input-button">
-                <button type="submit">Send Message</button>
+                <button type="submit">Gửi Tin Nhắn</button>
               </div>
             </div>
           </div>
@@ -752,36 +744,33 @@
           <div class="footer-infor">
             <i class="bx bx-map bx-sm"></i>
             <div>
-              <h4>Address</h4>
-              <p>
-                79 Royal Hospital Rd<br />
-                London SW3 4AN<br />
-              </p>
+              <h4>Địa Chỉ</h4>
+              <p>Cầu Diễn ,Nguyên Xá 134/51</p>
             </div>
           </div>
           <div class="footer-infor">
             <i class="bx bx-phone bx-sm"></i>
             <div>
-              <h4>Reservations</h4>
+              <h4>Đặt Chỗ</h4>
               <p>
-                <strong>Phone:</strong> +1 5555 180520 04<br />
-                <strong>Email:</strong> Beerlovehuy@gmail.com<br />
+                <strong>Điện Thoại:</strong> +84 0973756592<br />
+                <strong>Email:</strong> contactkhanh@gmail.com<br />
               </p>
             </div>
           </div>
           <div class="footer-infor">
             <i class="bx bx-time-five bx-sm"></i>
             <div>
-              <h4>Opening Hours</h4>
+              <h4>Giờ Mở Cửa</h4>
               <p>
-                <strong>Mon-Sat: 11AM</strong> - 23PM<br />
-                <strong>Sunday: </strong>Closed
+                <strong>Thứ Hai - Thứ Bảy: 11AM</strong> - 23PM<br />
+                <strong>Chủ Nhật: </strong>Đóng Cửa
               </p>
             </div>
           </div>
         </div>
         <div class="footer-infor-icon-block">
-          <h4>Follow Us</h4>
+          <h4>Theo Dõi Chúng Tôi</h4>
           <div class="footer-infor-icon">
             <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
             <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
@@ -792,8 +781,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          Copyright <strong><span>Beer</span></strong
-          >. All Rights Reserved
+          Bản quyền <strong><span>Beer</span></strong
+          >. Đã Được Bảo Lưu
         </div>
       </div>
     </footer>
