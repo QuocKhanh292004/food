@@ -208,18 +208,23 @@
             data-aos-duration="800"
             data-aos-delay="100"
           >
-            <img
-              src="./img/menu/menu-item-2.png"
-              alt="Bánh mì Thịt"
-              class="card-image"
-            />
+            <div class="product-image-container">
+              <img
+                src="./img/menu/menu-item-2.png"
+                alt="Bánh mì Thịt"
+                class="card-image"
+              />
+            </div>
             <div class="card-body">
               <h3 class="card-title">Bánh Mì Thịt</h3>
               <div class="card-rating">
                 <span class="stars">★★★★☆</span>
+                <span class="rating-text">4.8</span>
               </div>
               <div class="card-price">28.000₫</div>
-              <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+              <button class="add-to-cart-btn">
+                <i class="bx bx-shopping-bag"></i>
+              </button>
             </div>
           </a>
           <a
@@ -229,18 +234,23 @@
             data-aos-duration="800"
             data-aos-delay="200"
           >
-            <img
-              src="./img/menu/menu-item-3.png"
-              alt="Cà Phê Sữa Đá"
-              class="card-image"
-            />
+            <div class="product-image-container">
+              <img
+                src="./img/menu/menu-item-3.png"
+                alt="Cà Phê Sữa Đá"
+                class="card-image"
+              />
+            </div>
             <div class="card-body">
               <h3 class="card-title">Cà Phê Sữa Đá</h3>
               <div class="card-rating">
                 <span class="stars">★★★★★</span>
+                <span class="rating-text">4.9</span>
               </div>
               <div class="card-price">22.000₫</div>
-              <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+              <button class="add-to-cart-btn">
+                <i class="bx bx-shopping-bag"></i>
+              </button>
             </div>
           </a>
           <a
@@ -250,79 +260,39 @@
             data-aos-duration="800"
             data-aos-delay="300"
           >
-            <img
-              src="./img/menu/menu-item-4.png"
-              alt="Bún Chả Hà Nội"
-              class="card-image"
-            />
+            <div class="product-image-container">
+              <img
+                src="./img/menu/menu-item-4.png"
+                alt="Bún Chả Hà Nội"
+                class="card-image"
+              />
+            </div>
             <div class="card-body">
               <h3 class="card-title">Bún Chả</h3>
               <div class="card-rating">
                 <span class="stars">★★★★☆</span>
+                <span class="rating-text">4.7</span>
               </div>
               <div class="card-price">45.000₫</div>
-              <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+              <button class="add-to-cart-btn">
+                <i class="bx bx-shopping-bag"></i>
+              </button>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="footer-block">
-        <div class="footer-content">
-          <div class="footer-infor">
-            <i class="bx bx-map bx-sm"></i>
-            <div>
-              <h4>Địa Chỉ</h4>
-              <p>Cầu Diễn ,Nguyên Xá 134/51</p>
-            </div>
-          </div>
-          <div class="footer-infor">
-            <i class="bx bx-phone bx-sm"></i>
-            <div>
-              <h4>Đặt Chỗ</h4>
-              <p>
-                <strong>Điện Thoại:</strong> +84 0973756592<br />
-                <strong>Email:</strong> contactkhanh@gmail.com<br />
-              </p>
-            </div>
-          </div>
-          <div class="footer-infor">
-            <i class="bx bx-time-five bx-sm"></i>
-            <div>
-              <h4>Giờ Mở Cửa</h4>
-              <p>
-                <strong>Thứ Hai - Thứ Bảy: 11AM</strong> - 23PM<br />
-                <strong>Chủ Nhật: </strong>Đóng Cửa
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-infor-icon-block">
-          <h4>Theo Dõi Chúng Tôi</h4>
-          <div class="footer-infor-icon">
-            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
-            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
-            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
-            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          Bản quyền <strong><span>KhanhFood</span></strong
-          >. Đã Được Bảo Lưu
-        </div>
-      </div>
-    </footer>
+    <script id="menu-deco"></script>
+    <!-- <div id="footer"></div>
+    <script src="./footer/footer.js"></script> -->
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        // Tùy chỉnh các thông số để phù hợp với trang
-        once: true, // Hiệu ứng chỉ chạy một lần khi cuộn qua
-        duration: 800, // Thời gian hiệu ứng mặc định
-        easing: "ease-out-quad", // Kiểu chuyển động
+        once: true,
+        duration: 800,
+        easing: "ease-out-quad",
       });
     </script>
   </body>

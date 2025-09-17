@@ -1,598 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beer</title>
-    <!-- Link Css -->
+    <title>Món Ăn Việt Nam - Vietnamese Cuisine</title>
     <link rel="stylesheet" href="/css/menu.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- Link Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Link icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-
   <body>
-    <!---------- Header ---------->
-    <header>
-      <div class="header-block">
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <a href="index.html" class="logo-header">
-          <h1>KhanhFood<span>.</span></h1>
-        </a>
-        <nav class="nav-header">
-          <ul id="menuList">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about-us">About</a></li>
-            <li><a href="/menu.html">Menu</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#chefs">Chefs</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="user-cart">
-          <a href="/login.html" class="user"
-            ><i class="bx bx-user bx-sm"></i
-          ></a>
-          <a href="/cart.html" class="cart"><i class="bx bx-cart bx-sm"></i></a>
-        </div>
-      </div>
-    </header>
-    <!---------- Header ---------->
+    <section class="menu-section">
+      <div class="container">
+        <div class="menu-header">
+          <div class="menu-tag" data-aos="fade-right">OUR MENU</div>
+          <h1 class="main-title" data-aos="fade-up">Hãy Cùng Nhau,</h1>
+          <h1 class="main-title" data-aos="fade-up" data-aos-delay="200">
+            Ăn Uống & Lành Mạnh
+          </h1>
+          <div
+            class="decorative-line"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          ></div>
 
-    <!---------- menu ---------->
-    <section class="menu">
-      <div class="menu-block">
-        <div
-          class="menu-header"
-          class="why-us-choose-beer"
-          data-aos="fade-up"
-          data-aos-delay="100"
-          data-aos-duration="1000"
-        >
-          <p><span>KhanhFood Menu </span></p>
-        </div>
-        <p class="description">
-          Khám phá thực đơn hấp dẫn của chúng tôi, được chế biến từ nguyên liệu
-          tươi ngon và đậm đà hương vị. Từ món chính thịnh soạn đến đồ ăn nhẹ
-          hấp dẫn và đồ uống giải khát, luôn có món ăn phù hợp với sở thích của
-          mọi người.
-        </p>
-        <div class="menu-content">
-          <div class="menu-content-block">
-            <div
-              class="menu-content-header"
-              data-aos="fade-up"
-              data-aos-delay="150"
-              data-aos-duration="1000"
-            >
-              <div class="menu-content-select">
-                <h4>Danh Mục</h4>
-                <select>
-                  <option value="1">Tất cả</option>
-                  <option value="2">Bữa sáng</option>
-                  <option value="3">Bữa trưa</option>
-                  <option value="4">Bữa tối</option>
-                </select>
-              </div>
-              <div class="menu-content-select">
-                <h4>Giá</h4>
-                <div>
-                  <select>
-                    <option value="1">$100</option>
-                    <option value="2">$200</option>
-                    <option value="3">$300</option>
-                    <option value="4">$400</option>
-                  </select>
-                  -
-                  <select>
-                    <option value="1">$200</option>
-                    <option value="2">$300</option>
-                    <option value="3">$400</option>
-                    <option value="4">$500</option>
-                  </select>
-                </div>
-              </div>
-              <div class="menu-content-select">
-                <h4>Sắp Xếp Theo</h4>
-                <select>
-                  <option value="1">Bán Chạy Nhất</option>
-                  <option value="2">Thấp đến Cao</option>
-                  <option value="3">Cao đến Thấp</option>
-                </select>
-              </div>
-            </div>
-            <div
-              class="menu-content-infor-block"
-              data-aos="fade-up"
-              data-aos-delay="250"
-              data-aos-duration="1000"
-            >
-              <div class="menu-content-infor">
-                <a href="/detail.html">
-                  <div class="menu-content-infor-img">
-                    <img src="/img/menu/menu-item-1.png" alt="" />
-                  </div>
-                </a>
-                <div class="menu-content-infor-text">
-                  <h4>Kobe Beef</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$389</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-2.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Truffle Risotto</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$269</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-3.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Gan ngỗng</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$189</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-4.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Hàu Rockefeller</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$439</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-5.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Lobster ThermidorTôm hùm Thermidor</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$324</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-6.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Bít tết Chateaubriand</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$229</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-1.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Kobe Beef</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$389</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-2.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Truffle Risotto</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$269</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-3.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Foie Gras</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$189</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-4.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Oysters Rockefeller</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$439</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-5.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Lobster Thermidor</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$324</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-6.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Chateaubriand Steak</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$229</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-1.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Kobe Beef</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$389</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-2.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Truffle Risotto</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$269</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-3.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Foie Gras</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$189</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-4.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Oysters Rockefeller</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$439</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-5.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Lobster Thermidor</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$324</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-6.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Chateaubriand Steak</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$229</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-1.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Kobe Beef</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$389</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-2.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Truffle Risotto</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$269</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-3.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Foie Gras</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$189</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-4.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Oysters Rockefeller</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$439</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-5.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Lobster Thermidor</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$324</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-6.png" alt="" />
-                </div>
-                <div class="menu-content-infor-text">
-                  <h4>Chateaubriand Steak</h4>
-                  <div class="menu-content-infor-text-btn">
-                    <button>
-                      <h3>Mua Ngay</h3>
-                    </button>
-                    <h2>$229</h2>
-                    <button>
-                      <i class="bx bx-cart bx-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="filter-tabs" data-aos="fade-up" data-aos-delay="500">
+            <button class="filter-btn active">
+              <i class="bx bx-restaurant filter-icon"></i>
+              <span class="filter-text">Tất cả</span>
+            </button>
+            <button class="filter-btn">
+              <i class="bx bx-coffee filter-icon"></i>
+              <span class="filter-text">Bữa Sáng</span>
+            </button>
+            <button class="filter-btn">
+              <i class="bx bx-bowl-rice filter-icon"></i>
+              <span class="filter-text">Bữa Trưa</span>
+            </button>
+            <button class="filter-btn dinner-btn">
+              <i class="bx bx-dish filter-icon"></i>
+              <span class="filter-text">Bữa Tối</span>
+            </button>
           </div>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+
+        <div class="see-all-section">
+          <button class="see-all-btn" data-aos="fade-up">
+            Xem tất cả
+            <i class="bx bx-right-arrow-alt arrow"></i>
+          </button>
         </div>
       </div>
     </section>
-    <!---------- menu ---------->
-
-    <!---------- footer---------->
-    <footer class="footer">
-      <div class="footer-block">
-        <div class="footer-content">
-          <div class="footer-infor">
-            <i class="bx bx-map bx-sm"></i>
-            <div>
-              <h4>Địa Chỉ</h4>
-              <p>
-                Cầu Diễn<br />
-                Nguyên Xá 134 /51<br />
-              </p>
-            </div>
-          </div>
-          <div class="footer-infor">
-            <i class="bx bx-phone bx-sm"></i>
-            <div>
-              <h4>Reservations</h4>
-              <p>
-                <strong>Phone:</strong> +84 973756592<br />
-                <strong>Email:</strong> contackhanh@gmail.com<br />
-              </p>
-            </div>
-          </div>
-          <div class="footer-infor">
-            <i class="bx bx-time-five bx-sm"></i>
-            <div>
-              <h4>Giờ mở cửa</h4>
-              <p>
-                <strong>Thứ 2 - Thứ 7: 11AM</strong> - 23PM<br />
-                <strong>Chủ Nhật: </strong>Đóng cửa
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-infor-icon-block">
-          <h4>Follow Us</h4>
-          <div class="footer-infor-icon">
-            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
-            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
-            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
-            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          Copyright <strong><span>KhanhFood</span></strong
-          >. Đã đuợc bảo lưu
-        </div>
-      </div>
-    </footer>
-    <!---------- footer---------->
+    <div id="footer"></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./footer/footer.js"></script>
     <script>
-      AOS.init();
+      // Dữ liệu món ăn cho từng loại menu
+      const menuData = {
+        all: [
+          {
+            name: "Phở Bò",
+            image: "/img/menu/menu-item-1.png",
+            rating: 4.9,
+            price: "95k",
+            stars: 5,
+          },
+          {
+            name: "Bánh Mì Thịt",
+            image: "/img/menu/menu-item-2.png",
+            rating: 4.8,
+            price: "25k",
+            stars: 5,
+          },
+          {
+            name: "Bún Bò Huế",
+            image:
+              "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&auto=format&fit=crop&q=60",
+            rating: 4.7,
+            price: "85k",
+            stars: 4,
+          },
+          {
+            name: "Bánh Cuốn",
+            image: "/img/menu/menu-item-2.png",
+            rating: 4.6,
+            price: "45k",
+            stars: 4,
+          },
+          {
+            name: "Gỏi Cuốn",
+            image: "/img/menu/menu-item-3.png",
+            rating: 4.5,
+            price: "35k",
+            stars: 4,
+          },
+          {
+            name: "Chả Cá Lã Vọng",
+            image: "/img/menu/menu-item-4.png",
+            rating: 4.4,
+            price: "120k",
+            stars: 4,
+          },
+          {
+            name: "Cao Lầu Hội An",
+            image: "/img/menu/menu-item-5.png",
+            rating: 4.8,
+            price: "75k",
+            stars: 5,
+          },
+          {
+            name: "Bánh Xèo",
+            image: "/img/menu/menu-item-6.png",
+            rating: 4.3,
+            price: "55k",
+            stars: 4,
+          },
+          {
+            name: "Bánh Khọt",
+            image:
+              "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&auto=format&fit=crop&q=60",
+            rating: 4.2,
+            price: "40k",
+            stars: 4,
+          },
+          {
+            name: "Cơm Tấm Sài Gòn",
+            image:
+              "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&auto=format&fit=crop&q=60",
+            rating: 4.7,
+            price: "65k",
+            stars: 5,
+          },
+        ],
+        breakfast: [
+          {
+            name: "Phở Bò",
+            image:
+              "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&auto=format&fit=crop&q=60",
+            rating: 4.9,
+            price: "95k",
+            stars: 5,
+          },
+          {
+            name: "Bánh Mì Thịt",
+            image:
+              "https://images.unsplash.com/photo-1587385789097-0197a7fbd179?w=800&auto=format&fit=crop&q=60",
+            rating: 4.8,
+            price: "25k",
+            stars: 5,
+          },
+          {
+            name: "Bánh Cuốn",
+            image:
+              "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&auto=format&fit=crop&q=60",
+            rating: 4.6,
+            price: "45k",
+            stars: 4,
+          },
+          {
+            name: "Chè Bá Ba",
+            image:
+              "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&auto=format&fit=crop&q=60",
+            rating: 4.4,
+            price: "30k",
+            stars: 4,
+          },
+          {
+            name: "Bánh Fặn",
+            image:
+              "https://images.unsplash.com/photo-1555939594-58e4c4844a33?w=800&auto=format&fit=crop&q=60",
+            rating: 4.3,
+            price: "35k",
+            stars: 4,
+          },
+          {
+            name: "Xoi Xéo",
+            image:
+              "https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?w=800&auto=format&fit=crop&q=60",
+            rating: 4.5,
+            price: "20k",
+            stars: 4,
+          },
+        ],
+        lunch: [
+          {
+            name: "Bún Bò Huế",
+            image:
+              "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&auto=format&fit=crop&q=60",
+            rating: 4.7,
+            price: "85k",
+            stars: 4,
+          },
+          {
+            name: "Cơm Tấm Sài Gòn",
+            image:
+              "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&auto=format&fit=crop&q=60",
+            rating: 4.7,
+            price: "65k",
+            stars: 5,
+          },
+          {
+            name: "Bún Chả Hà Nội",
+            image:
+              "https://images.unsplash.com/photo-1559847844-d724b4b6bf3c?w=800&auto=format&fit=crop&q=60",
+            rating: 4.6,
+            price: "70k",
+            stars: 4,
+          },
+          {
+            name: "Mì Quảng",
+            image:
+              "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800&auto=format&fit=crop&q=60",
+            rating: 4.5,
+            price: "60k",
+            stars: 4,
+          },
+          {
+            name: "Bánh Xèo Miền Tây",
+            image:
+              "https://images.unsplash.com/photo-1608053829579-bd71b9b0a021?w=800&auto=format&fit=crop&q=60",
+            rating: 4.3,
+            price: "55k",
+            stars: 4,
+          },
+          {
+            name: "Hủ Tiếu Xao",
+            image:
+              "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&auto=format&fit=crop&q=60",
+            rating: 4.4,
+            price: "50k",
+            stars: 4,
+          },
+          {
+            name: "Cơm Chiên Dương Châu",
+            image:
+              "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&auto=format&fit=crop&q=60",
+            rating: 4.2,
+            price: "45k",
+            stars: 4,
+          },
+          {
+            name: "Gỏi Cuốn Tôm Thịt",
+            image:
+              "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=60",
+            rating: 4.5,
+            price: "35k",
+            stars: 4,
+          },
+        ],
+        dinner: [
+          {
+            name: "Chả Cá Lã Vọng",
+            image:
+              "https://images.unsplash.com/photo-1606491048228-b7374e6a2ce1?w=800&auto=format&fit=crop&q=60",
+            rating: 4.4,
+            price: "120k",
+            stars: 4,
+          },
+          {
+            name: "Lẩu Thái Chua Cay",
+            image:
+              "https://images.unsplash.com/photo-1564890417327-4f06a2fb7e7e?w=800&auto=format&fit=crop&q=60",
+            rating: 4.6,
+            price: "200k",
+            stars: 5,
+          },
+          {
+            name: "Nem Nướng Nêng Vi",
+            image:
+              "https://images.unsplash.com/photo-1559847844-d724b4b6bf3c?w=800&auto=format&fit=crop&q=60",
+            rating: 4.5,
+            price: "150k",
+            stars: 4,
+          },
+          {
+            name: "Gà Nướng Luộc Lá Chả",
+            image:
+              "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=800&auto=format&fit=crop&q=60",
+            rating: 4.7,
+            price: "180k",
+            stars: 5,
+          },
+          {
+            name: "Cá Nướng Riều Cá",
+            image:
+              "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&auto=format&fit=crop&q=60",
+            rating: 4.3,
+            price: "160k",
+            stars: 4,
+          },
+          {
+            name: "Bánh Khọt Vũng Tàu",
+            image:
+              "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&auto=format&fit=crop&q=60",
+            rating: 4.2,
+            price: "40k",
+            stars: 4,
+          },
+          {
+            name: "Tôm Hấp Biên",
+            image:
+              "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&auto=format&fit=crop&q=60",
+            rating: 4.8,
+            price: "220k",
+            stars: 5,
+          },
+        ],
+      };
+
+      // Hàm tạo một thẻ món ăn
+      function createMenuCard(dish) {
+        let starsHtml = "";
+        for (let i = 0; i < 5; i++) {
+          if (i < dish.stars) {
+            starsHtml += '<i class="bx bxs-star"></i>';
+          } else {
+            starsHtml += '<i class="bx bx-star"></i>';
+          }
+        }
+
+        return `
+            <div class="menu-card" data-aos="zoom-in">
+                <div class="card-image">
+                   <a href ="/detail.html"> <img src="${dish.image}" alt="${dish.name}"></a>
+                </div>
+                <div class="card-content">
+                    <h3 class="dish-name">${dish.name}</h3>
+                    <div class="rating">
+                        <div class="stars">
+                            ${starsHtml}
+                        </div>
+                        <span class="rating-score">${dish.rating}</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">${dish.price}</span>
+                        <button class="order-btn">
+                           <a href = "/cart.html"> <i class="bx bx-cart-add btn-icon"></i></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+          `;
+      }
+      // Hàm hiển thị menu theo loại
+      function displayMenu(category) {
+        const menuGrid = document.getElementById("menuGrid");
+        const dishes = menuData[category] || menuData.all;
+
+        // Xóa nội dung cũ
+        menuGrid.innerHTML = "";
+
+        // Tạo nội dung mới
+        dishes.forEach((dish) => {
+          menuGrid.innerHTML += createMenuCard(dish);
+        });
+
+        // Bắt đầu lại animation của AOS
+        setTimeout(() => {
+          AOS.refresh();
+        }, 100);
+      }
+
+      // Xử lý sự kiện click cho các nút filter
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: true,
+          duration: 800,
+        });
+
+        const filterBtns = document.querySelectorAll(".filter-btn");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Xóa active class khỏi tất cả nút
+            filterBtns.forEach((b) => b.classList.remove("active"));
+
+            // Thêm active class cho nút được click
+            this.classList.add("active");
+
+            // Lấy loại menu từ text nút
+            const category =
+              this.querySelector(".filter-text").textContent.toLowerCase();
+
+            // Hiển thị menu tương ứng
+            displayMenu(category);
+          });
+        });
+
+        // Hiển thị menu "All" khi tải trang
+        displayMenu("all");
+      });
     </script>
-    <script src="./js/home.js"></script>
   </body>
 </html>

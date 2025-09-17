@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
           AOS.init();
           AOS.refreshHard();
         }, 100);
-        h;
       } else {
         console.error("Lỗi: Thư viện AOS chưa được tải.");
       }

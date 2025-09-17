@@ -127,6 +127,69 @@
         transform: translateY(0);
         transition: transform 0.8s ease-out, opacity 0.8s ease-out;
       }
+
+      /* ========================
+         Responsive Design (Media Queries)
+         ======================== */
+
+      /* Tablets (Màn hình từ 769px đến 1024px) */
+      @media (max-width: 1024px) {
+        .product-section {
+          padding: 60px 20px;
+        }
+
+        .product-card {
+          gap: 40px;
+          margin-bottom: 60px;
+        }
+
+        .content h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Mobile (Màn hình dưới 768px) */
+      @media (max-width: 768px) {
+        .product-section {
+          padding: 40px 10px;
+        }
+
+        .product-card,
+        .product-card--reverse {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 30px;
+          margin-bottom: 50px;
+        }
+
+        .image-container {
+          padding: 0;
+        }
+
+        .image-container img {
+          max-width: 80%;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:first-child .image-container img {
+          width: 250px;
+          height: 250px;
+          object-fit: cover;
+        }
+
+        .content {
+          padding: 0 10px;
+        }
+
+        .content h2 {
+          font-size: 1.8rem;
+        }
+
+        .content p {
+          font-size: 0.9rem;
+        }
+      }
     </style>
   </head>
   <body>
