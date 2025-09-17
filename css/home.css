@@ -10,8 +10,8 @@
 /*---------- Color ----------*/
 :root {
   --color-default: #212529;
-  --color-primary: #ce1212;
-  --color-primary-hover: #ec2727;
+  --color-primary: #f6a21e;
+  --color-primary-hover: #e07b00;
   --color-secondary: #37373f;
 }
 /*---------- Color ----------*/
@@ -177,7 +177,8 @@ header {
   justify-content: center;
   background-size: cover;
   position: relative;
-  margin: 160px 0px 100px 0px;
+  padding: 160px 0px 100px 0px;
+  background-color: #fff7f0;
 }
 .intro-block {
   display: flex;
@@ -191,8 +192,8 @@ header {
   max-height: 550px;
 }
 .intro-text h2 {
-  font-weight: 700;
-  font-size: 64px;
+  font-weight: 600;
+  font-size: 54px;
   color: var(--color-secondary);
 }
 .intro-text p {
@@ -216,7 +217,7 @@ header {
   box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
 }
 .text-book-table:hover {
-  background: rgba(206, 18, 18, 0.8);
+  background: #e07b00;
   box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
 }
 .text-book-table:active {
@@ -230,7 +231,6 @@ header {
   max-width: 550px;
   max-height: 550px;
 }
-
 /*---------- intro ----------*/
 
 /*---------- about ----------*/
@@ -364,7 +364,7 @@ header {
   margin: 0px 120px;
 }
 .why-us-choose-beer {
-  height: 360px;
+  height: 370px;
   width: 440px;
   padding: 30px;
   margin-right: 20px;
@@ -375,7 +375,7 @@ header {
   text-align: center;
   font-weight: 700;
   font-size: 34px;
-  margin-bottom: 30px;
+  /* margin-bottom: 0px; */
 }
 .why-us-choose-beer p {
   margin-bottom: 30px;
@@ -385,6 +385,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff7f0;
 }
 .why-us-learn-more {
   display: inline-block;
@@ -396,7 +397,8 @@ header {
 }
 .why-us-learn-more:hover {
   color: var(--color-primary);
-  background: #fff;
+  /* background: #fff; */
+  background-color: #fff7f0;
 }
 .why-us-box-icon-block {
   display: flex;
@@ -415,7 +417,7 @@ header {
   background-color: #fff;
 }
 .why-us-box-icon:hover {
-  transform: scale(1.08);
+  transform: scale(1.09);
 }
 .why-us-box-icon i {
   display: flex;
@@ -922,50 +924,60 @@ header {
 /*---------- footer ----------*/
 .footer {
   font-size: 14px;
-  background-color: #1f1f24;
+  background-color: #ffbf80;
   padding: 50px 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #333; /* đổi chữ từ trắng mờ sang xám đậm */
 }
+
 .footer-block h4 {
   font-size: 16px;
   font-weight: bold;
   position: relative;
   padding-bottom: 5px;
-  color: #fff;
+  color: #111; /* tiêu đề nổi bật hơn */
 }
+
 .footer-block {
   display: flex;
   justify-content: center;
   margin: 0px 120px;
 }
+
 .footer-content {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: auto;
 }
+
 .footer-infor {
   display: flex;
   height: 120px;
   width: 320px;
 }
+
 .footer-infor i {
   margin-right: 15px;
 }
+
 .footer-infor h4 {
   margin-bottom: 5px;
 }
+
 .footer-infor p {
   line-height: 1.5;
 }
+
 .footer-infor-icon-block {
   height: 120px;
   width: 320px;
 }
+
 .footer-infor-icon {
   display: flex;
   margin-top: 10px;
 }
+
 .footer-infor-icon a {
   display: flex;
   align-items: center;
@@ -973,21 +985,24 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2); /* viền tối hơn */
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #333; /* icon đậm hơn để dễ nhìn */
   margin-right: 10px;
   transition: 0.3s;
 }
+
 .footer-infor-icon a:hover {
-  color: #fff;
-  border-color: #fff;
+  color: #000; /* khi hover đậm hẳn */
+  border-color: #000;
 }
+
 .footer .copyright {
   margin: 0px 120px;
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* đường viền tối hơn */
+  color: #444; /* chữ copyright dễ đọc */
 }
 /*---------- footer ----------*/
 
@@ -1135,6 +1150,7 @@ header {
   background: none;
   border: none;
   color: #333;
+  margin-right: 25px;
 }
 
 /* Menu mặc định desktop */
@@ -1180,7 +1196,7 @@ header {
     background: #fff;
     position: absolute;
     top: 60px; /* cao bằng header */
-    right: 0;
+    left: 0;
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;

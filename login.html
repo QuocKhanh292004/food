@@ -6,6 +6,7 @@
 
     <!-- link css -->
     <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/header.css" />
 
     <!-- link icon -->
     <link
@@ -27,18 +28,20 @@
     <!---------- Header ---------->
     <header>
       <div class="header-block">
-        <a href="index.html" class="logo-header"
-          ><h1>khanhFood<span>.</span></h1></a
-        >
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <a href="index.html" class="logo-header">
+          <h1>KhanhFood<span>.</span></h1>
+        </a>
+
         <nav class="nav-header">
-          <ul>
-            <li><a href="index.html#">Home</a></li>
-            <li><a href="index.html#about-us">About</a></li>
+          <ul id="menuList">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about-us">About</a></li>
             <li><a href="/menu.html">Menu</a></li>
-            <li><a href="index.html#events">Events</a></li>
-            <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#chefs">Chefs</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="user-cart">
@@ -134,5 +137,6 @@
 
     <!-- link script -->
     <script src="/js/login.js"></script>
+    <script src="/js/home.js"></script>
   </body>
 </html>

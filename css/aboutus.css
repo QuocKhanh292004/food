@@ -1,0 +1,152 @@
+:root {
+  --accent-1: #f6a21e;
+  --accent-2: #5a2d0c;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #fffaf6;
+  color: #222;
+}
+.about-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 250, 246, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: 12px;
+}
+
+.about-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-img img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  transform: translateY(-8px);
+}
+
+.about-content {
+  flex: 1;
+  padding-right: 40px;
+}
+.about-content h2 {
+  font-size: 34px;
+  margin: 0 0 12px;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  line-height: 1;
+}
+.about-content p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 22px;
+  max-width: 520px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 22px;
+  align-items: center;
+}
+.stat {
+  text-align: left;
+}
+.stat h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--accent-1);
+  font-weight: 700;
+}
+.stat span {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: var(--accent-1);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(246, 162, 30, 0.18);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.decor {
+  position: absolute;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 6px solid #fff;
+  background: #fff;
+  z-index: 3;
+}
+
+.decor-top {
+  top: 20px;
+}
+
+.decor-bottom {
+  bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .about-section {
+    gap: 20px;
+    padding: 40px 18px;
+  }
+  .decor {
+    width: 96px;
+    height: 96px;
+    right: -26px;
+    border-width: 5px;
+  }
+  .about-content h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 16px;
+  }
+  .about-content {
+    padding-right: 0;
+  }
+  .decor {
+    display: none;
+  }
+}

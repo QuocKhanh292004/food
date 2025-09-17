@@ -3,140 +3,327 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết sản phẩm - Kobe Beef</title>
-    <link rel="stylesheet" href="./css/detail.css" />
+    <title>Phở Bò Đặc Biệt | The Noodle Co.</title>
+    <link rel="stylesheet" href="/css/detail.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container">
-      <!-- Product Image -->
-      <div class="product-image">
-        <img src="./img/menu/menu-item-2.png" alt="Kobe Beef" />
+    <div style="margin-top: 30px">
+      <a
+        href="./menu.html"
+        style="text-align: center; margin-left: 15%; text-decoration: none"
+      >
+        < Quay lại menu</a
+      >
+    </div>
+    <main class="product-page">
+      <div
+        class="product-gallery"
+        data-aos="fade-right"
+        data-aos-duration="800"
+      >
+        <img
+          src="./img/menu/menu-item-1.png"
+          alt="Tô Phở Bò Đặc Biệt"
+          class="product-main-image"
+        />
       </div>
 
-      <!-- Product Info -->
-      <div class="product-info">
-        <h1>Kobe Beef</h1>
-
-        <!-- Rating & Sold -->
-        <div class="meta">
-          <span class="rating"
-            ><i class="fa fa-star"></i> 4.9 (120 đánh giá)</span
+      <div
+        class="product-info-container"
+        data-aos="fade-left"
+        data-aos-duration="800"
+      >
+        <div class="product-info">
+          <div class="breadcrumbs"></div>
+          <h1 class="product-name" data-aos="fade-up" data-aos-duration="600">
+            Đậu sốt cà chua
+          </h1>
+          <div
+            class="rating-price-info"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="100"
           >
-          <span class="sold">Đã bán: 350+</span>
-        </div>
-
-        <p class="price">$389</p>
-
-        <p class="description">
-          Kobe Beef hảo hạng được chế biến tinh tế, mang đến hương vị đậm đà,
-          mềm ngọt, phù hợp cho những bữa tiệc sang trọng.
-        </p>
-
-        <!-- Stock -->
-        <p class="stock"><strong>Tình trạng:</strong> Còn hàng</p>
-
-        <!-- Quantity -->
-        <div class="quantity">
-          <label for="qty">Số lượng:</label>
-          <div class="qty-control">
-            <button class="qty-btn">-</button>
-            <input type="number" id="qty" value="1" min="1" />
-            <button class="qty-btn">+</button>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="review-count"> (1,254 đánh giá)</span>
+            </div>
           </div>
-        </div>
+          <div
+            class="price"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
+            Giá :65.000₫
+          </div>
+          <p
+            class="description"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
+            Nước dùng tinh túy ninh 12 tiếng, kết hợp với thịt bò thăn thái lát
+            mỏng. Một trải nghiệm ẩm thực truyền thống, sang trọng.
+          </p>
 
-        <!-- Shipping -->
-        <div class="shipping">
-          <p><i class="fa fa-truck"></i> Vận chuyển: Miễn phí toàn quốc</p>
-          <p><i class="fa fa-sync-alt"></i> Đổi trả trong vòng 7 ngày</p>
-        </div>
+          <form class="product-form">
+            <div
+              class="option-group"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="400"
+            >
+              <label for="size-select" class="option-label">Kích cỡ</label>
+              <div class="option-pills">
+                <input type="radio" name="size" id="size-s" checked />
+                <label for="size-s">Nhỏ</label>
+                <input type="radio" name="size" id="size-m" />
+                <label for="size-m">Vừa</label>
+                <input type="radio" name="size" id="size-l" />
+                <label for="size-l">Lớn</label>
+              </div>
+            </div>
 
-        <!-- Buttons -->
-        <div class="btn-group">
-          <button class="btn btn-primary">Mua Ngay</button>
-          <button class="btn btn-cart">
-            <i class="fa fa-shopping-cart"></i> Thêm vào giỏ
-          </button>
+            <div
+              class="option-group"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="500"
+            >
+              <label for="topping-select" class="option-label"
+                >Topping thêm</label
+              >
+              <div class="option-pills">
+                <input type="checkbox" name="topping" id="egg" />
+                <label for="egg">Trứng lòng đào</label>
+                <input type="checkbox" name="topping" id="meatball" />
+                <label for="meatball">Bò viên</label>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="cta-button"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="600"
+            >
+              Thêm vào giỏ hàng
+            </button>
+            <div
+              class="delivery-info"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="700"
+            >
+              <span>Giao hàng nhanh trong 30 phút</span>
+              <span>Đảm bảo tươi ngon, nóng hổi</span>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- Extra Info Sections -->
-    <div class="extra-info">
-      <!-- Mô tả sản phẩm -->
-      <section class="section">
-        <h2>Mô tả sản phẩm</h2>
-        <p>
-          Thịt bò Kobe nổi tiếng với độ mềm mịn và hương vị đặc trưng, cung cấp
-          nhiều protein và dưỡng chất cần thiết cho sức khỏe. Đây là lựa chọn
-          tuyệt vời cho những bữa tiệc sang trọng hoặc làm quà tặng cao cấp.
-        </p>
-      </section>
+    <section class="info-sections">
+      <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <h2 class="section-title">Chi tiết sản phẩm</h2>
+        <div class="accordion">
+          <details open>
+            <summary>Mô tả và thành phần</summary>
+            <div class="accordion-content">
+              <p>
+                Phở của chúng tôi được làm từ những nguyên liệu tươi ngon nhất,
+                chọn lọc từ các nhà cung cấp uy tín. Nước dùng được ninh từ
+                xương bò và các loại gia vị tự nhiên, không sử dụng bột ngọt.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Giá trị dinh dưỡng</summary>
+            <div class="accordion-content">
+              <table class="nutrition-table">
+                <thead>
+                  <tr>
+                    <th>Thành phần</th>
+                    <th>Giá trị</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Năng lượng</td>
+                    <td>520 kcal</td>
+                  </tr>
+                  <tr>
+                    <td>Đạm</td>
+                    <td>32g</td>
+                  </tr>
+                  <tr>
+                    <td>Chất béo</td>
+                    <td>14g</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details>
+            <summary>Đánh giá khách hàng</summary>
+            <div class="accordion-content">
+              <div class="review-item">
+                <strong>Mai P.</strong><span class="stars-review">★★★★★</span>
+                <p>
+                  Nước dùng ngon, thịt bò mềm. Giao hàng nhanh và đóng gói cẩn
+                  thận.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-      <!-- Thông tin dinh dưỡng -->
-      <section class="section">
-        <h2>Thông tin dinh dưỡng</h2>
-        <table class="nutrition-table">
-          <tr>
-            <th>Thành phần</th>
-            <th>Giá trị</th>
-          </tr>
-          <tr>
-            <td>Năng lượng</td>
-            <td>250 kcal / 100g</td>
-          </tr>
-          <tr>
-            <td>Protein</td>
-            <td>20g</td>
-          </tr>
-          <tr>
-            <td>Chất béo</td>
-            <td>18g</td>
-          </tr>
-          <tr>
-            <td>Vitamin & Khoáng chất</td>
-            <td>Vitamin B12, Sắt, Kẽm</td>
-          </tr>
-        </table>
-      </section>
+    <section class="related-products">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">
+          Có thể bạn sẽ thích
+        </h2>
+        <div class="product-grid">
+          <a
+            href="#"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="100"
+          >
+            <img
+              src="./img/menu/menu-item-2.png"
+              alt="Bánh mì Thịt"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Bánh Mì Thịt</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★☆</span>
+              </div>
+              <div class="card-price">28.000₫</div>
+              <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
+            <img
+              src="./img/menu/menu-item-3.png"
+              alt="Cà Phê Sữa Đá"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Cà Phê Sữa Đá</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+              </div>
+              <div class="card-price">22.000₫</div>
+              <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="300"
+          >
+            <img
+              src="./img/menu/menu-item-4.png"
+              alt="Bún Chả Hà Nội"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Bún Chả</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★☆</span>
+              </div>
+              <div class="card-price">45.000₫</div>
+              <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <!-- Đánh giá -->
-      <section class="section">
-        <h2>Đánh giá</h2>
-
-        <div class="review">
-          <div class="review-header">
-            <img src="https://i.pravatar.cc/40?img=1" alt="User" />
+    <footer class="footer">
+      <div class="footer-block">
+        <div class="footer-content">
+          <div class="footer-infor">
+            <i class="bx bx-map bx-sm"></i>
             <div>
-              <strong>Nguyễn Văn A</strong>
-              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <h4>Địa Chỉ</h4>
+              <p>Cầu Diễn ,Nguyên Xá 134/51</p>
             </div>
           </div>
-          <p>Thịt rất mềm và ngon, đáng tiền!</p>
-        </div>
-
-        <div class="review">
-          <div class="review-header">
-            <img src="https://i.pravatar.cc/40?img=2" alt="User" />
+          <div class="footer-infor">
+            <i class="bx bx-phone bx-sm"></i>
             <div>
-              <strong>Trần Thị B</strong>
-              <div class="stars">⭐⭐⭐⭐</div>
+              <h4>Đặt Chỗ</h4>
+              <p>
+                <strong>Điện Thoại:</strong> +84 0973756592<br />
+                <strong>Email:</strong> contactkhanh@gmail.com<br />
+              </p>
             </div>
           </div>
-          <p>Giao hàng nhanh, chất lượng tuyệt vời.</p>
+          <div class="footer-infor">
+            <i class="bx bx-time-five bx-sm"></i>
+            <div>
+              <h4>Giờ Mở Cửa</h4>
+              <p>
+                <strong>Thứ Hai - Thứ Bảy: 11AM</strong> - 23PM<br />
+                <strong>Chủ Nhật: </strong>Đóng Cửa
+              </p>
+            </div>
+          </div>
         </div>
-
-        <!-- Form viết đánh giá -->
-        <form class="review-form">
-          <h3>Viết đánh giá của bạn</h3>
-          <textarea placeholder="Chia sẻ cảm nhận của bạn..."></textarea>
-          <button type="submit" class="btn btn-submit">Gửi đánh giá</button>
-        </form>
-      </section>
-    </div>
+        <div class="footer-infor-icon-block">
+          <h4>Theo Dõi Chúng Tôi</h4>
+          <div class="footer-infor-icon">
+            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
+            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
+            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
+            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          Bản quyền <strong><span>KhanhFood</span></strong
+          >. Đã Được Bảo Lưu
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        // Tùy chỉnh các thông số để phù hợp với trang
+        once: true, // Hiệu ứng chỉ chạy một lần khi cuộn qua
+        duration: 800, // Thời gian hiệu ứng mặc định
+        easing: "ease-out-quad", // Kiểu chuyển động
+      });
+    </script>
   </body>
 </html>

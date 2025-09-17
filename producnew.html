@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm cao cấp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --main-bg-color: #f7f3ed;
+        --card-bg-color: #fff;
+        --primary-text-color: #2c2c2c;
+        --secondary-text-color: #6a401b;
+        --accent-color: #f7a61d;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--main-bg-color);
+        color: var(--primary-text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .product-section {
+        padding: 80px 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .product-card {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        margin-bottom: 80px;
+      }
+
+      .product-card--reverse {
+        flex-direction: row-reverse;
+      }
+
+      .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: cover;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .product-card:first-child .image-container img {
+        border-radius: 50%;
+      }
+
+      .product-card:nth-child(2) .image-container img {
+        border-radius: 20px;
+      }
+
+      @keyframes gentle-shake {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-2px);
+        }
+        50% {
+          transform: translateX(2px);
+        }
+        75% {
+          transform: translateX(-2px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .image-container img.aos-animate {
+        animation: gentle-shake 0.8s infinite alternate-reverse;
+      }
+
+      .content {
+        flex: 1;
+        padding: 0 20px;
+      }
+
+      .content h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--secondary-text-color);
+        margin-top: 0;
+      }
+
+      .content p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+
+      /* Hiệu ứng chữ cái */
+      .word {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .word.animated {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="product-section" id="produc-new">
+      <div class="container">
+        <div
+          class="product-card"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+        >
+          <div
+            class="image-container"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <img src="./img/deco/grilled-shrimp.png" alt="Tôm Nướng" />
+          </div>
+          <div class="content">
+            <h2 class="animate-text" data-original-text="Tôm Nướng">
+              Tôm Nướng
+            </h2>
+            <p
+              class="animate-text"
+              data-original-text="Hãy để vị giác của bạn được đánh thức với món Tôm Nướng Tuyệt Hảo. Những con tôm tươi roi rói được lựa chọn kỹ càng, tẩm ướp cùng sốt gia vị bí truyền và nướng trên than hồng, giữ trọn vẹn vị ngọt tự nhiên của thịt."
+            >
+              Hãy để vị giác của bạn được đánh thức với món Tôm Nướng Tuyệt Hảo.
+              Những con tôm tươi roi rói được lựa chọn kỹ càng, tẩm ướp cùng sốt
+              gia vị bí truyền và nướng trên than hồng, giữ trọn vẹn vị ngọt tự
+              nhiên của thịt.
+            </p>
+            <p
+              class="animate-text"
+              data-original-text="Lớp vỏ ngoài giòn rụm, ẩn chứa bên trong là phần thịt tôm săn chắc, đậm đà, lan tỏa hương thơm khó cưỡng. Món ăn này là sự kết hợp hoàn hảo giữa hương vị truyền thống và cách chế biến tinh tế, hứa hẹn mang đến một trải nghiệm ẩm thực đáng nhớ cho những tín đồ hải sản."
+            >
+              Lớp vỏ ngoài giòn rụm, ẩn chứa bên trong là phần thịt tôm săn
+              chắc, đậm đà, lan tỏa hương thơm khó cưỡng. Món ăn này là sự kết
+              hợp hoàn hảo giữa hương vị truyền thống và cách chế biến tinh tế,
+              hứa hẹn mang đến một trải nghiệm ẩm thực đáng nhớ cho những tín đồ
+              hải sản.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-card product-card--reverse"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+        >
+          <div
+            class="image-container"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <img src="/img/deco/pad-thai.png" alt="Nộm Tôm" />
+          </div>
+          <div class="content">
+            <h2 class="animate-text" data-original-text="Nộm Tôm">Nộm Tôm</h2>
+            <p
+              class="animate-text"
+              data-original-text="Đắm chìm trong sự thanh thoát và tươi mới của món Nộm Tôm. Từng con tôm tươi ngon, mọng nước được trộn đều với các loại rau củ giòn ngọt như cà rốt, dưa chuột và bắp cải tím. Điểm nhấn của món ăn nằm ở phần nước sốt chua ngọt, cay nhẹ, được pha chế theo công thức riêng, giúp các nguyên liệu hòa quyện vào nhau một cách hoàn hảo."
+            >
+              Đắm chìm trong sự thanh thoát và tươi mới của món Nộm Tôm. Từng
+              con tôm tươi ngon, mọng nước được trộn đều với các loại rau củ
+              giòn ngọt như cà rốt, dưa chuột và bắp cải tím. Điểm nhấn của món
+              ăn nằm ở phần nước sốt chua ngọt, cay nhẹ, được pha chế theo công
+              thức riêng, giúp các nguyên liệu hòa quyện vào nhau một cách hoàn
+              hảo.
+            </p>
+            <p
+              class="animate-text"
+              data-original-text="Nộm Tôm không chỉ là một món khai vị tuyệt vời mà còn là lựa chọn lý tưởng cho những ai yêu thích sự nhẹ nhàng, tinh tế và đầy màu sắc của ẩm thực."
+            >
+              Nộm Tôm không chỉ là một món khai vị tuyệt vời mà còn là lựa chọn
+              lý tưởng cho những ai yêu thích sự nhẹ nhàng, tinh tế và đầy màu
+              sắc của ẩm thực.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-in-out",
+        // Bỏ 'once: true' để animation lặp lại
+      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Khi phần tử đi vào viewport
+              animateWords(entry.target);
+            } else {
+              // Khi phần tử đi ra khỏi viewport
+              resetWords(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+
+      function animateWords(element) {
+        if (!element.classList.contains("animated-init")) {
+          const text = element.getAttribute("data-original-text");
+          element.innerHTML = ""; // Xóa nội dung cũ
+          const words = text.trim().split(/\s+/);
+
+          words.forEach((word, index) => {
+            const wordSpan = document.createElement("span");
+            wordSpan.className = "word";
+            wordSpan.textContent = word;
+            wordSpan.style.transitionDelay = `${index * 100}ms`;
+            element.appendChild(wordSpan);
+            if (index < words.length - 1) {
+              element.appendChild(document.createTextNode(" "));
+            }
+          });
+          element.classList.add("animated-init");
+        }
+
+        setTimeout(() => {
+          element.querySelectorAll(".word").forEach((word) => {
+            word.classList.add("animated");
+          });
+        }, 100);
+      }
+
+      function resetWords(element) {
+        element.querySelectorAll(".word").forEach((word) => {
+          word.classList.remove("animated");
+        });
+      }
+
+      document.querySelectorAll(".animate-text").forEach((element) => {
+        // Lưu nội dung gốc vào thuộc tính data để dễ dàng reset
+        element.setAttribute("data-original-text", element.textContent);
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>

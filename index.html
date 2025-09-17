@@ -7,6 +7,7 @@
     <!-- Link Css -->
     <link rel="stylesheet" href="././css/home.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/aboutus.css" />
     <!-- Link Js -->
     <link
       rel="stylesheet"
@@ -30,13 +31,13 @@
     <!---------- Header ---------->
     <header>
       <div class="header-block">
-        <a href="index.html" class="logo-header">
-          <h1>KhanhFood<span>.</span></h1>
-        </a>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <a href="index.html" class="logo-header">
+          <h1><span style="color: #ffcfa2">Khanh</span>Food<span>.</span></h1>
+        </a>
         <nav class="nav-header">
           <ul id="menuList">
-            <li><a href="#">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="#about-us">About</a></li>
             <li><a href="/menu.html">Menu</a></li>
             <li><a href="#events">Events</a></li>
@@ -54,13 +55,13 @@
       </div>
     </header>
     <!---------- Header ---------->
-
     <!---------- intro ---------->
     <section class="intro">
       <div class="intro-block">
         <div class="intro-text">
           <h2 data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            Hãy ăn uống lành mạnh<br />Món ăn ngon
+            Chào mừng đến
+            <span>Thế giới <span style="color: #ffcfa2">ẩm thực</span></span>
           </h2>
           <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             Chúng tôi cam kết mang đến cho bạn những món ăn ngon nhất, được chế
@@ -79,19 +80,27 @@
           class="intro-img"
           data-aos="zoom-out"
           data-aos-delay="100"
-          data-aos-duration="1500"
+          data-aos-duration="1700"
         >
-          <img src="/img/intro.png" alt="" />
+          <img src="/img/deco/roasted-chicken.png" alt="" />
         </div>
       </div>
     </section>
     <!---------- intro ---------->
-
     <main>
+      <!-- menudeco -->
+      <div>
+        <div id="menu-deco"></div>
+      </div>
+      <!-- menudeco -->
+      <!-- producnew -->
+      <div id="produc-new">kjhgf</div>
+      <!-- producnew -->
+
       <!---------- about us ---------->
       <section class="about-us" id="about-us" data-target="about-us">
         <div class="about-us-block">
-          <div
+          <!-- <div
             class="about-us-header"
             data-aos="fade-up"
             data-aos-delay="150"
@@ -99,7 +108,11 @@
           >
             <h2>VỀ CHÚNG TÔI</h2>
             <p>Tìm hiểu thêm <span>Về Chúng Tôi</span></p>
-          </div>
+          </div> -->
+
+          <!-- về chúng tôi deco -->
+          <div id="about-us-container"></div>
+          <!-- về chúng tôi deco -->
           <div class="about-us-img-text">
             <div
               class="about-us-img"
@@ -119,7 +132,7 @@
               data-aos-delay="250"
               data-aos-duration="1000"
             >
-              <p>Chào mừng bạn đến với Nhà hàng của chúng tôi</p>
+              <!-- <p>Chào mừng bạn đến với Nhà hàng của chúng tôi</p> -->
               <p>
                 Chúng tôi tự hào giới thiệu mình là một nơi mà chúng tôi kết hợp
                 hoàn hảo giữa nghệ thuật ẩm thực xuất sắc với không gian ấm cúng
@@ -171,9 +184,9 @@
               một trải nghiệm ẩm thực xuất sắc, nơi chúng tôi tôn trọng và ưu
               tiên lựa chọn của khách hàng trong mọi hoàn cảnh.
             </p>
-            <div class="why-us-learn-more-block">
+            <!-- <div class="why-us-learn-more-block">
               <a href="#" class="why-us-learn-more">Tìm Hiểu Thêm</a>
-            </div>
+            </div> -->
           </div>
           <div class="why-us-box-icon-block">
             <div
@@ -787,17 +800,24 @@
       </div>
     </footer>
     <!---------- footer---------->
-
     <!-- Link js -->
     <script src="/js/home.js"></script>
+    <script src="/js/include-menu-deco.js"></script>
+    <script src="./js/include-producnew.js"></script>
+    <script src="/js/include-about-us.js"></script>
+    <script src="/floating-animation/floating-animation.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script>
       new PureCounter();
     </script>
     <script>
       AOS.init();
+    </script>
+    <script>
+      AOS.refreshHard();
     </script>
   </body>
 </html>

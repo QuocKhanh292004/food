@@ -6,6 +6,7 @@
     <title>Beer</title>
     <!-- Link Css -->
     <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Link Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,18 +26,19 @@
     <!---------- Header ---------->
     <header>
       <div class="header-block">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <a href="index.html" class="logo-header">
           <h1>KhanhFood<span>.</span></h1>
         </a>
         <nav class="nav-header">
-          <ul>
-            <li><a href="index.html#">Home</a></li>
-            <li><a href="index.html#about-us">About</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="index.html#events">Events</a></li>
-            <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#chefs">Chefs</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+          <ul id="menuList">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="user-cart">
@@ -59,9 +61,14 @@
           data-aos-delay="100"
           data-aos-duration="1000"
         >
-          <h2>MENU</h2>
           <p><span>KhanhFood Menu </span></p>
         </div>
+        <p class="description">
+          Khám phá thực đơn hấp dẫn của chúng tôi, được chế biến từ nguyên liệu
+          tươi ngon và đậm đà hương vị. Từ món chính thịnh soạn đến đồ ăn nhẹ
+          hấp dẫn và đồ uống giải khát, luôn có món ăn phù hợp với sở thích của
+          mọi người.
+        </p>
         <div class="menu-content">
           <div class="menu-content-block">
             <div
@@ -113,9 +120,11 @@
               data-aos-duration="1000"
             >
               <div class="menu-content-infor">
-                <div class="menu-content-infor-img">
-                  <img src="/img/menu/menu-item-1.png" alt="" />
-                </div>
+                <a href="/detail.html">
+                  <div class="menu-content-infor-img">
+                    <img src="/img/menu/menu-item-1.png" alt="" />
+                  </div>
+                </a>
                 <div class="menu-content-infor-text">
                   <h4>Kobe Beef</h4>
                   <div class="menu-content-infor-text-btn">
@@ -584,5 +593,6 @@
     <script>
       AOS.init();
     </script>
+    <script src="./js/home.js"></script>
   </body>
 </html>

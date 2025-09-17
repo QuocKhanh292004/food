@@ -1,0 +1,126 @@
+.footer {
+  font-size: 14px;
+  background-color: #1f1f24;
+  padding: 50px 0;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+}
+.footer-block h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 5px;
+  color: #fff;
+}
+.footer-block {
+  display: flex;
+  justify-content: center;
+  margin: 0px 120px;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: auto;
+}
+.footer-infor {
+  display: flex;
+  height: 120px;
+  width: 320px;
+}
+.footer-infor i {
+  margin-right: 15px;
+}
+.footer-infor h4 {
+  margin-bottom: 5px;
+}
+.footer-infor p {
+  line-height: 1.5;
+}
+.footer-infor-icon-block {
+  height: 120px;
+  width: 320px;
+}
+.footer-infor-icon {
+  display: flex;
+  margin-top: 10px;
+}
+.footer-infor-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+.footer-infor-icon a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+.footer .copyright {
+  margin: 0px 120px;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/*---------- footer ----------*/
+/* Tối ưu footer responsive */
+@media (max-width: 992px) {
+  .footer-block {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    gap: 24px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .footer-infor-icon {
+    justify-content: center;
+  }
+  .footer-block h4 {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .footer .copyright {
+    margin: 0 10px;
+    font-size: 13px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-block {
+    margin: 0 5px;
+    gap: 16px;
+  }
+  .footer-content {
+    gap: 10px;
+  }
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+  }
+  .footer .copyright {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+}

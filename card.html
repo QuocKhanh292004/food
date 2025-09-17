@@ -1,127 +1,473 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beer</title>
-    <!-- Link Css -->
+    <title>KhanhFood • Thanh toán</title>
+
+    <!-- CSS chung -->
+    <link rel="stylesheet" href="./css/card.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+
+    <!-- CSS trang thanh toán -->
     <link rel="stylesheet" href="/css/card.css" />
-    <!-- Link Google font -->
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Inter:wght@500;600;800&display=swap"
       rel="stylesheet"
     />
-    <!-- Link icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!---------- Header ---------->
+    <!-- Header -->
     <header>
       <div class="header-block">
-        <a href="index.html" class="logo-header"
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <a href="./index.html" class="logo-header"
           ><h1>KhanhFood<span>.</span></h1></a
         >
         <nav class="nav-header">
-          <ul>
-            <li><a href="index.html#">Home</a></li>
-            <li><a href="index.html#about-us">About</a></li>
-            <li><a href="/menu.html">Menu</a></li>
-            <li><a href="index.html#events">Events</a></li>
-            <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#chefs">Chefs</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+          <ul id="menuList">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="user-cart">
-          <a href="/login.html" class="user"
+          <a href="./login.html" class="user" aria-label="Đăng nhập"
             ><i class="bx bx-user bx-sm"></i
           ></a>
-          <a href="/cart.html" class="cart"><i class="bx bx-cart bx-sm"></i></a>
+          <a href="./cart.html" class="cart" aria-label="Giỏ hàng"
+            ><i class="bx bx-cart bx-sm"></i
+          ></a>
         </div>
       </div>
     </header>
-    <!---------- Header ---------->
 
-    <!---------- card ---------->
-    <div class="container">
-      <form action="">
-        <div class="row">
-          <div class="col">
-            <h3 class="title">địa chỉ thanh toán</h3>
+    <!-- Hero -->
+    <section class="checkout-hero" aria-hidden="true">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h2>Thanh toán an toàn & tiện lợi</h2>
+        <p>Chọn ví điện tử hoặc thẻ quốc tế. Mọi giao dịch đều được mã hóa.</p>
+      </div>
+    </section>
 
-            <div class="inputBox">
-              <span>họ và tên :</span>
-              <input type="text" placeholder="john deo" />
-            </div>
-            <div class="inputBox">
-              <span>email :</span>
-              <input type="email" placeholder="contackhanh@gmail.com" />
-            </div>
-            <div class="inputBox">
-              <span>địa chỉ :</span>
-              <input type="text" placeholder="phòng - đường - khu vực" />
-            </div>
-            <div class="inputBox">
-              <span>thành phố :</span>
-              <input type="text" placeholder="thành phố" />
-            </div>
+    <!-- CARD -->
+    <main class="checkout-card">
+      <h3 class="card-title">Thanh toán</h3>
 
-            <div class="flex">
-              <div class="inputBox">
-                <span>state :</span>
-                <input type="text" placeholder="bangalore" />
-              </div>
-              <div class="inputBox">
-                <span>zip code :</span>
-                <input type="text" placeholder="123 456" />
-              </div>
+      <div class="checkout-grid expand-left">
+        <!-- LUÔN 1 CỘT -->
+        <!-- Trái: FORM -->
+        <section class="checkout-left">
+          <h4 class="block-title">Địa chỉ thanh toán</h4>
+
+          <div class="inputRow">
+            <label for="fullname">Họ và tên</label>
+            <input
+              id="fullname"
+              type="text"
+              placeholder="Nguyễn Văn A"
+              required
+            />
+          </div>
+
+          <div class="inputRow">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="contact@khanhfood.com"
+              required
+            />
+          </div>
+
+          <div class="inputRow">
+            <label for="address">Địa chỉ</label>
+            <input
+              id="address"
+              type="text"
+              placeholder="Số nhà - Đường - Khu vực"
+              required
+            />
+          </div>
+
+          <div class="grid-2">
+            <div class="inputRow">
+              <label for="city">Thành phố</label>
+              <input id="city" type="text" placeholder="Hà Nội" required />
+            </div>
+            <div class="inputRow">
+              <label for="zipcode">Mã bưu chính</label>
+              <input
+                id="zipcode"
+                type="text"
+                placeholder="100000"
+                inputmode="numeric"
+              />
             </div>
           </div>
 
-          <div class="col">
-            <h3 class="title">thông tin thanh toán</h3>
+          <h4 class="block-title mt24">Phương thức thanh toán</h4>
+          <fieldset
+            class="pay-methods"
+            role="radiogroup"
+            aria-label="Phương thức thanh toán"
+          >
+            <!-- Ví điện tử -->
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="momo" />
+              <span class="thumb"
+                ><img
+                  alt="MoMo"
+                  src="https://logo.clearbit.com/momo.vn"
+                  onerror="walletFallback(this,'MoMo')"
+              /></span>
+              <span class="label">MoMo</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="zalopay" />
+              <span class="thumb"
+                ><img
+                  alt="ZaloPay"
+                  src="https://logo.clearbit.com/zalopay.vn"
+                  onerror="walletFallback(this,'ZaloPay')"
+              /></span>
+              <span class="label">ZaloPay</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="vnpay" />
+              <span class="thumb"
+                ><img
+                  alt="VNPay"
+                  src="https://logo.clearbit.com/vnpay.vn"
+                  onerror="walletFallback(this,'VNPay')"
+              /></span>
+              <span class="label">VNPay</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="viettelpay" />
+              <span class="thumb"
+                ><img
+                  alt="ViettelPay"
+                  src="https://logo.clearbit.com/viettelmoney.vn"
+                  onerror="walletFallback(this,'ViettelPay')"
+              /></span>
+              <span class="label">ViettelPay</span>
+            </label>
 
-            <div class="inputBox">
-              <span>thẻ được chấp nhận :</span>
-              <img src="/img/card_img.png" alt="" />
-            </div>
-            <div class="inputBox">
-              <span>tên trên thẻ :</span>
-              <input type="text" placeholder="mr. john deo" />
-            </div>
-            <div class="inputBox">
-              <span>số thẻ tín dụng :</span>
-              <input type="number" placeholder="1111-2222-3333-4444" />
-            </div>
-            <div class="inputBox">
-              <span>tháng hết hạn :</span>
-              <input type="text" placeholder="tháng một" />
-            </div>
+            <!-- Thẻ quốc tế -->
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="visa" />
+              <span class="thumb"
+                ><img alt="Visa" src="https://logo.clearbit.com/visa.com"
+              /></span>
+              <span class="label">Visa</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="mastercard" />
+              <span class="thumb"
+                ><img
+                  alt="Mastercard"
+                  src="https://logo.clearbit.com/mastercard.com"
+              /></span>
+              <span class="label">Mastercard</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="jcb" />
+              <span class="thumb"
+                ><img alt="JCB" src="https://logo.clearbit.com/jcb.co.jp"
+              /></span>
+              <span class="label">JCB</span>
+            </label>
 
-            <div class="flex">
-              <div class="inputBox">
-                <span>năm hết hạn :</span>
-                <input type="number" placeholder="2022" />
-              </div>
-              <div class="inputBox">
-                <span>CVV :</span>
-                <input type="text" placeholder="1234" />
-              </div>
+            <!-- Chuyển khoản ngân hàng -->
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="bank" />
+              <span class="thumb bank-thumb"><i class="bx bx-bank"></i></span>
+              <span class="label">Chuyển khoản ngân hàng</span>
+            </label>
+          </fieldset>
+
+          <!-- BANK PICKER -->
+          <div class="bank-picker" id="bankPicker">
+            <p class="bank-note">Chọn ngân hàng để nhận QR chuyển khoản:</p>
+            <div class="bank-grid">
+              <!-- value = BankName|AccountNo|AccountName|BankCode(VietQR)  -->
+              <!-- TODO: Thay đúng SỐ TK & TÊN TK của bạn -->
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="Vietcombank|0123456789|Khanh Food|VCB"
+                />
+                <img
+                  alt="Vietcombank"
+                  src="https://logo.clearbit.com/vietcombank.com.vn"
+                  onerror="this.style.display='none'"
+                /><span>Vietcombank</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="Techcombank|0123456789|Khanh Food|TCB"
+                />
+                <img
+                  alt="Techcombank"
+                  src="https://logo.clearbit.com/techcombank.com.vn"
+                  onerror="this.style.display='none'"
+                /><span>Techcombank</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="BIDV|0123456789|Khanh Food|BIDV"
+                />
+                <img
+                  alt="BIDV"
+                  src="https://logo.clearbit.com/bidv.com.vn"
+                  onerror="this.style.display='none'"
+                /><span>BIDV</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="VietinBank|0123456789|Khanh Food|CTG"
+                />
+                <img
+                  alt="VietinBank"
+                  src="https://logo.clearbit.com/vietinbank.vn"
+                  onerror="this.style.display='none'"
+                /><span>VietinBank</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="ACB|0123456789|Khanh Food|ACB"
+                />
+                <img
+                  alt="ACB"
+                  src="https://logo.clearbit.com/acb.com.vn"
+                  onerror="this.style.display='none'"
+                /><span>ACB</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="TPBank|0123456789|Khanh Food|TPB"
+                />
+                <img
+                  alt="TPBank"
+                  src="https://logo.clearbit.com/tpb.vn"
+                  onerror="this.style.display='none'"
+                /><span>TPBank</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="MB Bank|0123456789|Khanh Food|MB"
+                />
+                <img
+                  alt="MB Bank"
+                  src="https://logo.clearbit.com/mbbank.com.vn"
+                  onerror="this.style.display='none'"
+                /><span>MB</span>
+              </label>
+              <label class="bank-item">
+                <input
+                  type="radio"
+                  name="bank"
+                  value="Sacombank|0123456789|Khanh Food|STB"
+                />
+                <img
+                  alt="Sacombank"
+                  src="https://logo.clearbit.com/sacombank.com.vn"
+                  onerror="this.style.display='none'"
+                /><span>Sacombank</span>
+              </label>
             </div>
+            <small class="hint"
+              >* Nhớ thay <b>số tài khoản</b> & <b>tên tài khoản</b> của bạn
+              trong phần <i>value</i> ở trên để QR VietQR chính xác.</small
+            >
           </div>
-        </div>
 
-        <input type="submit" value="proceed to checkout" class="submit-btn" />
-      </form>
+          <!-- CARD FIELDS -->
+          <div class="card-fields" id="cardFields">
+            <div class="inputRow">
+              <label for="cardname">Tên trên thẻ</label
+              ><input id="cardname" type="text" placeholder="NGUYEN VAN A" />
+            </div>
+            <div class="inputRow">
+              <label for="cardnumber">Số thẻ</label
+              ><input
+                id="cardnumber"
+                type="text"
+                inputmode="numeric"
+                placeholder="1111 2222 3333 4444"
+                maxlength="19"
+              />
+            </div>
+            <div class="grid-3">
+              <div class="inputRow">
+                <label for="expmonth">Tháng</label
+                ><input
+                  id="expmonth"
+                  type="text"
+                  placeholder="MM"
+                  inputmode="numeric"
+                  maxlength="2"
+                />
+              </div>
+              <div class="inputRow">
+                <label for="expyear">Năm</label
+                ><input
+                  id="expyear"
+                  type="text"
+                  placeholder="YY"
+                  inputmode="numeric"
+                  maxlength="2"
+                />
+              </div>
+              <div class="inputRow">
+                <label for="cvv">CVV</label
+                ><input
+                  id="cvv"
+                  type="password"
+                  placeholder="***"
+                  inputmode="numeric"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+            <p class="note">Thông tin thẻ được mã hóa và bảo vệ.</p>
+          </div>
+        </section>
+
+        <!-- (Không dùng vạch ngăn khi 1 cột) -->
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- Phải (xếp dưới khi 1 cột): BANK INFO + QR + SUMMARY -->
+        <aside class="checkout-right">
+          <!-- Bank/Wallet info + QR -->
+          <section class="qr-panel" id="qrPanel" style="display: none">
+            <div class="info-row">
+              <span>Tên tài khoản</span><strong id="accName">—</strong>
+            </div>
+            <div class="info-row">
+              <span>Số tài khoản</span><strong id="accNo">—</strong>
+            </div>
+            <div class="qr-head">
+              <img class="qr-brand" id="qrBrand" alt="brand" />
+              <span id="qrTitle">Quét mã</span>
+            </div>
+            <div class="qr-box">
+              <img
+                class="qr-img"
+                id="qrImg"
+                alt="QR thanh toán"
+                loading="lazy"
+              />
+            </div>
+            <ul class="qr-steps" id="qrSteps"></ul>
+            <div class="qr-actions">
+              <a
+                class="btn secondary"
+                id="transferBtn"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="bx bx-export"></i> Chuyển khoản
+              </a>
+              <button class="btn success" id="doneBankBtn" type="button">
+                <i class="bx bx-check-circle"></i> Hoàn tất
+              </button>
+            </div>
+          </section>
+
+          <h4 class="block-title">Tóm tắt đơn hàng</h4>
+          <ul class="summary-list" id="summaryList">
+            <li>
+              <div class="item">
+                <img
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  src="https://images.unsplash.com/photo-1603052875300-9b3d36adc09e?q=80&w=600&auto=format&fit=crop"
+                  alt="Bia chai"
+                />
+                <div>
+                  <p class="name">Bia chai Craft Ale</p>
+                  <span class="qty">x2</span>
+                </div>
+              </div>
+              <strong class="price">120.000₫</strong>
+            </li>
+            <li>
+              <div class="item">
+                <img
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  src="https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=600&auto=format&fit=crop"
+                  alt="Snack phô mai"
+                />
+                <div>
+                  <p class="name">Snack phô mai</p>
+                  <span class="qty">x1</span>
+                </div>
+              </div>
+              <strong class="price">35.000₫</strong>
+            </li>
+          </ul>
+          <div class="summary-line">
+            <span>Tạm tính</span><span id="subtotal">155.000₫</span>
+          </div>
+          <div class="summary-line">
+            <span>Phí giao</span><span id="ship">15.000₫</span>
+          </div>
+          <div class="summary-line total">
+            <span>Tổng cộng</span><span id="grand">170.000₫</span>
+          </div>
+
+          <div class="badges">
+            <span class="badge"
+              ><i class="bx bx-shield-quarter"></i> Mã hóa 256-bit</span
+            >
+            <span class="badge"><i class="bx bx-timer"></i> Xử lý tức thì</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Nút cuối trang -->
+      <div class="page-submit">
+        <button class="submit-btn" id="payBtn" type="button">
+          <i class="bx bx-check-shield"></i> Thanh toán hoàn tất
+        </button>
+      </div>
+    </main>
+
+    <!-- Toast nhỏ khi copy -->
+    <div id="toast" class="toast" role="status" aria-live="polite">
+      Đã sao chép thông tin!
     </div>
-    <!---------- card ---------->
 
-    <!---------- footer---------->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-block">
         <div class="footer-content">
@@ -129,7 +475,7 @@
             <i class="bx bx-map bx-sm"></i>
             <div>
               <h4>Địa Chỉ</h4>
-              <p>Cầu Diễn ,Nguyên Xá 134/51</p>
+              <p>Cầu Diễn, Nguyên Xá 134/51</p>
             </div>
           </div>
           <div class="footer-infor">
@@ -137,8 +483,10 @@
             <div>
               <h4>Đặt Bàn</h4>
               <p>
-                <strong>Điện Thoại:</strong> +84 973756592<br />
-                <strong>Email:</strong> contact@khanhfood.com<br />
+                <strong>Điện Thoại:</strong> +84 973756592<br /><strong
+                  >Email:</strong
+                >
+                contact@khanhfood.com
               </p>
             </div>
           </div>
@@ -147,8 +495,10 @@
             <div>
               <h4>Giờ Mở Cửa</h4>
               <p>
-                <strong>Thứ Hai - Thứ Bảy: 11AM</strong> - 23PM<br />
-                <strong>Chủ Nhật: </strong>Đóng Cửa
+                <strong>Thứ Hai - Thứ Bảy:</strong> 11:00 - 23:00<br /><strong
+                  >Chủ Nhật:</strong
+                >
+                Đóng cửa
               </p>
             </div>
           </div>
@@ -156,20 +506,247 @@
         <div class="footer-infor-icon-block">
           <h4>Follow Us</h4>
           <div class="footer-infor-icon">
-            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
-            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
-            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
-            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
+            <a href="#"><i class="bx bxl-facebook-circle bx-sm"></i></a
+            ><a href="#"><i class="bx bxl-twitter bx-sm"></i></a
+            ><a href="#"><i class="bx bxl-instagram-alt bx-sm"></i></a
+            ><a href="#"><i class="bx bxl-linkedin-square bx-sm"></i></a>
           </div>
         </div>
       </div>
-      <div class="">
-        <div class="copyright">
-          Copyright <strong><span>KhanhFood</span></strong
-          >. Đã Được Bảo Lưu
-        </div>
+      <div class="copyright">
+        Copyright <strong><span>KhanhFood</span></strong
+        >. Đã Được Bảo Lưu
       </div>
     </footer>
-    <!---------- footer---------->
+
+    <!-- JS -->
+    <script>
+      /* ====== NAV ====== */
+      function toggleMenu() {
+        document.getElementById("menuList")?.classList.toggle("open");
+      }
+
+      /* ====== ELEMENTS ====== */
+      const payRadios = document.querySelectorAll('input[name="payMethod"]');
+      const bankPicker = document.getElementById("bankPicker");
+      const cardFields = document.getElementById("cardFields");
+      const grid = document.querySelector(".checkout-grid");
+
+      // QR section
+      const qrPanel = document.getElementById("qrPanel");
+      const qrBrand = document.getElementById("qrBrand");
+      const qrTitle = document.getElementById("qrTitle");
+      const qrImg = document.getElementById("qrImg");
+      const qrSteps = document.getElementById("qrSteps");
+      const accNameEl = document.getElementById("accName");
+      const accNoEl = document.getElementById("accNo");
+      const transferBtn = document.getElementById("transferBtn");
+      const doneBankBtn = document.getElementById("doneBankBtn");
+      const payBtn = document.getElementById("payBtn");
+      const toast = document.getElementById("toast");
+
+      const ORDER_NO = "KHANHFOOD-1234";
+      const GRAND = 170000; // Tổng tiền demo (đ)
+
+      /* ====== LAYOUT: LUÔN 1 CỘT ====== */
+      function setLayout() {
+        /* giữ nguyên 1 cột - không toggle gì cả */
+      }
+
+      /* ====== HELPERS ====== */
+      function walletFallback(img, text) {
+        const wrap = img.parentElement;
+        img.remove();
+        const tag = document.createElement("div");
+        tag.className = "wallet-fallback";
+        tag.textContent = text;
+        wrap.appendChild(tag);
+      }
+      window.walletFallback = walletFallback;
+
+      // VietQR (ngân hàng)
+      function buildVietQR(bankCode, accNo, accName, amount, addInfo) {
+        const qp = new URLSearchParams({
+          accountName: accName || "",
+          amount: amount ? String(amount) : "",
+          addInfo: addInfo || "",
+        });
+        return `https://img.vietqr.io/image/${bankCode}-${accNo}-qr_only.png?${qp.toString()}`;
+      }
+
+      // QR DEMO cho ví (không phải thanh toán thật)
+      function buildWalletQR(provider, amount, order) {
+        const payload = JSON.stringify({
+          provider,
+          amount,
+          order,
+          note: "Demo QR",
+        });
+        const enc = encodeURIComponent(payload);
+        return `https://quickchart.io/qr?text=${enc}&size=220`;
+      }
+
+      function setQR(
+        src,
+        brandLogo,
+        title,
+        steps,
+        accNo,
+        accName,
+        showTransfer
+      ) {
+        qrBrand.src = brandLogo || "";
+        qrTitle.textContent = title || "Quét mã";
+        qrImg.onerror = function () {
+          this.onerror = null;
+          this.src =
+            "data:image/svg+xml;utf8," +
+            encodeURIComponent(
+              '<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220"><rect width="100%" height="100%" fill="#f5f6fa"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="14" fill="#888">QR tạm thời</text></svg>'
+            );
+        };
+        qrImg.src = src;
+        qrSteps.innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
+        accNameEl.textContent = accName || "—";
+        accNoEl.textContent = accNo || "—";
+
+        transferBtn.style.display = showTransfer ? "inline-flex" : "none";
+        doneBankBtn.style.display = showTransfer ? "inline-flex" : "none";
+
+        qrPanel.style.display = "block";
+        setLayout();
+      }
+      function hideQR() {
+        qrPanel.style.display = "none";
+        setLayout();
+      }
+
+      function copyText(str) {
+        navigator.clipboard
+          ?.writeText(str)
+          .then(() => {
+            toast.classList.add("show");
+            setTimeout(() => toast.classList.remove("show"), 1400);
+          })
+          .catch(() => {
+            /* ignore */
+          });
+      }
+
+      /* ====== CORE: cập nhật UI theo lựa chọn ====== */
+      function updateUI() {
+        const val = document.querySelector(
+          'input[name="payMethod"]:checked'
+        )?.value;
+        const isCard = val === "visa" || val === "mastercard" || val === "jcb";
+        const isBank = val === "bank";
+
+        // Toggle nhóm field theo loại
+        cardFields.style.display = isCard ? "block" : "none";
+        bankPicker.style.display = isBank ? "block" : "none";
+
+        // Nút cuối trang cho ví/thẻ
+        payBtn.style.display = isBank ? "none" : "inline-flex";
+
+        // luôn ẩn QR trước để không còn khoảng trắng
+        hideQR();
+        if (!val) return;
+
+        // Ví điện tử: HIỂN THỊ QR DEMO (không có số TK)
+        if (
+          val === "momo" ||
+          val === "zalopay" ||
+          val === "vnpay" ||
+          val === "viettelpay"
+        ) {
+          const logo =
+            document
+              .querySelector('input[name="payMethod"]:checked')
+              ?.parentElement.querySelector("img")?.src || "";
+          const src = buildWalletQR(val.toUpperCase(), GRAND, ORDER_NO);
+          setQR(
+            src,
+            logo,
+            `Quét mã ${val.toUpperCase()}`,
+            [
+              `Số tiền: <b>${GRAND.toLocaleString("vi-VN")}₫</b>`,
+              `Nội dung: <b>${ORDER_NO}</b>`,
+              `Mở app ${val.toUpperCase()} → Quét mã để điền nhanh thông tin (demo).`,
+            ],
+            "",
+            "" /* không có tài khoản ví */,
+            false /* ẩn nút "Chuyển khoản" (chỉ dùng cho bank) */
+          );
+          return;
+        }
+
+        // Thẻ quốc tế: không QR
+        if (isCard) return;
+
+        // Ngân hàng: chỉ hiện QR khi đã chọn bank
+        if (isBank) {
+          const chosen = document.querySelector(
+            'input[name="bank"]:checked'
+          )?.value;
+          if (!chosen) return;
+
+          const [bankName, accNo, accName, bankCode] = chosen.split("|");
+          const bankLogo =
+            document
+              .querySelector('input[name="bank"]:checked')
+              ?.parentElement.querySelector("img")?.src || "";
+
+          const qrSrc = buildVietQR(bankCode, accNo, accName, GRAND, ORDER_NO);
+
+          transferBtn.href = qrSrc;
+          transferBtn.onclick = () => {
+            copyText(
+              `Ngân hàng: ${bankName}\nTên TK: ${accName}\nSố TK: ${accNo}\nSố tiền: ${GRAND.toLocaleString(
+                "vi-VN"
+              )}₫\nNội dung: ${ORDER_NO}`
+            );
+          };
+
+          setQR(
+            qrSrc,
+            bankLogo,
+            `Chuyển khoản ${bankName}`,
+            [
+              `Số tiền: <b>${GRAND.toLocaleString("vi-VN")}₫</b>`,
+              `Nội dung: <b>${ORDER_NO}</b>`,
+              `Kiểm tra đúng <b>Tên TK</b> & <b>Số TK</b> trước khi chuyển.`,
+            ],
+            accNo,
+            accName,
+            true
+          );
+        }
+      }
+
+      // Lắng nghe thay đổi
+      document
+        .querySelectorAll('input[name="payMethod"]')
+        .forEach((r) => r.addEventListener("change", updateUI));
+      document
+        .querySelectorAll('input[name="bank"]')
+        .forEach((b) => b.addEventListener("change", updateUI));
+      updateUI(); // init
+
+      // format số thẻ
+      document.getElementById("cardnumber")?.addEventListener("input", (e) => {
+        let v = e.target.value.replace(/\D/g, "").slice(0, 16);
+        e.target.value = v.replace(/(.{4})/g, "$1 ").trim();
+      });
+
+      // hành vi demo
+      doneBankBtn.addEventListener("click", () =>
+        alert(
+          "Cảm ơn bạn! Hệ thống sẽ xác nhận giao dịch sau khi nhận chuyển khoản."
+        )
+      );
+      payBtn.addEventListener("click", () =>
+        alert("Đã nhận yêu cầu. Thanh toán hoàn tất!")
+      );
+    </script>
   </body>
 </html>

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beer</title>
-    <!-- Link Css -->
-    <link rel="stylesheet" href="/css/cart.css" />
-    <!-- Link Google font -->
+    <title>KhanhFood Cart</title>
+    <link rel="stylesheet" href="./css/cart.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Amatic+SC:wght@400;700&family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Link icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -23,18 +22,19 @@
     <!---------- Header ---------->
     <header>
       <div class="header-block">
-        <a href="index.html" class="logo-header"
-          ><h1><span>KhanhFood</span><span>.</span></h1></a
-        >
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <a href="index.html" class="logo-header">
+          <h1>KhanhFood<span>.</span></h1>
+        </a>
         <nav class="nav-header">
-          <ul>
-            <li><a href="index.html#">Home</a></li>
-            <li><a href="index.html#about-us">About</a></li>
+          <ul id="menuList">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about-us">About</a></li>
             <li><a href="/menu.html">Menu</a></li>
-            <li><a href="index.html#events">Events</a></li>
-            <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#chefs">Chefs</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="user-cart">
@@ -47,131 +47,286 @@
     </header>
     <!---------- Header ---------->
 
-    <!---------- cart ---------->
     <section class="cart">
       <div class="cart-block">
         <div class="cart-content">
-          <div class="cart-content-header">
-            <div id="content-header">
-              <input type="checkbox" />
-              <h4>Đơn giá</h4>
+          <div class="cart-content-header" role="row">
+            <div id="content-header" role="columnheader" aria-label="Sản phẩm">
+              <input id="checkAll" type="checkbox" aria-label="Chọn tất cả" />
+              <h4>Sản phẩm</h4>
             </div>
-            <h4>Số lượng</h4>
-            <h4>Thành tiền</h4>
-            <h4>Thao tác</h4>
+            <h4 class="col-total" role="columnheader">Thành tiền</h4>
+            <h4 class="col-qty" role="columnheader">Số lượng</h4>
+            <h4 class="col-action" role="columnheader">Thao tác</h4>
           </div>
+
           <div class="cart-content-infor-all">
-            <div class="cart-content-infor">
-              <div class="cart-content-infor-img">
-                <input type="checkbox" />
-                <img src="/img/menu/menu-item-1.png" />
-                <p>Súp hành kiểu Pháp</p>
-                <div class="cart-content-infor-text-all">
-                  <div class="cart-content-infor-text">
-                    <p>$129</p>
-                  </div>
-                  <div class="cart-content-infor-text-s">
-                    <p>-</p>
-                    <p>1</p>
-                    <p>+</p>
-                  </div>
-                  <div class="cart-content-infor-text-remove">
-                    <p>xóa</p>
-                  </div>
+            <div class="cart-row" data-item>
+              <div class="col-product">
+                <input
+                  type="checkbox"
+                  class="row-check"
+                  aria-label="Chọn Súp hành kiểu Pháp"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=300&q=80"
+                  alt="Súp hành kiểu Pháp"
+                  loading="lazy"
+                  crossorigin="anonymous"
+                />
+                <div class="col-product-infor">
+                  <p class="product-name">Súp hành kiểu Pháp</p>
+                  <p class="product-description">
+                    Nước súp thanh ngọt, đậm đà từ hành tây caramen hóa, phô mai
+                    tan chảy, bánh mì nướng giòn.
+                  </p>
                 </div>
               </div>
-            </div>
-            <div class="cart-content-infor">
-              <div class="cart-content-infor-img">
-                <input type="checkbox" />
-                <img src="/img/menu/menu-item-2.png" />
-                <p>Súp hành kiểu Pháp</p>
-                <div class="cart-content-infor-text-all">
-                  <div class="cart-content-infor-text">
-                    <p>$300</p>
-                  </div>
-                  <div class="cart-content-infor-text-s">
-                    <p>-</p>
-                    <p>1</p>
-                    <p>+</p>
-                  </div>
-                  <div class="cart-content-infor-text-remove">
-                    <p>xóa</p>
-                  </div>
+              <div class="product-meta">
+                <div class="col-total">
+                  <p class="price" data-price="129">$129</p>
+                </div>
+                <div class="col-qty" aria-label="Điều chỉnh số lượng">
+                  <button class="qty-btn" data-op="-" aria-label="Giảm">
+                    -
+                  </button>
+                  <span class="qty-val" aria-live="polite">1</span>
+                  <button class="qty-btn" data-op="+" aria-label="Tăng">
+                    +
+                  </button>
                 </div>
               </div>
-              <div class="cart-content-infor-text"></div>
+              <div class="col-action">
+                <button
+                  class="remove"
+                  title="Xóa"
+                  aria-label="Xóa Súp hành kiểu Pháp"
+                >
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
             </div>
-            <div class="cart-content-infor">
-              <div class="cart-content-infor-img">
-                <input type="checkbox" />
-                <img src="/img/menu/menu-item-3.png" />
-                <p>Súp hành kiểu Mỹ</p>
-                <div class="cart-content-infor-text-all">
-                  <div class="cart-content-infor-text">
-                    <p>$255</p>
-                  </div>
-                  <div class="cart-content-infor-text-s">
-                    <p>-</p>
-                    <p>1</p>
-                    <p>+</p>
-                  </div>
-                  <div class="cart-content-infor-text-remove">
-                    <p>Xóa</p>
-                  </div>
+
+            <div class="cart-row" data-item>
+              <div class="col-product">
+                <input
+                  type="checkbox"
+                  class="row-check"
+                  aria-label="Chọn Phở Bò Việt Nam"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=300&q=80"
+                  alt="Phở Bò Việt Nam"
+                  loading="lazy"
+                  crossorigin="anonymous"
+                />
+                <div class="col-product-infor">
+                  <p class="product-name">Phở Bò Việt Nam</p>
+                  <p class="product-description">
+                    Nước dùng tinh túy ninh 12 tiếng, kết hợp với thịt bò thăn
+                    thái lát mỏng.
+                  </p>
                 </div>
               </div>
-              <div class="cart-content-infor-text"></div>
-            </div>
-            <div class="cart-content-infor">
-              <div class="cart-content-infor-img">
-                <input type="checkbox" />
-                <img src="/img/menu/menu-item-4.png" />
-                <p>Súp hành kiểu VN</p>
-                <div class="cart-content-infor-text-all">
-                  <div class="cart-content-infor-text">
-                    <p>$386</p>
-                  </div>
-                  <div class="cart-content-infor-text-s">
-                    <p>-</p>
-                    <p>1</p>
-                    <p>+</p>
-                  </div>
-                  <div class="cart-content-infor-text-remove">
-                    <p>Xóa</p>
-                  </div>
+              <div class="product-meta">
+                <div class="col-total">
+                  <p class="price" data-price="300">$300</p>
+                </div>
+                <div class="col-qty">
+                  <button class="qty-btn" data-op="-">-</button>
+                  <span class="qty-val">1</span>
+                  <button class="qty-btn" data-op="+">+</button>
                 </div>
               </div>
-              <div class="cart-content-infor-text"></div>
+              <div class="col-action">
+                <button
+                  class="remove"
+                  title="Xóa"
+                  aria-label="Xóa Phở Bò Việt Nam"
+                >
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
             </div>
-            <div class="cart-content-infor">
-              <div class="cart-content-infor-img">
-                <input type="checkbox" />
-                <img src="/img/menu/menu-item-5.png" />
-                <p>Súp hành kiểu Pháp</p>
-                <div class="cart-content-infor-text-all">
-                  <div class="cart-content-infor-text">
-                    <p>$500</p>
-                  </div>
-                  <div class="cart-content-infor-text-s">
-                    <p>-</p>
-                    <p>1</p>
-                    <p>+</p>
-                  </div>
-                  <div class="cart-content-infor-text-remove">
-                    <p>Xóa</p>
-                  </div>
+
+            <div class="cart-row" data-item>
+              <div class="col-product">
+                <input
+                  type="checkbox"
+                  class="row-check"
+                  aria-label="Chọn Súp Clam Chowder Mỹ"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=300&q=80"
+                  alt="Súp Clam Chowder Mỹ"
+                  loading="lazy"
+                  crossorigin="anonymous"
+                />
+                <div class="col-product-infor">
+                  <p class="product-name">Súp Clam Chowder Mỹ</p>
+                  <p class="product-description">
+                    Món súp kem béo ngậy, đậm vị hải sản, nấu từ nghêu tươi và
+                    khoai tây.
+                  </p>
                 </div>
+              </div>
+              <div class="product-meta">
+                <div class="col-total">
+                  <p class="price" data-price="255">$255</p>
+                </div>
+                <div class="col-qty">
+                  <button class="qty-btn" data-op="-">-</button>
+                  <span class="qty-val">1</span>
+                  <button class="qty-btn" data-op="+">+</button>
+                </div>
+              </div>
+              <div class="col-action">
+                <button
+                  class="remove"
+                  title="Xóa"
+                  aria-label="Xóa Súp Clam Chowder Mỹ"
+                >
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="cart-row" data-item>
+              <div class="col-product">
+                <input
+                  type="checkbox"
+                  class="row-check"
+                  aria-label="Chọn Bún Bò Huế"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?auto=format&fit=crop&w=300&q=80"
+                  alt="Bún Bò Huế"
+                  loading="lazy"
+                  crossorigin="anonymous"
+                />
+                <div class="col-product-infor">
+                  <p class="product-name">Bún Bò Huế</p>
+                  <p class="product-description">
+                    Nước dùng đậm đà vị sả và mắm ruốc, cùng chả cua, thịt bò,
+                    và gân bò.
+                  </p>
+                </div>
+              </div>
+              <div class="product-meta">
+                <div class="col-total">
+                  <p class="price" data-price="386">$386</p>
+                </div>
+                <div class="col-qty">
+                  <button class="qty-btn" data-op="-">-</button>
+                  <span class="qty-val">1</span>
+                  <button class="qty-btn" data-op="+">+</button>
+                </div>
+              </div>
+              <div class="col-action">
+                <button class="remove" title="Xóa" aria-label="Xóa Bún Bò Huế">
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="cart-row" data-item>
+              <div class="col-product">
+                <input
+                  type="checkbox"
+                  class="row-check"
+                  aria-label="Chọn Súp Bisque Tôm Hùm Pháp"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=300&q=80"
+                  alt="Súp Bisque Tôm Hùm Pháp"
+                  loading="lazy"
+                  crossorigin="anonymous"
+                />
+                <div class="col-product-infor">
+                  <p class="product-name">Súp Bisque Tôm Hùm Pháp</p>
+                  <p class="product-description">
+                    Súp kem đậm vị tôm hùm, nấu cùng rau củ, rượu brandy và sốt
+                    cà chua.
+                  </p>
+                </div>
+              </div>
+              <div class="product-meta">
+                <div class="col-total">
+                  <p class="price" data-price="500">$500</p>
+                </div>
+                <div class="col-qty">
+                  <button class="qty-btn" data-op="-">-</button>
+                  <span class="qty-val">1</span>
+                  <button class="qty-btn" data-op="+">+</button>
+                </div>
+              </div>
+              <div class="col-action">
+                <button
+                  class="remove"
+                  title="Xóa"
+                  aria-label="Xóa Súp Bisque Tôm Hùm Pháp"
+                >
+                  <i class="bx bx-trash"></i>
+                </button>
               </div>
             </div>
           </div>
-          <div class="link-buy">
-            <a href="card.html">Mua</a>
+
+          <div class="cart-footer">
+            <div class="cart-summary" aria-live="polite">
+              <div class="summary-row">
+                <div class="summary-item">
+                  <span class="summary-label">Tổng sản phẩm</span>
+                  <span class="summary-value" id="summaryQty">0</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Tổng tiền</span>
+                  <span class="summary-value" id="summaryMoney">$0</span>
+                </div>
+              </div>
+            </div>
+            <div class="link-buy">
+              <a href="card.html">Mua</a>
+            </div>
           </div>
+
+          <div class="voucher-section">
+            <h4 class="voucher-title">Mã giảm giá</h4>
+            <div class="voucher-input">
+              <input
+                type="text"
+                id="voucherCode"
+                placeholder="Nhập mã giảm giá..."
+              />
+              <button id="applyVoucher">Áp dụng</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary-block">
+          <h3>Tóm tắt đơn hàng</h3>
+          <div class="summary-items">
+            <div class="summary-line">
+              <span>Tổng sản phẩm</span>
+              <span id="subtotalDesktop">$0</span>
+            </div>
+            <div class="summary-line">
+              <span>Giảm giá</span>
+              <span id="discountDesktop" class="discount-value">$0</span>
+            </div>
+            <div class="summary-line">
+              <span>Phí vận chuyển</span>
+              <span id="shippingDesktop">$0</span>
+            </div>
+          </div>
+          <div class="summary-total">
+            <span class="total-label">Tổng cộng</span>
+            <span id="totalDesktop" class="total-value">$0</span>
+          </div>
+          <a href="card.html" class="checkout-btn">Thanh toán</a>
         </div>
       </div>
     </section>
-    <!---------- cart ---------->
 
     <!---------- footer---------->
     <footer class="footer">
@@ -181,16 +336,19 @@
             <i class="bx bx-map bx-sm"></i>
             <div>
               <h4>Địa Chỉ</h4>
-              <p>Cầu Diễn ,Nguyên Xá 134/51</p>
+              <p>
+                `<br />
+                Cầu diễn ,Nguyên xá 134/51<br />
+              </p>
             </div>
           </div>
           <div class="footer-infor">
             <i class="bx bx-phone bx-sm"></i>
             <div>
-              <h4>Đặt Bàn</h4>
+              <h4>Reservations</h4>
               <p>
-                <strong>Điện Thoại:</strong> +84 973756592<br />
-                <strong>Email:</strong> contact@khanhfood.com<br />
+                <strong>Phone:</strong> +1 5555 180520 04<br />
+                <strong>Email:</strong> contactkhanh@gmail.com<br />
               </p>
             </div>
           </div>
@@ -215,13 +373,90 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="">
         <div class="copyright">
           Copyright <strong><span>KhanhFood</span></strong
-          >. Đã Được Bảo Lưu
+          >. Đã được bảo lưu
         </div>
       </div>
     </footer>
     <!---------- footer---------->
+    <script src="/js/home.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Đảm bảo GSAP đã được tải trước khi chạy code này
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Timeline cho hiệu ứng tổng thể
+      const cartTl = gsap.timeline({
+        // Hiệu ứng chỉ chạy một lần khi tải trang
+        defaults: {
+          duration: 0.8,
+          ease: "power2.out",
+        },
+      });
+
+      // Hiệu ứng cho các sản phẩm trong giỏ hàng
+      cartTl
+        .from(".cart-content", {
+          opacity: 0,
+          x: -50,
+          duration: 1,
+        })
+        .from(
+          ".order-summary-block",
+          {
+            opacity: 0,
+            x: 50,
+            duration: 1,
+          },
+          "-=0.5"
+        ); // Bắt đầu hiệu ứng này sớm hơn 0.5 giây so với hiệu ứng trước
+
+      // Hiệu ứng cho từng sản phẩm riêng lẻ với hiệu ứng xếp chồng (stagger)
+      gsap.from(".cart-block", {
+        y: 100,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".cart-block", // Phần tử kích hoạt hiệu ứng
+          start: "top 80%", // Bắt đầu khi phần tử .cart-block cách top viewport 80%
+          toggleActions: "play none none none", // Chỉ chạy hiệu ứng một lần khi cuộn tới
+        },
+      });
+
+      // Hiệu ứng "bay vào" từng sản phẩm khi cuộn tới
+      gsap.from(".cart-row", {
+        x: -50,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".cart-content-infor-all",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      // Thêm hiệu ứng nhấp nháy cho nút tăng/giảm số lượng
+      document.querySelectorAll(".qty-btn").forEach((button) => {
+        button.addEventListener("mousedown", () =>
+          gsap.to(button, {
+            scale: 0.9,
+            duration: 0.1,
+          })
+        );
+        button.addEventListener("mouseup", () =>
+          gsap.to(button, {
+            scale: 1,
+            duration: 0.2,
+          })
+        );
+      });
+    </script>
   </body>
 </html>

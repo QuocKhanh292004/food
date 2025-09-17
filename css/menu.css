@@ -9,8 +9,8 @@
 /*---------- Color ----------*/
 :root {
   --color-default: #212529;
-  --color-primary: #ce1212;
-  --color-primary-hover: #ec2727;
+  --color-primary: #ffa955;
+  --color-primary-hover: #ffbf80;
   --color-secondary: #37373f;
 }
 /*---------- Color ----------*/
@@ -230,6 +230,24 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.menu-header span {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #5a2d0c, #f6a21e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.description {
+  font-size: 14px;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto; /* căn giữa */
+  text-align: center;
+  line-height: 1.6;
 }
 @media (max-width: 1200px) {
   .menu-content-infor-block {
@@ -459,7 +477,7 @@ header {
   .menu-content-infor {
     padding: 12px 4px;
     border-radius: 12px;
-    background: #fff;
+    background-color: #fff7f0;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
     transition: box-shadow 0.3s;
   }

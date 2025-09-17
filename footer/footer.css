@@ -1,0 +1,158 @@
+/* CSS Variables for colors */
+:root {
+  --primary-color: #d4851f;
+  --secondary-color: #e89c3a;
+  --dark-color: #2c2c2c;
+  --light-dark-color: #444;
+  --text-color: #666;
+  --light-color: #fdfcfb;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/*---------- Footer ----------*/
+.footer {
+  font-size: 14px;
+  background-color: #ffbf80;
+  padding: 50px 0;
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+}
+
+.footer-block {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-infor {
+  display: flex;
+  gap: 15px;
+  flex-basis: 25%; /* Giảm flex-basis để các khối đều nhau hơn */
+  min-width: 250px;
+  align-items: flex-start;
+}
+
+.footer-infor i {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+}
+
+.footer-infor h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+.footer-infor p {
+  line-height: 1.6;
+}
+
+.footer-infor-icon-block {
+  flex-basis: 20%;
+  min-width: 180px;
+}
+
+.footer-infor-icon-block h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.footer-infor-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-infor-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.footer-infor-icon a:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border-color: var(--primary-color);
+}
+
+.footer .copyright {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 50px;
+  color: var(--light-dark-color);
+}
+
+.footer .copyright strong {
+  color: var(--dark-color);
+}
+.footer .copyright span {
+  color: var(--primary-color);
+}
+
+/*---------- Responsive Design ----------*/
+/* Chuyển sang một cột khi màn hình nhỏ hơn 768px (điện thoại và một số tablet) */
+@media (max-width: 768px) {
+  .footer-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Giảm khoảng cách để gọn hơn */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .footer-infor,
+  .footer-infor-icon-block {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-infor {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-infor i {
+    font-size: 1.8rem; /* Giảm kích thước icon trên di động */
+  }
+
+  .footer-infor-icon {
+    justify-content: center;
+  }
+
+  .footer .copyright {
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 12px;
+  }
+}

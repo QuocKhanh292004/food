@@ -1,161 +1,359 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beer</title>
-    <!-- Link Css -->
-    <link rel="stylesheet" href="/css/book-table.css" />
-    <!-- Link Google font -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KhanhFood • Đặt bàn</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Link icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/book-table.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <meta
+      name="description"
+      content="Đặt bàn trực tuyến tại KhanhFood — nhanh, gọn, xác nhận tức thì."
+    />
   </head>
+
   <body>
-    <!---------- Header ---------->
-    <header>
+    <div id="preloader">
+      <div class="preloader-logo">KhanhFood<b>.</b></div>
+    </div>
+
+    <header data-aos="fade-down" data-aos-duration="800">
       <div class="header-block">
-        <a href="index.html" class="logo-header"
-          ><h1>Beer<span>.</span></h1></a
-        >
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <a href="index.html" class="logo-header">
+          <h1>KhanhFood<span>.</span></h1>
+        </a>
         <nav class="nav-header">
-          <ul>
-            <li><a href="index.html#">Home</a></li>
-            <li><a href="index.html#about-us">About</a></li>
+          <ul id="menuList">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about-us">About</a></li>
             <li><a href="/menu.html">Menu</a></li>
-            <li><a href="index.html#events">Events</a></li>
-            <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#chefs">Chefs</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="user-cart">
           <a href="/login.html" class="user"
             ><i class="bx bx-user bx-sm"></i
           ></a>
-          <a href="/card.html" class="cart"><i class="bx bx-cart bx-sm"></i></a>
+          <a href="/cart.html" class="cart"><i class="bx bx-cart bx-sm"></i></a>
         </div>
       </div>
     </header>
-    <!---------- Header ---------->
-
-    <!---------- book-table ---------->
-    <div class="wrapper">
-      <div class="container">
-        <div class="container-time">
-          <h2 class="heading">Thời gian mở</h2>
-          <h3 class="heading-days">Thứ Hai - Thứ Sáu</h3>
-          <p>7am - 11am (bữa sáng)</p>
-          <p>11am - 10pm (bữa trưa/bữa tối)</p>
-
-          <h3 class="heading-days">Thứ Bảy và Chủ Nhật</h3>
-          <p>9am - 1am (bữa sáng)</p>
-          <p style="margin-bottom: 20px">1am - 10pm (bữa trưa/bữa tối)</p>
-
-          <hr />
-
-          <h4 class="heading-phone">Gọi cho chúng tôi: (123) 45-45-456</h4>
+    <section class="hero">
+      <div
+        class="hero__bg"
+        aria-hidden="true"
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+      ></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 data-aos="fade-right" data-aos-delay="200">Đặt bàn trực tuyến</h1>
+          <p data-aos="fade-right" data-aos-delay="400">
+            Chọn giờ – nhập thông tin – xác nhận tức thì. Trải nghiệm ẩm thực
+            trọn vẹn tại <b>KhanhFood</b>.
+          </p>
+          <ul class="badges">
+            <li data-aos="fade-right" data-aos-delay="600">
+              <i class="bx bx-time-five"></i> Mở cửa: 7:00 – 23:00
+            </li>
+            <li data-aos="fade-right" data-aos-delay="700">
+              <i class="bx bx-map"></i> Cầu Diễn, Nguyên Xá 134/51
+            </li>
+            <li data-aos="fade-right" data-aos-delay="800">
+              <i class="bx bx-phone"></i> Hotline: (123) 45-45-456
+            </li>
+          </ul>
         </div>
 
-        <div class="container-form">
-          <form action="#">
-            <h2 class="heading heading-yellow">Đặt Chỗ Trực Tuyến</h2>
+        <div class="card" data-aos="fade-left" data-aos-delay="300">
+          <h2 class="card__title">Đặt chỗ ngay</h2>
+          <form id="bookingForm" novalidate>
+            <div class="grid-2">
+              <div class="field">
+                <label for="fullname">Họ và tên</label>
+                <input id="fullname" name="fullname" type="text" required />
+                <small class="error"></small>
+              </div>
 
-            <div class="form-field">
-              <p>Họ Tên</p>
-              <input type="text" placeholder="Họ Tên" />
-            </div>
-            <div class="form-field">
-              <p>Email của bạn</p>
-              <input type="email" placeholder="Email của bạn" />
-            </div>
-            <div class="form-field">
-              <p>Ngày</p>
-              <input type="date" />
-            </div>
-            <div class="form-field">
-              <p>Thời gian</p>
-              <input type="time" />
-            </div>
-            <div class="form-field">
-              <p>Số lượng người</p>
-              <select name="select" id="#">
-                <option value="1">1 người</option>
-                <option value="2">2 người</option>
-                <option value="3">3 người</option>
-                <option value="4">4 người</option>
-                <option value="5">5 người</option>
-                <option value="5+">5+ người</option>
-              </select>
+              <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  pattern="(\+84|0)\d{9,10}"
+                  required
+                />
+                <small class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+                <small class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="guests">Số người</label>
+                <select id="guests" name="guests" required>
+                  <option value="" disabled selected>— Chọn số người —</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+                <small class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="date">Ngày</label>
+                <input id="date" name="date" type="date" required />
+                <small class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="time">Giờ</label>
+                <input id="time" name="time" type="time" required />
+                <small class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="zone">Khu vực</label>
+                <select id="zone" name="zone" required>
+                  <option value="" disabled selected>— Chọn khu vực —</option>
+                  <option>Phòng lạnh</option>
+                  <option>Sân vườn</option>
+                  <option>Phòng VIP</option>
+                </select>
+                <small class="error"></small>
+              </div>
+
+              <div class="field field--full">
+                <label for="note">Ghi chú (tuỳ chọn)</label>
+                <textarea
+                  id="note"
+                  name="note"
+                  rows="3"
+                  maxlength="200"
+                  placeholder=""
+                ></textarea>
+                <div class="meter"><span id="noteCount">0</span>/200</div>
+              </div>
             </div>
 
-            <button class="btn">Gửi</button>
+            <button class="btn" type="submit">
+              <i class="bx bx-calendar-check"></i> Xác nhận đặt bàn
+            </button>
+            <p class="terms">
+              Khi tiếp tục, bạn đồng ý với <a href="#">Điều khoản</a> &
+              <a href="#">Chính sách bảo mật</a>.
+            </p>
           </form>
         </div>
       </div>
-    </div>
-    <!---------- book-table ---------->
+    </section>
 
-    <!---------- footer---------->
-    <footer class="footer">
-      <div class="footer-block">
-        <div class="footer-content">
-          <div class="footer-infor">
-            <i class="bx bx-map bx-sm"></i>
-            <div>
-              <h4>Địa Chỉ</h4>
-              <p>
-                `<br />
-                Cầu diễn ,Nguyên xá 134/51<br />
-              </p>
-            </div>
-          </div>
-          <div class="footer-infor">
-            <i class="bx bx-phone bx-sm"></i>
-            <div>
-              <h4>Reservations</h4>
-              <p>
-                <strong>Phone:</strong> +1 5555 180520 04<br />
-                <strong>Email:</strong> contactkhanh@gmail.com<br />
-              </p>
-            </div>
-          </div>
-          <div class="footer-infor">
-            <i class="bx bx-time-five bx-sm"></i>
-            <div>
-              <h4>Giờ Mở Cửa</h4>
-              <p>
-                <strong>Thứ Hai - Thứ Bảy: 11AM</strong> - 23PM<br />
-                <strong>Chủ Nhật: </strong>Đóng Cửa
-              </p>
-            </div>
-          </div>
+    <section id="about" class="section">
+      <div class="container about">
+        <div class="about__item" data-aos="flip-up" data-aos-duration="1000">
+          <i class="bx bx-check-shield"></i>
+          <h3>Xác nhận tức thì</h3>
+          <p>Nhận thông báo ngay sau khi đặt thành công.</p>
         </div>
-        <div class="footer-infor-icon-block">
-          <h4>Follow Us</h4>
-          <div class="footer-infor-icon">
-            <a href=""><i class="bx bxl-facebook-circle bx-sm"></i></a>
-            <a href=""><i class="bx bxl-twitter bx-sm"></i></a>
-            <a href=""><i class="bx bxl-instagram-alt bx-sm"></i></a>
-            <a href=""><i class="bx bxl-linkedin-square bx-sm"></i></a>
-          </div>
+        <div
+          class="about__item"
+          data-aos="flip-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          <i class="bx bx-bowl-hot"></i>
+          <h3>Không gian ấm cúng</h3>
+          <p>Phù hợp gia đình, cặp đôi và hội nhóm.</p>
+        </div>
+        <div
+          class="about__item"
+          data-aos="flip-up"
+          data-aos-duration="1000"
+          data-aos-delay="400"
+        >
+          <i class="bx bx-party"></i>
+          <h3>Sự kiện/tiệc</h3>
+          <p>Đặt phòng riêng, trang trí theo yêu cầu.</p>
         </div>
       </div>
-      <div class="">
-        <div class="copyright">
-          Copyright <strong><span>KhanhFood</span></strong
-          >. Đã được bảo lưu
-        </div>
-      </div>
-    </footer>
-    <!---------- footer---------->
+    </section>
+    <div id="footer"></div>
+    <footer class="footer" data-aos="fade-in" data-aos-duration="1000"></footer>
+
+    <div
+      id="toast"
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+    <script src="footer/footer.js"></script>
+    <script>
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+      // Menu mobile
+      const menuBtn = $(".menu-toggle");
+      const navList = $("#menuList");
+      menuBtn.addEventListener("click", () => {
+        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", !expanded);
+        navList.classList.toggle("open");
+        document.body.classList.toggle("menu-open");
+      });
+
+      // Năm footer
+      const footerSpan = document.querySelector(".copyright span");
+      if (footerSpan) {
+        footerSpan.textContent = new Date().getFullYear();
+      }
+
+      // Form
+      const form = $("#bookingForm");
+      const toast = $("#toast");
+      const note = $("#note");
+      const noteCount = $("#noteCount");
+      const dateInput = $("#date");
+      const timeInput = $("#time");
+
+      // Min date = hôm nay
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, "0");
+      const dd = String(today.getDate()).padStart(2, "0");
+      if (dateInput) {
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+      }
+
+      // Kiểm tra giờ mở cửa
+      if (timeInput) {
+        timeInput.addEventListener("change", () => {
+          const [h] = timeInput.value.split(":").map(Number);
+          if (isNaN(h)) return;
+          const open = 7,
+            close = 23;
+          if (h < open || h >= close) {
+            showToast(
+              "⏰ Giờ đặt ngoài khung mở cửa (7:00 – 23:00). Vui lòng chọn lại!",
+              "warn"
+            );
+            timeInput.focus();
+          }
+        });
+      }
+
+      // Đếm ký tự ghi chú
+      if (note && noteCount) {
+        note.addEventListener(
+          "input",
+          () => (noteCount.textContent = note.value.length)
+        );
+      }
+
+      // Validate & Submit
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          clearErrors();
+
+          let ok = true;
+          $$("input[required], select[required]").forEach((el) => {
+            if (!el.value) {
+              setError(el, "Vui lòng điền thông tin!");
+              ok = false;
+            }
+          });
+
+          const phone = $("#phone");
+          if (
+            phone &&
+            phone.value &&
+            !new RegExp(phone.pattern).test(phone.value)
+          ) {
+            setError(phone, "Số điện thoại không hợp lệ!");
+            ok = false;
+          }
+
+          const email = $("#email");
+          if (email && email.value && !/^\S+@\S+\.\S{2,}$/.test(email.value)) {
+            setError(email, "Email không hợp lệ!");
+            ok = false;
+          }
+
+          if (!ok) return;
+
+          showToast(
+            "✅ Đặt bàn thành công! Chúng tôi sẽ liên hệ xác nhận sớm nhất.",
+            "success"
+          );
+          form.reset();
+          if (noteCount) noteCount.textContent = "0";
+        });
+      }
+
+      function setError(el, msg) {
+        if (!el) return;
+        el.setAttribute("aria-invalid", "true");
+        const small = el.closest(".field").querySelector(".error");
+        if (small) small.textContent = msg;
+      }
+
+      function clearErrors() {
+        $$("[aria-invalid='true']").forEach((el) =>
+          el.removeAttribute("aria-invalid")
+        );
+        $$(".error").forEach((s) => (s.textContent = ""));
+      }
+
+      function showToast(text, type = "info") {
+        if (!toast) return;
+        toast.textContent = text;
+        toast.className = `toast ${type}`;
+        setTimeout(() => {
+          toast.className = "toast";
+        }, 4000);
+      }
+
+      // Khởi tạo AOS sau khi trang tải xong
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({
+          duration: 800,
+          once: true,
+          easing: "ease-in-out",
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </body>
 </html>

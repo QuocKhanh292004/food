@@ -1,0 +1,3566 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Foodie Admin • Dashboard</title>
+    <link rel="stylesheet" href="./admin.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="layout" id="app">
+      <!-- Sidebar Overlay for mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- ================= SIDEBAR ================= -->
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <!-- 3 gạch ngang trước tên -->
+          <span class="brand-hamburger" aria-hidden="true">
+            <b></b><b></b><b></b>
+          </span>
+          <div class="logo" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M4 13a8 8 0 0016 0v-1H4v1z" fill="white" />
+              <path
+                d="M3 18h18a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                fill="white"
+                opacity=".9"
+              />
+            </svg>
+          </div>
+
+          <h1 class="title"><span class="label">Foodie Admin</span></h1>
+
+          <button
+            class="btn round"
+            id="collapseBtn"
+            title="Thu gọn / Mở rộng"
+            aria-label="Thu gọn sidebar"
+          >
+            <i class="bx bx-menu icon"></i>
+          </button>
+        </div>
+
+        <nav class="nav" aria-label="Chính">
+          <a href="#overview" class="active" data-route-link="overview"
+            ><i class="bx bx-home-alt icon"></i
+            ><span class="label">Tổng quan</span></a
+          >
+          <a href="#orders" data-route-link="orders"
+            ><i class="bx bx-receipt icon"></i
+            ><span class="label">Đơn hàng</span></a
+          >
+          <a href="#products" data-route-link="products"
+            ><i class="bx bx-package icon"></i
+            ><span class="label">Sản phẩm</span></a
+          >
+          <a href="#categories" data-route-link="categories"
+            ><i class="bx bx-grid-alt icon"></i
+            ><span class="label">Danh mục</span></a
+          >
+          <a href="#customers" data-route-link="customers"
+            ><i class="bx bx-user icon"></i
+            ><span class="label">Khách hàng</span></a
+          >
+          <a href="#coupons" data-route-link="coupons"
+            ><i class="bx bx-purchase-tag icon"></i
+            ><span class="label">Mã giảm</span></a
+          >
+          <a href="#promos" data-route-link="promos"
+            ><i class="bx bx-gift icon"></i
+            ><span class="label">Khuyến mãi</span></a
+          >
+          <a href="#delivery" data-route-link="delivery"
+            ><i class="bx bx-truck icon"></i
+            ><span class="label">Giao hàng</span></a
+          >
+          <a href="#riders" data-route-link="riders"
+            ><i class="bx bx-cycling icon"></i
+            ><span class="label">Tài xế</span></a
+          >
+          <a href="#analytics" data-route-link="analytics"
+            ><i class="bx bx-bar-chart-alt-2 icon"></i
+            ><span class="label">Phân tích</span></a
+          >
+          <a href="#reviews" data-route-link="reviews"
+            ><i class="bx bx-message-square-dots icon"></i
+            ><span class="label">Đánh giá</span></a
+          >
+          <a href="#banners" data-route-link="banners"
+            ><i class="bx bx-image icon"></i
+            ><span class="label">Banner & CMS</span></a
+          >
+          <a href="#users" data-route-link="users"
+            ><i class="bx bx-group icon"></i
+            ><span class="label">Người dùng</span></a
+          >
+          <a href="#roles" data-route-link="roles"
+            ><i class="bx bx-shield icon"></i
+            ><span class="label">Phân quyền</span></a
+          >
+          <a href="#settings" data-route-link="settings"
+            ><i class="bx bx-cog icon"></i><span class="label">Cài đặt</span></a
+          >
+          <a href="#login" data-route-link="login"
+            ><i class="bx bx-log-in icon"></i
+            ><span class="label">Đăng nhập</span></a
+          >
+          <a href="#cart" data-route-link="cart"
+            ><i class="bx bx-cart icon"></i
+            ><span class="label">Giỏ hàng</span></a
+          >
+          <div class="foot"><span class="chip">Phiên bản 1.0.0</span></div>
+        </nav>
+      </aside>
+
+      <!-- ================= MAIN ================= -->
+      <section class="main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="mobile-menu-btn"
+              id="mobileMenuBtn"
+              title="Menu"
+              aria-label="Mở menu"
+              aria-controls="sidebar"
+              aria-expanded="false"
+            >
+              <span class="hamburger"></span>
+            </button>
+            <h1 id="routeTitle">Tổng quan</h1>
+          </div>
+          <div class="actions">
+            <div class="search">
+              <i class="bx bx-search"></i>
+              <input
+                type="search"
+                placeholder="Tìm đơn hàng, khách hàng, sản phẩm…"
+                aria-label="Tìm kiếm"
+              />
+            </div>
+            <button
+              class="btn"
+              id="themeBtn"
+              title="Chuyển giao diện"
+              aria-label="Đổi chế độ sáng/tối"
+            >
+              <i class="bx bx-moon"></i>
+              <span class="nowrap">Giao diện</span>
+            </button>
+            <button class="btn primary" id="addDishBtn">
+              <i class="bx bx-plus"></i>
+              <span class="nowrap">Thêm món</span>
+            </button>
+            <div class="avatar" title="Tài khoản">TA</div>
+          </div>
+        </header>
+
+        <!-- ======= ROUTE: OVERVIEW ======= -->
+        <div class="content route active" data-route="overview">
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-receipt"></i>
+              </div>
+              <div>
+                <h3>Đơn hôm nay</h3>
+                <strong>248</strong>
+                <div class="trend up">+12% so với hôm qua</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-money"></i>
+              </div>
+              <div>
+                <h3>Doanh thu</h3>
+                <strong>₫37,520,000</strong>
+                <div class="trend up">+8% tuần này</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-user-plus"></i>
+              </div>
+              <div>
+                <h3>KH mới</h3>
+                <strong>53</strong>
+                <div class="trend up">+5% / 7 ngày</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div>
+                <h3>Tỷ lệ hoàn thành</h3>
+                <strong>96.2%</strong>
+                <div class="trend">Ổn định</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card panel">
+            <h2>Biểu đồ doanh thu (7 ngày)</h2>
+            <div class="chart">
+              <svg
+                viewBox="0 0 600 240"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+                aria-label="Biểu đồ doanh thu 7 ngày"
+              >
+                <defs>
+                  <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+                    <stop
+                      offset="0%"
+                      stop-color="var(--primary)"
+                      stop-opacity=".6"
+                    />
+                    <stop
+                      offset="100%"
+                      stop-color="var(--primary-2)"
+                      stop-opacity="0"
+                    />
+                  </linearGradient>
+                </defs>
+                <polyline
+                  fill="url(#grad)"
+                  stroke="none"
+                  points="0,210 60,180 120,190 180,130 240,150 300,110 360,125 420,80 480,120 540,90 600,115 600,240 0,240"
+                />
+                <polyline
+                  fill="none"
+                  stroke="var(--primary)"
+                  stroke-width="3"
+                  points="0,210 60,180 120,190 180,130 240,150 300,110 360,125 420,80 480,120 540,90 600,115"
+                />
+                <g fill="var(--muted)" font-size="12">
+                  <text x="10" y="20">₫</text>
+                  <text x="10" y="60">30m</text>
+                  <text x="10" y="100">24m</text>
+                  <text x="10" y="140">18m</text>
+                  <text x="10" y="180">12m</text>
+                </g>
+              </svg>
+            </div>
+            <div class="legend">
+              <span
+                ><span class="dot" style="background: var(--primary)"></span
+                >Doanh thu</span
+              ><span class="muted">Tuần hiện tại</span>
+            </div>
+          </div>
+
+          <div class="card side" id="top-products">
+            <h2>Top món bán chạy</h2>
+            <div class="list">
+              <div class="row">
+                <div class="thumb">🍔</div>
+                <div class="meta">
+                  <div>
+                    Burger bò phô mai <span class="muted">• 1,245 suất</span>
+                  </div>
+                  <div class="bar" aria-hidden="true">
+                    <span style="width: 82%"></span>
+                  </div>
+                </div>
+                <div class="nowrap">₫65k</div>
+              </div>
+              <div class="row">
+                <div class="thumb">🍗</div>
+                <div class="meta">
+                  <div>
+                    Gà rán giòn cay <span class="muted">• 982 suất</span>
+                  </div>
+                  <div class="bar"><span style="width: 66%"></span></div>
+                </div>
+                <div class="nowrap">₫49k</div>
+              </div>
+              <div class="row">
+                <div class="thumb">🥗</div>
+                <div class="meta">
+                  <div>Salad cá hồi <span class="muted">• 640 suất</span></div>
+                  <div class="bar"><span style="width: 43%"></span></div>
+                </div>
+                <div class="nowrap">₫72k</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card panel" id="orders">
+            <h2>Đơn hàng gần đây</h2>
+            <div
+              class="table-wrap"
+              role="region"
+              aria-label="Bảng đơn hàng"
+              tabindex="0"
+            >
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Món</th>
+                    <th>Giờ</th>
+                    <th>Giá trị</th>
+                    <th>Trạng thái</th>
+                    <th class="nowrap">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#A-10234</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>Burger bò phô mai x2</td>
+                    <td>11:20</td>
+                    <td>₫130,000</td>
+                    <td><span class="status st-prep">Đang chuẩn bị</span></td>
+                    <td class="nowrap">
+                      <a href="#">Xem</a> • <a href="#">Sửa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#A-10233</td>
+                    <td>Trần Thị B</td>
+                    <td>Gà rán giòn cay x1</td>
+                    <td>11:02</td>
+                    <td>₫49,000</td>
+                    <td><span class="status st-ship">Đang giao</span></td>
+                    <td class="nowrap">
+                      <a href="#">Xem</a> • <a href="#">Sửa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#A-10232</td>
+                    <td>Lê Minh C</td>
+                    <td>Salad cá hồi x1</td>
+                    <td>10:40</td>
+                    <td>₫72,000</td>
+                    <td><span class="status st-done">Hoàn thành</span></td>
+                    <td class="nowrap">
+                      <a href="#">Xem</a> • <a href="#">Sửa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#A-10231</td>
+                    <td>Phạm D</td>
+                    <td>Combo Burger + Nước</td>
+                    <td>10:10</td>
+                    <td>₫89,000</td>
+                    <td><span class="status st-cancel">Hủy</span></td>
+                    <td class="nowrap">
+                      <a href="#">Xem</a> • <a href="#">Sửa</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="side card">
+            <h2>Kho & cảnh báo</h2>
+            <div class="list">
+              <div class="row">
+                <div class="thumb">🥬</div>
+                <div class="meta">
+                  <div>Rau xà lách</div>
+                  <div class="muted">Tồn: 18 • Mức tối thiểu: 20</div>
+                </div>
+                <span class="status st-prep">Sắp hết</span>
+              </div>
+              <div class="row">
+                <div class="thumb">🥤</div>
+                <div class="meta">
+                  <div>Nước cola lon</div>
+                  <div class="muted">Tồn: 320</div>
+                </div>
+                <span class="status st-done">Ổn</span>
+              </div>
+              <div class="row">
+                <div class="thumb">🍞</div>
+                <div class="meta">
+                  <div>Bánh mì burger</div>
+                  <div class="muted">Tồn: 35 • Mức tối thiểu: 40</div>
+                </div>
+                <span class="status st-ship">Nhập thêm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card panel grid-2">
+            <div>
+              <h2>Tác vụ nhanh</h2>
+              <div class="grid-2 quick">
+                <button class="btn">
+                  <i class="bx bx-plus"></i> Thêm sản phẩm
+                </button>
+                <button class="btn">
+                  <i class="bx bx-purchase-tag"></i> Tạo mã giảm
+                </button>
+                <button class="btn">
+                  <i class="bx bx-file-plus"></i> Tạo đơn thủ công
+                </button>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất báo cáo
+                </button>
+              </div>
+            </div>
+            <div>
+              <h2>Đánh giá mới</h2>
+              <div class="list">
+                <div class="row">
+                  <div class="thumb">⭐️</div>
+                  <div class="meta">
+                    <div>Khách HOÀNG</div>
+                    <div class="muted">“Đồ ăn nóng, giao nhanh!”</div>
+                  </div>
+                  <span class="muted">2h trước</span>
+                </div>
+                <div class="row">
+                  <div class="thumb">⭐️</div>
+                  <div class="meta">
+                    <div>Khách MINH</div>
+                    <div class="muted">“Salad tươi, sẽ ủng hộ!”</div>
+                  </div>
+                  <span class="muted">5h trước</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======= ROUTES ======= -->
+        <div class="content route" data-route="orders">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-receipt"></i>
+              </div>
+              <div>
+                <h3>Tổng đơn hôm nay</h3>
+                <strong>127</strong>
+                <div class="trend up">+15% so với hôm qua</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-money"></i>
+              </div>
+              <div>
+                <h3>Doanh thu hôm nay</h3>
+                <strong>₫8,450,000</strong>
+                <div class="trend up">+12% so với hôm qua</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-time"></i>
+              </div>
+              <div>
+                <h3>Thời gian TB</h3>
+                <strong>28 phút</strong>
+                <div class="trend">Ổn định</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div>
+                <h3>Tỷ lệ hoàn thành</h3>
+                <strong>94.5%</strong>
+                <div class="trend up">+2% tuần này</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input
+                  type="search"
+                  placeholder="Tìm mã đơn, tên khách hàng, SĐT…"
+                />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả trạng thái</option>
+                  <option>Chờ xác nhận</option>
+                  <option>Đang chuẩn bị</option>
+                  <option>Đang giao</option>
+                  <option>Hoàn thành</option>
+                  <option>Đã hủy</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất CSV
+                </button>
+                <button class="btn primary">
+                  <i class="bx bx-plus"></i> Tạo đơn
+                </button>
+              </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Số món</th>
+                    <th>Thời gian đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#A-10235</strong></td>
+                    <td>
+                      <div>Đỗ Minh H</div>
+                      <div class="muted">0901xxx789</div>
+                    </td>
+                    <td>3 món</td>
+                    <td>11:35 - 15/01</td>
+                    <td><strong>₫178,000</strong></td>
+                    <td><span class="status st-prep">Đang chuẩn bị</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#A-10234</strong></td>
+                    <td>
+                      <div>Nguyễn Văn A</div>
+                      <div class="muted">0902xxx123</div>
+                    </td>
+                    <td>2 món</td>
+                    <td>11:20 - 15/01</td>
+                    <td><strong>₫130,000</strong></td>
+                    <td><span class="status st-ship">Đang giao</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#A-10233</strong></td>
+                    <td>
+                      <div>Trần Thị B</div>
+                      <div class="muted">0903xxx456</div>
+                    </td>
+                    <td>1 món</td>
+                    <td>11:02 - 15/01</td>
+                    <td><strong>₫49,000</strong></td>
+                    <td><span class="status st-done">Hoàn thành</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#A-10232</strong></td>
+                    <td>
+                      <div>Lê Minh C</div>
+                      <div class="muted">0904xxx789</div>
+                    </td>
+                    <td>4 món</td>
+                    <td>10:40 - 15/01</td>
+                    <td><strong>₫245,000</strong></td>
+                    <td><span class="status st-done">Hoàn thành</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#A-10231</strong></td>
+                    <td>
+                      <div>Phạm Văn D</div>
+                      <div class="muted">0905xxx012</div>
+                    </td>
+                    <td>2 món</td>
+                    <td>10:10 - 15/01</td>
+                    <td><strong>₫89,000</strong></td>
+                    <td><span class="status st-cancel">Đã hủy</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#A-10230</strong></td>
+                    <td>
+                      <div>Hoàng Thị E</div>
+                      <div class="muted">0906xxx345</div>
+                    </td>
+                    <td>3 món</td>
+                    <td>09:55 - 15/01</td>
+                    <td><strong>₫156,000</strong></td>
+                    <td><span class="status st-ship">Đang giao</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-6 của 127 đơn hàng</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">3</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="products">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-package"></i>
+              </div>
+              <div>
+                <h3>Tổng sản phẩm</h3>
+                <strong>156</strong>
+                <div class="trend up">+8 sản phẩm mới</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-show"></i>
+              </div>
+              <div>
+                <h3>Đang bán</h3>
+                <strong>142</strong>
+                <div class="trend">91% tổng sản phẩm</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-hide"></i>
+              </div>
+              <div>
+                <h3>Đã ẩn</h3>
+                <strong>14</strong>
+                <div class="trend">9% tổng sản phẩm</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-trending-up"></i>
+              </div>
+              <div>
+                <h3>Bán chạy nhất</h3>
+                <strong>Burger bò</strong>
+                <div class="trend up">1,245 suất/tuần</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input type="search" placeholder="Tìm tên sản phẩm, mô tả…" />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả danh mục</option>
+                  <option>Combo</option>
+                  <option>Đồ chiên</option>
+                  <option>Healthy</option>
+                  <option>Đồ uống</option>
+                </select>
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả trạng thái</option>
+                  <option>Đang bán</option>
+                  <option>Đã ẩn</option>
+                  <option>Hết hàng</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất Excel
+                </button>
+                <button class="btn primary">
+                  <i class="bx bx-plus"></i> Thêm sản phẩm
+                </button>
+              </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid-3">
+              <div class="card">
+                <div class="row">
+                  <div class="thumb">🍔</div>
+                  <div class="meta">
+                    <div><strong>Burger bò phô mai</strong></div>
+                    <div class="muted">Giá: ₫65,000 • Còn: 42</div>
+                    <div class="muted">Danh mục: Combo</div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-edit"></i> Sửa
+                  </button>
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      flex: 1;
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-trash"></i> Xóa
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="row">
+                  <div class="thumb">🍗</div>
+                  <div class="meta">
+                    <div><strong>Gà rán giòn cay</strong></div>
+                    <div class="muted">Giá: ₫49,000 • Còn: 120</div>
+                    <div class="muted">Danh mục: Đồ chiên</div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-edit"></i> Sửa
+                  </button>
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      flex: 1;
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-trash"></i> Xóa
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="row">
+                  <div class="thumb">🥗</div>
+                  <div class="meta">
+                    <div><strong>Salad cá hồi</strong></div>
+                    <div class="muted">Giá: ₫72,000 • Còn: 18</div>
+                    <div class="muted">Danh mục: Healthy</div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-edit"></i> Sửa
+                  </button>
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      flex: 1;
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-trash"></i> Xóa
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="row">
+                  <div class="thumb">🍕</div>
+                  <div class="meta">
+                    <div><strong>Pizza Margherita</strong></div>
+                    <div class="muted">Giá: ₫89,000 • Còn: 25</div>
+                    <div class="muted">Danh mục: Combo</div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-edit"></i> Sửa
+                  </button>
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      flex: 1;
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-trash"></i> Xóa
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="row">
+                  <div class="thumb">🍜</div>
+                  <div class="meta">
+                    <div><strong>Phở bò tái</strong></div>
+                    <div class="muted">Giá: ₫55,000 • Còn: 0</div>
+                    <div class="muted">Danh mục: Món chính</div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-edit"></i> Sửa
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      flex: 1;
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--warn);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-package"></i> Nhập
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="row">
+                  <div class="thumb">🥤</div>
+                  <div class="meta">
+                    <div><strong>Nước cola</strong></div>
+                    <div class="muted">Giá: ₫15,000 • Còn: 320</div>
+                    <div class="muted">Danh mục: Đồ uống</div>
+                  </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-edit"></i> Sửa
+                  </button>
+                  <button
+                    class="btn"
+                    style="flex: 1; padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      flex: 1;
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-trash"></i> Xóa
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-6 của 156 sản phẩm</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">3</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="categories">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-grid-alt"></i>
+              </div>
+              <div>
+                <h3>Tổng danh mục</h3>
+                <strong>8</strong>
+                <div class="trend up">+2 danh mục mới</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-show"></i>
+              </div>
+              <div>
+                <h3>Đang hiển thị</h3>
+                <strong>7</strong>
+                <div class="trend">87.5% tổng danh mục</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-package"></i>
+              </div>
+              <div>
+                <h3>Tổng sản phẩm</h3>
+                <strong>156</strong>
+                <div class="trend up">Trong tất cả danh mục</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-trending-up"></i>
+              </div>
+              <div>
+                <h3>Danh mục hot</h3>
+                <strong>Combo</strong>
+                <div class="trend up">45 sản phẩm</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input type="search" placeholder="Tìm tên danh mục…" />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả trạng thái</option>
+                  <option>Đang hiển thị</option>
+                  <option>Đã ẩn</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất Excel
+                </button>
+                <button class="btn primary">
+                  <i class="bx bx-plus"></i> Thêm danh mục
+                </button>
+              </div>
+            </div>
+
+            <!-- Categories Table -->
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Danh mục</th>
+                    <th>Mô tả</th>
+                    <th>Số sản phẩm</th>
+                    <th>Thứ tự</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày tạo</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            background: linear-gradient(
+                              135deg,
+                              #ff6b6b,
+                              #ff8e8e
+                            );
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                          "
+                        >
+                          🍔
+                        </div>
+                        <div>
+                          <div><strong>Combo</strong></div>
+                          <div class="muted">ID: #CAT001</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Combo món ăn với giá ưu đãi</td>
+                    <td><strong>45 sản phẩm</strong></td>
+                    <td>1</td>
+                    <td><span class="status st-done">Hiển thị</span></td>
+                    <td>15/12/2024</td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            background: linear-gradient(
+                              135deg,
+                              #ffa726,
+                              #ffb74d
+                            );
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                          "
+                        >
+                          🍗
+                        </div>
+                        <div>
+                          <div><strong>Đồ chiên</strong></div>
+                          <div class="muted">ID: #CAT002</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Các món chiên giòn, thơm ngon</td>
+                    <td><strong>32 sản phẩm</strong></td>
+                    <td>2</td>
+                    <td><span class="status st-done">Hiển thị</span></td>
+                    <td>10/12/2024</td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            background: linear-gradient(
+                              135deg,
+                              #66bb6a,
+                              #81c784
+                            );
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                          "
+                        >
+                          🥗
+                        </div>
+                        <div>
+                          <div><strong>Healthy</strong></div>
+                          <div class="muted">ID: #CAT003</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Món ăn tốt cho sức khỏe</td>
+                    <td><strong>18 sản phẩm</strong></td>
+                    <td>3</td>
+                    <td><span class="status st-done">Hiển thị</span></td>
+                    <td>08/12/2024</td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            background: linear-gradient(
+                              135deg,
+                              #42a5f5,
+                              #64b5f6
+                            );
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                          "
+                        >
+                          🥤
+                        </div>
+                        <div>
+                          <div><strong>Đồ uống</strong></div>
+                          <div class="muted">ID: #CAT004</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Nước uống, sinh tố, trà sữa</td>
+                    <td><strong>28 sản phẩm</strong></td>
+                    <td>4</td>
+                    <td><span class="status st-done">Hiển thị</span></td>
+                    <td>05/12/2024</td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            background: linear-gradient(
+                              135deg,
+                              #ab47bc,
+                              #ba68c8
+                            );
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                          "
+                        >
+                          🍕
+                        </div>
+                        <div>
+                          <div><strong>Pizza</strong></div>
+                          <div class="muted">ID: #CAT005</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Pizza các loại, size khác nhau</td>
+                    <td><strong>15 sản phẩm</strong></td>
+                    <td>5</td>
+                    <td><span class="status st-done">Hiển thị</span></td>
+                    <td>03/12/2024</td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            background: linear-gradient(
+                              135deg,
+                              #ef5350,
+                              #e57373
+                            );
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                          "
+                        >
+                          🍜
+                        </div>
+                        <div>
+                          <div><strong>Món chính</strong></div>
+                          <div class="muted">ID: #CAT006</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Phở, bún, cơm, mì các loại</td>
+                    <td><strong>18 sản phẩm</strong></td>
+                    <td>6</td>
+                    <td><span class="status st-prep">Ẩn</span></td>
+                    <td>01/12/2024</td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-6 của 8 danh mục</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="customers">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-user"></i>
+              </div>
+              <div>
+                <h3>Tổng khách hàng</h3>
+                <strong>2,847</strong>
+                <div class="trend up">+53 khách mới</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-user-plus"></i>
+              </div>
+              <div>
+                <h3>Khách mới tháng</h3>
+                <strong>234</strong>
+                <div class="trend up">+12% so với tháng trước</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-money"></i>
+              </div>
+              <div>
+                <h3>Chi tiêu TB</h3>
+                <strong>₫156,000</strong>
+                <div class="trend up">+8% so với tháng trước</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-star"></i>
+              </div>
+              <div>
+                <h3>Khách VIP</h3>
+                <strong>89</strong>
+                <div class="trend">Chi tiêu > ₫2 triệu</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input
+                  type="search"
+                  placeholder="Tìm tên, SĐT, email khách hàng…"
+                />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả khách hàng</option>
+                  <option>Khách VIP</option>
+                  <option>Khách thường</option>
+                  <option>Khách mới</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất Excel
+                </button>
+                <button class="btn primary">
+                  <i class="bx bx-plus"></i> Thêm khách
+                </button>
+              </div>
+            </div>
+
+            <!-- Customers Table -->
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Khách hàng</th>
+                    <th>Liên hệ</th>
+                    <th>Đơn đã đặt</th>
+                    <th>Tổng chi tiêu</th>
+                    <th>Đơn gần nhất</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          NV
+                        </div>
+                        <div>
+                          <div><strong>Nguyễn Văn A</strong></div>
+                          <div class="muted">ID: #KH001</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>0901xxx123</div>
+                      <div class="muted">nguyenvana@email.com</div>
+                    </td>
+                    <td><strong>18 đơn</strong></td>
+                    <td><strong>₫9,420,000</strong></td>
+                    <td>15/01/2025</td>
+                    <td><span class="status st-done">VIP</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          TT
+                        </div>
+                        <div>
+                          <div><strong>Trần Thị B</strong></div>
+                          <div class="muted">ID: #KH002</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>0902xxx456</div>
+                      <div class="muted">tranthib@email.com</div>
+                    </td>
+                    <td><strong>9 đơn</strong></td>
+                    <td><strong>₫3,150,000</strong></td>
+                    <td>12/01/2025</td>
+                    <td><span class="status st-ship">Thường</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          LM
+                        </div>
+                        <div>
+                          <div><strong>Lê Minh C</strong></div>
+                          <div class="muted">ID: #KH003</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>0903xxx789</div>
+                      <div class="muted">leminhc@email.com</div>
+                    </td>
+                    <td><strong>25 đơn</strong></td>
+                    <td><strong>₫12,800,000</strong></td>
+                    <td>14/01/2025</td>
+                    <td><span class="status st-done">VIP</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          PV
+                        </div>
+                        <div>
+                          <div><strong>Phạm Văn D</strong></div>
+                          <div class="muted">ID: #KH004</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>0904xxx012</div>
+                      <div class="muted">phamvand@email.com</div>
+                    </td>
+                    <td><strong>3 đơn</strong></td>
+                    <td><strong>₫450,000</strong></td>
+                    <td>08/01/2025</td>
+                    <td><span class="status st-prep">Mới</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          HT
+                        </div>
+                        <div>
+                          <div><strong>Hoàng Thị E</strong></div>
+                          <div class="muted">ID: #KH005</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>0905xxx345</div>
+                      <div class="muted">hoangthie@email.com</div>
+                    </td>
+                    <td><strong>15 đơn</strong></td>
+                    <td><strong>₫6,750,000</strong></td>
+                    <td>13/01/2025</td>
+                    <td><span class="status st-ship">Thường</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Xem
+                      </button>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        Sửa
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-5 của 2,847 khách hàng</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">3</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="coupons">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-purchase-tag"></i>
+              </div>
+              <div>
+                <h3>Tổng mã giảm</h3>
+                <strong>24</strong>
+                <div class="trend up">+3 mã mới</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div>
+                <h3>Đang hoạt động</h3>
+                <strong>18</strong>
+                <div class="trend">75% tổng mã</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-money"></i>
+              </div>
+              <div>
+                <h3>Tiết kiệm TB</h3>
+                <strong>₫45,000</strong>
+                <div class="trend up">Mỗi đơn hàng</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-trending-up"></i>
+              </div>
+              <div>
+                <h3>Sử dụng hôm nay</h3>
+                <strong>127 lần</strong>
+                <div class="trend up">+15% so với hôm qua</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input type="search" placeholder="Tìm mã giảm giá…" />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả trạng thái</option>
+                  <option>Đang hoạt động</option>
+                  <option>Hết hạn</option>
+                  <option>Đã hủy</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất Excel
+                </button>
+                <button class="btn primary">
+                  <i class="bx bx-plus"></i> Tạo mã mới
+                </button>
+              </div>
+            </div>
+
+            <!-- Coupons Table -->
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mã giảm</th>
+                    <th>Loại giảm</th>
+                    <th>Giá trị</th>
+                    <th>Điều kiện</th>
+                    <th>HSD</th>
+                    <th>Sử dụng</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>FOOD10</strong></td>
+                    <td>Phần trăm</td>
+                    <td><strong>10%</strong></td>
+                    <td>Từ ₫100,000</td>
+                    <td>31/12/2025</td>
+                    <td>245/500</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>SHIP0</strong></td>
+                    <td>Miễn phí ship</td>
+                    <td><strong>₫15,000</strong></td>
+                    <td>Từ ₫50,000</td>
+                    <td>30/09/2025</td>
+                    <td>89/200</td>
+                    <td><span class="status st-prep">Sắp hết hạn</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>NEWUSER</strong></td>
+                    <td>Giảm tiền</td>
+                    <td><strong>₫50,000</strong></td>
+                    <td>Khách mới</td>
+                    <td>31/03/2025</td>
+                    <td>156/300</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>VIP20</strong></td>
+                    <td>Phần trăm</td>
+                    <td><strong>20%</strong></td>
+                    <td>Khách VIP</td>
+                    <td>31/12/2025</td>
+                    <td>67/100</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>WEEKEND</strong></td>
+                    <td>Giảm tiền</td>
+                    <td><strong>₫30,000</strong></td>
+                    <td>Cuối tuần</td>
+                    <td>28/02/2025</td>
+                    <td>45/150</td>
+                    <td><span class="status st-ship">Hết hạn</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>COMBO15</strong></td>
+                    <td>Phần trăm</td>
+                    <td><strong>15%</strong></td>
+                    <td>Mua combo</td>
+                    <td>15/06/2025</td>
+                    <td>123/200</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-6 của 24 mã giảm giá</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">3</button>
+                <button class="btn" style="padding: 6px 12px">4</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="promos">
+          <div class="card panel">
+            <h2>Khuyến mãi</h2>
+            <div class="list">
+              <div class="row">
+                <div class="thumb">🔥</div>
+                <div class="meta">
+                  <div>Combo trưa -20%</div>
+                  <div class="muted">11:00–14:00 mỗi ngày</div>
+                </div>
+                <button class="btn">Chỉnh</button>
+              </div>
+              <div class="row">
+                <div class="thumb">🎉</div>
+                <div class="meta">
+                  <div>Mua 2 tặng 1</div>
+                  <div class="muted">Thứ 6 hàng tuần</div>
+                </div>
+                <button class="btn">Chỉnh</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="delivery">
+          <div class="card panel">
+            <h2>Giao hàng</h2>
+            <div class="list">
+              <div class="row">
+                <div class="thumb">🛵</div>
+                <div class="meta">
+                  <div>Khu vực A</div>
+                  <div class="muted">Phí: ₫15k • SLA: 30–40'</div>
+                </div>
+                <button class="btn">Sửa</button>
+              </div>
+              <div class="row">
+                <div class="thumb">🚚</div>
+                <div class="meta">
+                  <div>Khu vực B</div>
+                  <div class="muted">Phí: ₫20k • SLA: 40–55'</div>
+                </div>
+                <button class="btn">Sửa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="riders">
+          <div class="card panel">
+            <h2>Tài xế</h2>
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tên</th>
+                    <th>Trạng thái</th>
+                    <th>Đơn hôm nay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ngô Văn Rider</td>
+                    <td><span class="status st-done">Rảnh</span></td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Trần Rider</td>
+                    <td><span class="status st-ship">Đang giao</span></td>
+                    <td>9</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="analytics">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-trending-up"></i>
+              </div>
+              <div>
+                <h3>Tăng trưởng tháng</h3>
+                <strong>+24.5%</strong>
+                <div class="trend up">So với tháng trước</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-money"></i>
+              </div>
+              <div>
+                <h3>Doanh thu tháng</h3>
+                <strong>₫245,600,000</strong>
+                <div class="trend up">+18% so với tháng trước</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-receipt"></i>
+              </div>
+              <div>
+                <h3>Đơn hàng tháng</h3>
+                <strong>3,847</strong>
+                <div class="trend up">+12% so với tháng trước</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-user-plus"></i>
+              </div>
+              <div>
+                <h3>Khách mới</h3>
+                <strong>234</strong>
+                <div class="trend up">+15% so với tháng trước</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Section -->
+          <div class="grid-2">
+            <div class="card panel">
+              <h2>Doanh thu 7 ngày qua</h2>
+              <div class="chart">
+                <svg
+                  viewBox="0 0 600 240"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="revenue" x1="0" x2="0" y1="0" y2="1">
+                      <stop
+                        offset="0%"
+                        stop-color="var(--primary)"
+                        stop-opacity=".6"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="var(--primary)"
+                        stop-opacity="0"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <polyline
+                    fill="url(#revenue)"
+                    stroke="none"
+                    points="0,210 60,180 120,190 180,130 240,150 300,110 360,125 420,80 480,120 540,90 600,115 600,240 0,240"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="var(--primary)"
+                    stroke-width="3"
+                    points="0,210 60,180 120,190 180,130 240,150 300,110 360,125 420,80 480,120 540,90 600,115"
+                  />
+                  <g fill="var(--muted)" font-size="12">
+                    <text x="10" y="20">₫</text>
+                    <text x="10" y="60">40m</text>
+                    <text x="10" y="100">30m</text>
+                    <text x="10" y="140">20m</text>
+                    <text x="10" y="180">10m</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="legend">
+                <span
+                  ><span class="dot" style="background: var(--primary)"></span
+                  >Doanh thu</span
+                >
+                <span class="muted">7 ngày qua</span>
+              </div>
+            </div>
+
+            <div class="card panel">
+              <h2>Top sản phẩm bán chạy</h2>
+              <div class="list">
+                <div class="row">
+                  <div class="thumb">🍔</div>
+                  <div class="meta">
+                    <div><strong>Burger bò phô mai</strong></div>
+                    <div class="muted">1,245 suất • ₫81,175,000</div>
+                  </div>
+                  <div class="bar" style="width: 100%">
+                    <span style="width: 100%"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="thumb">🍗</div>
+                  <div class="meta">
+                    <div><strong>Gà rán giòn cay</strong></div>
+                    <div class="muted">982 suất • ₫48,118,000</div>
+                  </div>
+                  <div class="bar" style="width: 79%">
+                    <span style="width: 79%"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="thumb">🥗</div>
+                  <div class="meta">
+                    <div><strong>Salad cá hồi</strong></div>
+                    <div class="muted">640 suất • ₫46,080,000</div>
+                  </div>
+                  <div class="bar" style="width: 51%">
+                    <span style="width: 51%"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="thumb">🍕</div>
+                  <div class="meta">
+                    <div><strong>Pizza Margherita</strong></div>
+                    <div class="muted">456 suất • ₫40,584,000</div>
+                  </div>
+                  <div class="bar" style="width: 37%">
+                    <span style="width: 37%"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Analytics -->
+          <div class="grid-2">
+            <div class="card panel">
+              <h2>Phân bố đơn hàng theo giờ</h2>
+              <div class="chart">
+                <svg
+                  viewBox="0 0 600 200"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="orders" x1="0" x2="0" y1="0" y2="1">
+                      <stop
+                        offset="0%"
+                        stop-color="var(--good)"
+                        stop-opacity=".6"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="var(--good)"
+                        stop-opacity="0"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <polyline
+                    fill="url(#orders)"
+                    stroke="none"
+                    points="0,180 50,160 100,140 150,120 200,100 250,80 300,60 350,70 400,90 450,110 500,130 550,150 600,160 600,200 0,200"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="var(--good)"
+                    stroke-width="3"
+                    points="0,180 50,160 100,140 150,120 200,100 250,80 300,60 350,70 400,90 450,110 500,130 550,150 600,160"
+                  />
+                  <g fill="var(--muted)" font-size="10">
+                    <text x="20" y="190">6h</text>
+                    <text x="120" y="190">12h</text>
+                    <text x="220" y="190">18h</text>
+                    <text x="320" y="190">24h</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="legend">
+                <span
+                  ><span class="dot" style="background: var(--good)"></span>Số
+                  đơn hàng</span
+                >
+                <span class="muted">Theo giờ trong ngày</span>
+              </div>
+            </div>
+
+            <div class="card panel">
+              <h2>Thống kê khách hàng</h2>
+              <div class="list">
+                <div class="row">
+                  <div class="thumb">👥</div>
+                  <div class="meta">
+                    <div><strong>Khách hàng mới</strong></div>
+                    <div class="muted">234 khách trong tháng</div>
+                  </div>
+                  <div class="nowrap">+15%</div>
+                </div>
+                <div class="row">
+                  <div class="thumb">⭐</div>
+                  <div class="meta">
+                    <div><strong>Khách VIP</strong></div>
+                    <div class="muted">89 khách chi tiêu > ₫2M</div>
+                  </div>
+                  <div class="nowrap">3.1%</div>
+                </div>
+                <div class="row">
+                  <div class="thumb">🔄</div>
+                  <div class="meta">
+                    <div><strong>Tỷ lệ quay lại</strong></div>
+                    <div class="muted">Khách hàng đặt lại</div>
+                  </div>
+                  <div class="nowrap">68%</div>
+                </div>
+                <div class="row">
+                  <div class="thumb">💰</div>
+                  <div class="meta">
+                    <div><strong>Chi tiêu trung bình</strong></div>
+                    <div class="muted">Mỗi khách hàng</div>
+                  </div>
+                  <div class="nowrap">₫156k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="reviews">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-message-square-dots"></i>
+              </div>
+              <div>
+                <h3>Tổng đánh giá</h3>
+                <strong>1,247</strong>
+                <div class="trend up">+23 đánh giá mới</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-star"></i>
+              </div>
+              <div>
+                <h3>Điểm TB</h3>
+                <strong>4.6/5</strong>
+                <div class="trend up">+0.2 so với tháng trước</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div>
+                <h3>Đánh giá 5 sao</h3>
+                <strong>892</strong>
+                <div class="trend">71.5% tổng đánh giá</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-time"></i>
+              </div>
+              <div>
+                <h3>Chưa trả lời</h3>
+                <strong>45</strong>
+                <div class="trend">Cần xử lý</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input
+                  type="search"
+                  placeholder="Tìm tên khách hàng, nội dung đánh giá…"
+                />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả sao</option>
+                  <option>5 sao</option>
+                  <option>4 sao</option>
+                  <option>3 sao</option>
+                  <option>2 sao</option>
+                  <option>1 sao</option>
+                </select>
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả trạng thái</option>
+                  <option>Đã trả lời</option>
+                  <option>Chưa trả lời</option>
+                  <option>Đã ẩn</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất Excel
+                </button>
+              </div>
+            </div>
+
+            <!-- Reviews List -->
+            <div class="list">
+              <div class="row">
+                <div class="thumb">
+                  <div class="star-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                  </div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <strong>Nguyễn Văn A</strong> •
+                    <span class="muted">15/01/2025 11:30</span>
+                  </div>
+                  <div class="muted">
+                    "Đồ ăn rất ngon, giao hàng nhanh. Sẽ ủng hộ thường xuyên!"
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="status st-done">Đã trả lời</span>
+                    <span class="muted">• Đơn hàng #A-10235</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-reply"></i> Trả lời
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="thumb">
+                  <div class="star-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bx-star"></i>
+                  </div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <strong>Trần Thị B</strong> •
+                    <span class="muted">15/01/2025 10:15</span>
+                  </div>
+                  <div class="muted">
+                    "Giao hàng nhanh, đồ ăn còn nóng. Chỉ hơi mặn một chút."
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="status st-prep">Chưa trả lời</span>
+                    <span class="muted">• Đơn hàng #A-10234</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-reply"></i> Trả lời
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="thumb">
+                  <div class="star-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                  </div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <strong>Lê Minh C</strong> •
+                    <span class="muted">14/01/2025 16:45</span>
+                  </div>
+                  <div class="muted">
+                    "Tuyệt vời! Salad cá hồi rất tươi, sẽ đặt lại."
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="status st-done">Đã trả lời</span>
+                    <span class="muted">• Đơn hàng #A-10233</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-reply"></i> Trả lời
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="thumb">
+                  <div class="star-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bx-star"></i>
+                    <i class="bx bx-star"></i>
+                  </div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <strong>Phạm Văn D</strong> •
+                    <span class="muted">14/01/2025 14:20</span>
+                  </div>
+                  <div class="muted">
+                    "Đồ ăn ổn, nhưng giao hàng hơi chậm. Cần cải thiện."
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="status st-prep">Chưa trả lời</span>
+                    <span class="muted">• Đơn hàng #A-10232</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-reply"></i> Trả lời
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="thumb">
+                  <div class="star-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                  </div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <strong>Hoàng Thị E</strong> •
+                    <span class="muted">13/01/2025 12:30</span>
+                  </div>
+                  <div class="muted">
+                    "Combo burger rất ngon, giá hợp lý. Nhân viên thân thiện!"
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="status st-done">Đã trả lời</span>
+                    <span class="muted">• Đơn hàng #A-10231</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-reply"></i> Trả lời
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="thumb">
+                  <div class="star-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bx-star"></i>
+                    <i class="bx bx-star"></i>
+                    <i class="bx bx-star"></i>
+                  </div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <strong>Vũ Văn F</strong> •
+                    <span class="muted">13/01/2025 09:15</span>
+                  </div>
+                  <div class="muted">
+                    "Đồ ăn không ngon như mong đợi, giao hàng cũng chậm."
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="status st-prep">Chưa trả lời</span>
+                    <span class="muted">• Đơn hàng #A-10230</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button
+                    class="btn"
+                    style="padding: 6px 12px; font-size: 0.8rem"
+                  >
+                    <i class="bx bx-reply"></i> Trả lời
+                  </button>
+                  <button
+                    class="btn"
+                    style="
+                      padding: 6px 12px;
+                      font-size: 0.8rem;
+                      background: var(--danger);
+                      color: white;
+                    "
+                  >
+                    <i class="bx bx-hide"></i> Ẩn
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-6 của 1,247 đánh giá</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">3</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="banners">
+          <div class="card panel">
+            <h2>Banner & CMS</h2>
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tên</th>
+                    <th>Vị trí</th>
+                    <th>Trạng thái</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Banner Trang chủ</td>
+                    <td>Hero</td>
+                    <td>Hiển thị</td>
+                  </tr>
+                  <tr>
+                    <td>Popup khuyến mãi</td>
+                    <td>Global</td>
+                    <td>Tắt</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="content route" data-route="users">
+          <!-- KPI Cards -->
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-group"></i>
+              </div>
+              <div>
+                <h3>Tổng người dùng</h3>
+                <strong>12</strong>
+                <div class="trend up">+2 người dùng mới</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-check-circle"></i>
+              </div>
+              <div>
+                <h3>Đang hoạt động</h3>
+                <strong>10</strong>
+                <div class="trend">83% tổng người dùng</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-shield"></i>
+              </div>
+              <div>
+                <h3>Quản trị viên</h3>
+                <strong>3</strong>
+                <div class="trend">25% tổng người dùng</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble" aria-hidden="true">
+                <i class="bx bx-user"></i>
+              </div>
+              <div>
+                <h3>Nhân viên</h3>
+                <strong>9</strong>
+                <div class="trend">75% tổng người dùng</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Actions -->
+          <div class="card panel">
+            <div class="grid-2" style="margin-bottom: 16px">
+              <div class="search">
+                <i class="bx bx-search"></i>
+                <input type="search" placeholder="Tìm tên, email người dùng…" />
+              </div>
+              <div
+                style="
+                  text-align: right;
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-end;
+                "
+              >
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả vai trò</option>
+                  <option>Quản trị viên</option>
+                  <option>Nhân viên</option>
+                  <option>Khách hàng</option>
+                </select>
+                <select style="width: auto; min-width: 120px">
+                  <option>Tất cả trạng thái</option>
+                  <option>Hoạt động</option>
+                  <option>Khóa</option>
+                  <option>Chờ duyệt</option>
+                </select>
+                <button class="btn">
+                  <i class="bx bx-download"></i> Xuất Excel
+                </button>
+                <button class="btn primary">
+                  <i class="bx bx-plus"></i> Thêm người dùng
+                </button>
+              </div>
+            </div>
+
+            <!-- Users Table -->
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Người dùng</th>
+                    <th>Thông tin liên hệ</th>
+                    <th>Vai trò</th>
+                    <th>Quyền hạn</th>
+                    <th>Đăng nhập cuối</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          AD
+                        </div>
+                        <div>
+                          <div><strong>Admin</strong></div>
+                          <div class="muted">ID: #USR001</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>admin@foodie.local</div>
+                      <div class="muted">0901 234 567</div>
+                    </td>
+                    <td><span class="status st-done">Quản trị viên</span></td>
+                    <td>Tất cả quyền</td>
+                    <td>15/01/2025 11:30</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          NV
+                        </div>
+                        <div>
+                          <div><strong>Nguyễn Văn A</strong></div>
+                          <div class="muted">ID: #USR002</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>nva@foodie.local</div>
+                      <div class="muted">0902 345 678</div>
+                    </td>
+                    <td><span class="status st-ship">Nhân viên</span></td>
+                    <td>Quản lý đơn hàng</td>
+                    <td>15/01/2025 10:15</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          TT
+                        </div>
+                        <div>
+                          <div><strong>Trần Thị B</strong></div>
+                          <div class="muted">ID: #USR003</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>ttb@foodie.local</div>
+                      <div class="muted">0903 456 789</div>
+                    </td>
+                    <td><span class="status st-ship">Nhân viên</span></td>
+                    <td>Quản lý sản phẩm</td>
+                    <td>14/01/2025 16:45</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          LM
+                        </div>
+                        <div>
+                          <div><strong>Lê Minh C</strong></div>
+                          <div class="muted">ID: #USR004</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>lmc@foodie.local</div>
+                      <div class="muted">0904 567 890</div>
+                    </td>
+                    <td><span class="status st-done">Quản trị viên</span></td>
+                    <td>Quản lý hệ thống</td>
+                    <td>13/01/2025 09:20</td>
+                    <td><span class="status st-done">Hoạt động</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <div
+                          class="avatar"
+                          style="width: 32px; height: 32px; font-size: 0.8rem"
+                        >
+                          PV
+                        </div>
+                        <div>
+                          <div><strong>Phạm Văn D</strong></div>
+                          <div class="muted">ID: #USR005</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>pvd@foodie.local</div>
+                      <div class="muted">0905 678 901</div>
+                    </td>
+                    <td><span class="status st-ship">Nhân viên</span></td>
+                    <td>Giao hàng</td>
+                    <td>12/01/2025 14:30</td>
+                    <td><span class="status st-prep">Khóa</span></td>
+                    <td>
+                      <button
+                        class="btn"
+                        style="padding: 4px 8px; font-size: 0.8rem"
+                      >
+                        <i class="bx bx-edit"></i> Sửa
+                      </button>
+                      <button
+                        class="btn"
+                        style="
+                          padding: 4px 8px;
+                          font-size: 0.8rem;
+                          background: var(--danger);
+                          color: white;
+                        "
+                      >
+                        <i class="bx bx-trash"></i> Xóa
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--soft);
+              "
+            >
+              <div class="muted">Hiển thị 1-5 của 12 người dùng</div>
+              <div style="display: flex; gap: 8px">
+                <button class="btn" style="padding: 6px 12px">Trước</button>
+                <button class="btn primary" style="padding: 6px 12px">1</button>
+                <button class="btn" style="padding: 6px 12px">2</button>
+                <button class="btn" style="padding: 6px 12px">3</button>
+                <button class="btn" style="padding: 6px 12px">Sau</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="content route" data-route="login">
+          <div class="login-container">
+            <div class="login-card card">
+              <div class="login-header">
+                <div class="logo" aria-hidden="true">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M4 13a8 8 0 0016 0v-1H4v1z" fill="currentColor" />
+                    <path
+                      d="M3 18h18a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                      fill="currentColor"
+                      opacity=".9"
+                    />
+                  </svg>
+                </div>
+                <h1>Foodie Admin</h1>
+                <p>Đăng nhập vào hệ thống quản trị</p>
+              </div>
+
+              <form class="login-form" id="loginForm">
+                <div class="form-group">
+                  <label for="email">Email hoặc tên đăng nhập</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="username"
+                    placeholder="admin@foodie.local"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Mật khẩu</label>
+                  <div class="password-input">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                      autocomplete="current-password"
+                      placeholder="••••••••"
+                    />
+                    <button
+                      type="button"
+                      class="toggle-password"
+                      id="togglePassword"
+                      aria-label="Hiện/Ẩn mật khẩu"
+                    >
+                      <i class="bx bx-show"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-options">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="remember" name="remember" />
+                    <span class="checkmark"></span>
+                    Ghi nhớ đăng nhập
+                  </label>
+                  <a href="#" class="forgot-link">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="login-btn btn primary">
+                  <span class="btn-text">Đăng nhập</span>
+                  <div
+                    class="loading-spinner"
+                    id="loginSpinner"
+                    style="display: none"
+                  >
+                    <i class="bx bx-loader-alt"></i>
+                  </div>
+                </button>
+              </form>
+
+              <div class="login-footer">
+                <div class="divider"><span>hoặc</span></div>
+                <div class="social-login">
+                  <button class="social-btn" type="button">
+                    <i class="bx bxl-google"></i>
+                    Đăng nhập với Google
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CART -->
+        <div class="content route" data-route="cart">
+          <div class="cart-main">
+            <section class="cart-items" id="cartItems">
+              <div class="section-header">
+                <h2>Món ăn đã chọn</h2>
+                <span class="item-count" id="itemCount">3 món</span>
+              </div>
+
+              <div class="item-list">
+                <div class="cart-item card" data-id="1">
+                  <div class="item-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=80&h=80&fit=crop&crop=center"
+                      alt="Burger bò phô mai"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="item-details">
+                    <h3 class="item-name">Burger bò phô mai</h3>
+                    <p class="item-description">
+                      Bánh mì burger, thịt bò, phô mai cheddar, rau xà lách
+                    </p>
+                    <div class="item-options">
+                      <span class="option">Size: Lớn</span>
+                      <span class="option">Thêm: Khoai tây chiên</span>
+                    </div>
+                    <div class="item-price">₫65,000</div>
+                  </div>
+                  <div class="item-controls">
+                    <div class="quantity-control">
+                      <button
+                        class="qty-btn"
+                        data-action="decrease"
+                        aria-label="Giảm số lượng"
+                      >
+                        -
+                      </button>
+                      <span class="quantity">2</span>
+                      <button
+                        class="qty-btn"
+                        data-action="increase"
+                        aria-label="Tăng số lượng"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <button
+                      class="remove-btn"
+                      data-id="1"
+                      aria-label="Xóa khỏi giỏ hàng"
+                    >
+                      <i class="bx bx-trash"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="cart-item card" data-id="2">
+                  <div class="item-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1562967914-608f82629710?w=80&h=80&fit=crop&crop=center"
+                      alt="Gà rán giòn cay"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="item-details">
+                    <h3 class="item-name">Gà rán giòn cay</h3>
+                    <p class="item-description">
+                      Đùi gà rán giòn, gia vị cay nồng đặc biệt
+                    </p>
+                    <div class="item-options">
+                      <span class="option">Độ cay: Vừa</span>
+                    </div>
+                    <div class="item-price">₫49,000</div>
+                  </div>
+                  <div class="item-controls">
+                    <div class="quantity-control">
+                      <button class="qty-btn" data-action="decrease">-</button>
+                      <span class="quantity">1</span>
+                      <button class="qty-btn" data-action="increase">+</button>
+                    </div>
+                    <button class="remove-btn" data-id="2">
+                      <i class="bx bx-trash"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="cart-item card" data-id="3">
+                  <div class="item-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=80&h=80&fit=crop&crop=center"
+                      alt="Salad cá hồi"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="item-details">
+                    <h3 class="item-name">Salad cá hồi</h3>
+                    <p class="item-description">
+                      Cá hồi nướng, rau xanh tươi, sốt vinaigrette
+                    </p>
+                    <div class="item-options">
+                      <span class="option">Sốt: Vinaigrette</span>
+                    </div>
+                    <div class="item-price">₫72,000</div>
+                  </div>
+                  <div class="item-controls">
+                    <div class="quantity-control">
+                      <button class="qty-btn" data-action="decrease">-</button>
+                      <span class="quantity">1</span>
+                      <button class="qty-btn" data-action="increase">+</button>
+                    </div>
+                    <button class="remove-btn" data-id="3">
+                      <i class="bx bx-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="promo-section card">
+                <div class="promo-input">
+                  <input
+                    type="text"
+                    id="promoCode"
+                    placeholder="Nhập mã giảm giá (vd: FOOD10, SHIP0)"
+                  />
+                  <button class="apply-btn btn primary" id="applyPromo">
+                    Áp dụng
+                  </button>
+                </div>
+                <div class="applied-promos" id="appliedPromos"></div>
+              </div>
+            </section>
+
+            <div class="cart-summary card">
+              <h2>Tóm tắt đơn hàng</h2>
+              <div class="summary-line">
+                <span>Tạm tính</span>
+                <span id="subtotal">₫186,000</span>
+              </div>
+              <div class="summary-line">
+                <span>Phí giao hàng</span>
+                <span id="shippingFee">₫15,000</span>
+              </div>
+              <div
+                class="summary-line promo-discount"
+                id="promoDiscount"
+                style="display: none"
+              >
+                <span>Giảm giá</span>
+                <span class="discount-amount">-₫0</span>
+              </div>
+              <hr class="summary-divider" />
+              <div class="summary-line total">
+                <span>Tổng cộng</span>
+                <span id="total">₫201,000</span>
+              </div>
+              <button class="checkout-btn btn primary" id="checkoutBtn">
+                <span>Thanh toán</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="content route" data-route="settings">
+          <div class="grid-2">
+            <!-- General Settings -->
+            <div class="card panel">
+              <h2>Cài đặt chung</h2>
+              <div class="form-field">
+                <label>Tên cửa hàng</label>
+                <input type="text" value="Foodie Restaurant" />
+              </div>
+              <div class="form-field">
+                <label>Địa chỉ</label>
+                <textarea rows="3">123 Đường ABC, Quận 1, TP.HCM</textarea>
+              </div>
+              <div class="form-field">
+                <label>Số điện thoại</label>
+                <input type="tel" value="0901 234 567" />
+              </div>
+              <div class="form-field">
+                <label>Email</label>
+                <input type="email" value="info@foodie.com" />
+              </div>
+              <div class="form-field">
+                <label>Thời gian mở cửa</label>
+                <div style="display: flex; gap: 8px">
+                  <input type="time" value="08:00" style="flex: 1" />
+                  <span style="align-self: center">-</span>
+                  <input type="time" value="22:00" style="flex: 1" />
+                </div>
+              </div>
+              <button class="btn primary">
+                <i class="bx bx-save"></i> Lưu cài đặt
+              </button>
+            </div>
+
+            <!-- Business Settings -->
+            <div class="card panel">
+              <h2>Cài đặt kinh doanh</h2>
+              <div class="form-field">
+                <label>Phí giao hàng cơ bản</label>
+                <input type="number" value="15000" />
+              </div>
+              <div class="form-field">
+                <label>Miễn phí ship từ</label>
+                <input type="number" value="200000" />
+              </div>
+              <div class="form-field">
+                <label>Thời gian chuẩn bị (phút)</label>
+                <input type="number" value="15" />
+              </div>
+              <div class="form-field">
+                <label>Thời gian giao hàng (phút)</label>
+                <input type="number" value="30" />
+              </div>
+              <div class="form-field">
+                <label>Hình thức thanh toán</label>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" checked />
+                    Tiền mặt
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" checked />
+                    Chuyển khoản
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" />
+                    Thẻ tín dụng
+                  </label>
+                </div>
+              </div>
+              <button class="btn primary">
+                <i class="bx bx-save"></i> Lưu cài đặt
+              </button>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <!-- Notification Settings -->
+            <div class="card panel">
+              <h2>Thông báo</h2>
+              <div class="form-field">
+                <label>Email thông báo đơn hàng</label>
+                <input type="email" value="orders@foodie.com" />
+              </div>
+              <div class="form-field">
+                <label>Thông báo qua SMS</label>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" checked />
+                    Đơn hàng mới
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" checked />
+                    Đơn hàng hủy
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" />
+                    Báo cáo hàng ngày
+                  </label>
+                </div>
+              </div>
+              <div class="form-field">
+                <label>API Key SMS</label>
+                <input type="password" value="••••••••••••••••" />
+              </div>
+              <button class="btn primary">
+                <i class="bx bx-save"></i> Lưu cài đặt
+              </button>
+            </div>
+
+            <!-- System Settings -->
+            <div class="card panel">
+              <h2>Hệ thống</h2>
+              <div class="form-field">
+                <label>Ngôn ngữ</label>
+                <select>
+                  <option>Tiếng Việt</option>
+                  <option>English</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Múi giờ</label>
+                <select>
+                  <option>Asia/Ho_Chi_Minh (UTC+7)</option>
+                  <option>UTC</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Định dạng ngày</label>
+                <select>
+                  <option>DD/MM/YYYY</option>
+                  <option>MM/DD/YYYY</option>
+                  <option>YYYY-MM-DD</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Backup tự động</label>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" checked />
+                    Hàng ngày lúc 2:00 AM
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px">
+                    <input type="checkbox" />
+                    Gửi email backup
+                  </label>
+                </div>
+              </div>
+              <button class="btn primary">
+                <i class="bx bx-save"></i> Lưu cài đặt
+              </button>
+            </div>
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="card panel">
+            <h2 style="color: var(--danger)">Khu vực nguy hiểm</h2>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <button class="btn" style="background: var(--warn); color: white">
+                <i class="bx bx-download"></i> Xuất dữ liệu
+              </button>
+              <button
+                class="btn"
+                style="background: var(--danger); color: white"
+              >
+                <i class="bx bx-trash"></i> Xóa cache
+              </button>
+              <button
+                class="btn"
+                style="background: var(--danger); color: white"
+              >
+                <i class="bx bx-reset"></i> Reset hệ thống
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          © 2025 Foodie Admin. Thiết kế responsive, dark/light, sẵn sàng tích
+          hợp CRUD.
+        </footer>
+      </section>
+    </div>
+
+    <script src="./admin.js" defer></script>
+  </body>
+</html>
