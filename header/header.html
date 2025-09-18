@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./header.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-block">
+        <!-- Logo -->
+        <a href="index.html" class="logo-header">
+          <h1><span style="color: #ff6b35">Khanh</span>Food<span>.</span></h1>
+        </a>
+        <!-- Hamburger Menu Button - Only visible on mobile -->
+        <button
+          class="menu-toggle"
+          onclick="toggleMenu()"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <!-- Navigation Menu -->
+        <nav class="nav-header">
+          <ul id="menuList">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- User Cart - Hidden on mobile -->
+        <div class="user-cart">
+          <a href="/login.html" class="user"
+            ><i class="bx bx-user bx-sm"></i
+          ></a>
+          <a href="/cart.html" class="cart"><i class="bx bx-cart bx-sm"></i></a>
+        </div>
+      </div>
+    </header>
+    <script src="./header.js"></script>
+  </body>
+</html>

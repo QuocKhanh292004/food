@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Dashboard - FoodMaster Admin</title>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS tách file -->
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+  </head>
+  <body>
+    <div class="layout" id="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <span class="brand-hamburger" aria-hidden="true"><b></b><b></b><b></b></span>
+          <div class="logo"><i class="bx bx-food-menu"></i></div>
+          <h1 class="title">FoodMaster</h1>
+          <button class="btn round" id="collapseBtn" title="Thu gọn">
+            <i class="bx bx-menu"></i>
+          </button>
+        </div>
+
+        <nav class="nav" aria-label="Chính">
+          <div class="group">TỔNG QUAN</div>
+          <a href="#dashboard" class="active" data-route="dashboard"><i class="bx bx-home-alt icon"></i><span>Dashboard</span></a>
+          <a href="#analytics" data-route="analytics"><i class="bx bx-line-chart icon"></i><span>Thống kê</span></a>
+
+          <div class="group">ĐƠN HÀNG</div>
+          <a href="#orders" data-route="orders"><i class="bx bx-receipt icon"></i><span>Quản lý đơn hàng</span><em class="badge warn">8</em></a>
+          <a href="#kitchen" data-route="kitchen"><i class="bx bx-restaurant icon"></i><span>Bếp</span><em class="badge ok">1</em></a>
+          <a href="#shipping" data-route="shipping"><i class="bx bx-truck icon"></i><span>Giao hàng</span></a>
+
+          <div class="group">SẢN PHẨM</div>
+          <a href="#menu" data-route="menu"><i class="bx bx-food-tag icon"></i><span>Món ăn</span></a>
+          <a href="#categories" data-route="categories"><i class="bx bx-grid-alt icon"></i><span>Danh mục</span></a>
+          <a href="#inventory" data-route="inventory"><i class="bx bx-package icon"></i><span>Kho hàng</span></a>
+
+          <div class="group">KHÁCH HÀNG</div>
+          <a href="#customers" data-route="customers"><i class="bx bx-user icon"></i><span>Khách hàng</span></a>
+          <a href="#reviews" data-route="reviews"><i class="bx bx-message-square-dots icon"></i><span>Đánh giá</span></a>
+
+          <div class="group">KHUYẾN MÃI</div>
+          <a href="#promotions" data-route="promotions"><i class="bx bx-gift icon"></i><span>Khuyến mãi</span></a>
+
+          <div class="group">NHÂN SỰ</div>
+          <a href="#staff" data-route="staff"><i class="bx bx-group icon"></i><span>Nhân viên</span></a>
+          <a href="#roles" data-route="roles"><i class="bx bx-shield icon"></i><span>Phân quyền</span></a>
+
+          <!-- User avatar + Logout -->
+          <div class="user-box">
+            <div class="user-row">
+              <img class="user-avatar" src="https://i.pravatar.cc/80?img=15" alt="Chủ tịch" />
+              <div class="user-meta">
+                <strong class="user-name">Chủ tịch</strong>
+                <div class="muted" style="font-size:.75rem">Quản lý nhà hàng</div>
+              </div>
+            </div>
+            <button class="btn logout-btn" id="logoutBtn"><i class="bx bx-log-out"></i> Đăng xuất</button>
+          </div>
+
+          <div class="foot"><span class="chip">Phiên bản 1.0.0</span></div>
+        </nav>
+      </aside>
+
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu"><span class="hamburger"></span></button>
+            <div>
+              <h1 id="routeTitle">Dashboard</h1>
+              <small class="muted">Tổng quan hoạt động nhà hàng</small>
+            </div>
+          </div>
+          <div class="actions">
+            <div class="search">
+              <i class="bx bx-search"></i>
+              <input type="search" placeholder="Tìm kiếm đơn hàng, món ăn, khách hàng…" />
+            </div>
+            <button class="btn" id="themeBtn"><i class="bx bx-moon"></i><span>Giao diện</span></button>
+            <button class="btn primary"><i class="bx bx-plus"></i><span>Thêm món</span></button>
+            <div class="avatar">FM</div>
+          </div>
+        </header>
+
+        <!-- ================= Dashboard ================= -->
+        <section class="content route active" data-page="dashboard">
+          <div class="kpis">
+            <div class="card kpi">
+              <div class="bubble green"><i class="bx bx-receipt"></i></div>
+              <div>
+                <h3>Doanh thu hôm nay</h3>
+                <strong>₫2.205.819</strong>
+                <div class="trend up">+12.5% so với hôm qua</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble blue"><i class="bx bx-cart"></i></div>
+              <div>
+                <h3>Đơn hàng hôm nay</h3>
+                <strong>130</strong>
+                <div class="trend up">+8.3% so với hôm qua</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble indigo"><i class="bx bx-user-plus"></i></div>
+              <div>
+                <h3>Khách hàng mới</h3>
+                <strong>28</strong>
+                <div class="trend up">+15.2% so với hôm qua</div>
+              </div>
+            </div>
+            <div class="card kpi">
+              <div class="bubble orange"><i class="bx bx-star"></i></div>
+              <div>
+                <h3>Đánh giá trung bình</h3>
+                <strong>4.7/5</strong>
+                <div class="trend">Không đổi</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card panel">
+              <h2>Doanh thu 7 ngày qua</h2>
+              <div class="chart">
+                <canvas id="revenueChart" height="240"></canvas>
+              </div>
+            </div>
+            <div class="card panel">
+              <h2>Đơn hàng theo giờ</h2>
+              <div class="chart">
+                <canvas id="hourChart" height="240"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top:16px">
+            <div class="card panel">
+              <h2>Đơn hàng gần đây</h2>
+              <div class="table-wrap" role="region" aria-label="Bảng đơn hàng" tabindex="0">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Mã đơn</th>
+                      <th>Khách hàng</th>
+                      <th>Món</th>
+                      <th>Giờ</th>
+                      <th>Giá trị</th>
+                      <th>Trạng thái</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recentOrders"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card panel">
+              <h2>Món ăn bán chạy</h2>
+              <div class="list" id="topProducts"></div>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top:16px">
+            <div class="card panel">
+              <h2>Trạng thái bếp</h2>
+              <div class="list" id="kitchenStatus"></div>
+            </div>
+            <div class="card panel">
+              <h2>Cảnh báo tồn kho</h2>
+              <div class="list" id="stockAlerts"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================ Các trang khác (đổ nội dung) ================ -->
+        <section class="content route" data-page="analytics">
+          <div class="card panel">
+            <h2>Thống kê tổng hợp</h2>
+            <p class="muted">Biểu đồ nâng cao và so sánh theo tháng.</p>
+            <div class="grid-2">
+              <div class="chart card"><canvas id="analyticsRevenue" height="240"></canvas></div>
+              <div class="chart card"><canvas id="analyticsOrders" height="240"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="orders">
+          <div class="card panel">
+            <h2>Quản lý đơn hàng</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mã</th>
+                    <th>Khách</th>
+                    <th>Số món</th>
+                    <th>Thời gian</th>
+                    <th>Tổng</th>
+                    <th>Trạng thái</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="kitchen">
+          <div class="card panel">
+            <h2>Bếp</h2>
+            <div class="list" id="kitchenQueue"></div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="shipping">
+          <div class="card panel">
+            <h2>Giao hàng</h2>
+            <div class="list" id="shippingList"></div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="menu">
+          <div class="card panel">
+            <h2>Món ăn</h2>
+            <div class="grid-3" id="menuGrid"></div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="categories">
+          <div class="card panel">
+            <h2>Danh mục</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Danh mục</th><th>Mô tả</th><th>Sản phẩm</th><th>Trạng thái</th></tr></thead>
+                <tbody id="catTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="inventory">
+          <div class="card panel">
+            <h2>Kho hàng</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Mặt hàng</th><th>Tồn</th><th>Mức tối thiểu</th><th>Trạng thái</th></tr></thead>
+                <tbody id="invTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="customers">
+          <div class="card panel">
+            <h2>Khách hàng</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Khách hàng</th><th>Liên hệ</th><th>Đơn</th><th>Tổng chi tiêu</th><th>Xếp hạng</th></tr></thead>
+                <tbody id="customersTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="reviews">
+          <div class="card panel">
+            <h2>Đánh giá</h2>
+            <div class="list" id="reviewsList"></div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="promotions">
+          <div class="card panel">
+            <h2>Khuyến mãi</h2>
+            <div class="list" id="promoList"></div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="staff">
+          <div class="card panel">
+            <h2>Nhân viên</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Tên</th><th>Chức vụ</th><th>Ca làm</th><th>Trạng thái</th></tr></thead>
+                <tbody id="staffTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="content route" data-page="roles">
+          <div class="card panel">
+            <h2>Phân quyền</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Vai trò</th><th>Mô tả</th><th>Quyền</th></tr></thead>
+                <tbody id="rolesTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- JS -->
+    <script src="./js/data.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
+

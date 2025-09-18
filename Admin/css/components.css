@@ -1,0 +1,255 @@
+/* Cards & grids */
+.content{padding:16px;display:none}
+.content.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.card.panel h2{margin-bottom:10px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.kpi{display:flex;align-items:center;gap:12px}
+.kpi .bubble{width:46px;height:46px;border-radius:12px;display:grid;place-items:center}
+.kpi .bubble i{font-size:22px}
+.kpi .bubble.green{background:#e7f8f0;color:#0ea371}
+.kpi .bubble.blue{background:#ebf1ff;color:#4466ff}
+.kpi .bubble.indigo{background:#eef0ff;color:#5b7cfa}
+.kpi .bubble.orange{background:#fff3e8;color:#d97706}
+.kpi h3{margin-bottom:2px;font-size:.85rem;color:var(--muted)}
+.kpi strong{font-size:1.25rem}
+.kpi .trend{margin-top:2px;font-size:.8rem;color:var(--muted)}
+.kpi .trend.up{color:var(--success)}
+
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+
+/* Chart wrappers */
+.chart{height:260px;border-radius:12px;border:1px dashed var(--soft);background:#fff;padding:8px}
+
+/* List */
+.list{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--soft)}
+.row:last-child{border-bottom:0}
+.thumb{width:40px;height:40px;border-radius:10px;overflow:hidden;background:var(--bg-2);display:grid;place-items:center;border:1px solid var(--soft)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.meta{display:flex;flex-direction:column;gap:6px}
+
+/* Bars */
+.bar{width:100%;height:8px;background:var(--bg-2);border:1px solid var(--soft);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#3f5efb)}
+
+/* Buttons */
+.btn{background:var(--bg-2);border:1px solid var(--soft);padding:8px 12px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;font-weight:700;cursor:pointer;box-shadow:var(--shadow-s)}
+.btn.primary{background:var(--primary);color:#fff;border-color:transparent}
+
+/* Table - Mobile optimized */
+.table-wrap{width:100%;overflow:auto;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-s);max-width:100%;-webkit-overflow-scrolling:touch}
+.table-wrap table{width:100%;border-collapse:separate;border-spacing:0}
+.table-wrap th,.table-wrap td{padding:12px 14px;border-bottom:1px solid var(--soft)}
+.table-wrap thead th{text-align:left;background:#f7f9fc;color:#4b5563;position:sticky;top:0;z-index:1}
+.table-wrap tbody tr:hover{background:#fafbff}
+
+/* Status chips */
+.status{font-size:.8rem;padding:6px 10px;border-radius:999px;font-weight:800;border:1px solid transparent}
+.st-prep{background:#fff7ed;color:#b45309;border-color:#fde68a}
+.st-ship{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.st-done{background:#ecfdf5;color:#047857;border-color:#a7f3d0}
+.st-cancel{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:18px;padding:0 6px;border-radius:999px;font-size:.7rem}
+.badge.ok{background:#e7f8f0;color:#0ea371}
+.badge.warn{background:#fff3e8;color:#d97706}
+.badge.danger{background:#fde8e8;color:#b91c1c}
+
+/* Utilities */
+hr{border:none;border-top:1px solid var(--soft);margin:8px 0}
+small{color:var(--muted)}
+
+/* Dark Theme Specific Styles */
+[data-theme="dark"] .table-wrap thead th {
+  background:var(--bg-2);
+  color:var(--text);
+}
+
+[data-theme="dark"] .table-wrap tbody tr:hover {
+  background:var(--bg);
+}
+
+[data-theme="dark"] .chart {
+  background:var(--surface);
+  border-color:var(--soft);
+}
+
+/* Dark theme bubble colors adjustment */
+[data-theme="dark"] .kpi .bubble.green {
+  background:rgba(16,185,129,.2);
+  color:#34d399;
+}
+
+[data-theme="dark"] .kpi .bubble.blue {
+  background:rgba(59,130,246,.2);
+  color:#60a5fa;
+}
+
+[data-theme="dark"] .kpi .bubble.indigo {
+  background:rgba(99,102,241,.2);
+  color:#a5b4fc;
+}
+
+[data-theme="dark"] .kpi .bubble.orange {
+  background:rgba(245,158,11,.2);
+  color:#fbbf24;
+}
+
+/* Theme button animation */
+.btn i {
+  transition:transform 0.3s ease;
+}
+
+#themeBtn:hover i {
+  transform:rotate(180deg) scale(1.1);
+}
+
+/* Mobile theme button */
+@media (max-width:768px) {
+  #themeBtn {
+    min-width:40px;
+    height:40px;
+    padding:8px;
+  }
+  
+  #themeBtn:hover i {
+    transform:rotate(360deg) scale(1.1);
+  }
+}
+
+/* Comprehensive Mobile-First Responsive Design */
+
+/* Large tablet */
+@media (max-width:1200px){
+  .content{padding:14px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .grid-2{gap:12px}
+  .chart{height:220px}
+}
+
+/* Tablet portrait */
+@media (max-width:900px){
+  .content{padding:12px}
+  .kpis,.grid-2,.grid-3{grid-template-columns:1fr;gap:12px}
+  
+  /* KPI optimization */
+  .kpi{gap:10px}
+  .kpi .bubble{width:40px;height:40px}
+  .kpi .bubble i{font-size:20px}
+  .kpi h3{font-size:0.8rem}
+  .kpi strong{font-size:1.1rem}
+  .chart{height:200px}
+}
+
+/* Large mobile */
+@media (max-width:768px){
+  .content{padding:10px}
+  .card{padding:12px;border-radius:10px}
+  .card.panel{padding:12px}
+  
+  /* Tables mobile-friendly */
+  .table-wrap{font-size:0.9rem;border-radius:8px}
+  .table-wrap th,.table-wrap td{padding:8px 6px}
+  
+  /* Charts mobile size */
+  .chart{height:180px;padding:6px;border-radius:8px}
+  
+  /* Buttons touch-friendly */
+  .btn{padding:8px 12px;font-size:0.9rem;min-height:40px;border-radius:8px}
+  
+  /* Lists compact */
+  .row{padding:8px 0;gap:10px}
+  .thumb{width:36px;height:36px;border-radius:8px}
+  .meta{gap:4px}
+}
+
+/* Medium mobile */
+@media (max-width:640px){
+  .content{padding:8px}
+  .card{padding:10px;border-radius:8px}
+  .card.panel{padding:10px}
+  .card.panel h2{font-size:1rem;margin-bottom:8px}
+  
+  /* KPI mobile compact */
+  .kpi{gap:8px}
+  .kpi .bubble{width:36px;height:36px}
+  .kpi .bubble i{font-size:18px}
+  .kpi h3{font-size:0.75rem}
+  .kpi strong{font-size:1rem}
+  .kpi .trend{font-size:0.75rem}
+  
+  /* Charts very compact */
+  .chart{height:160px;padding:4px}
+  
+  /* Tables ultra compact */
+  .table-wrap{font-size:0.85rem}
+  .table-wrap th,.table-wrap td{padding:6px 4px}
+  
+  /* Status elements smaller */
+  .status{font-size:0.75rem;padding:4px 8px}
+  .badge{font-size:0.65rem;min-width:20px;height:16px;padding:0 4px}
+}
+
+/* Small mobile */
+@media (max-width:480px){
+  .content{padding:6px}
+  .kpis{gap:8px}
+  .grid-2,.grid-3{gap:8px}
+  
+  .card{padding:8px;margin-bottom:8px;border-radius:6px}
+  .card.panel{padding:8px}
+  .card.panel h2{font-size:0.95rem;margin-bottom:6px}
+  
+  /* KPI mobile ultra compact */
+  .kpi .bubble{width:32px;height:32px}
+  .kpi .bubble i{font-size:16px}
+  .kpi strong{font-size:0.95rem}
+  .kpi h3{font-size:0.7rem}
+  
+  /* Charts minimal */
+  .chart{height:140px;padding:2px;border-radius:6px}
+  
+  /* Lists very compact */
+  .row{padding:6px 0;gap:8px}
+  .thumb{width:32px;height:32px;border-radius:6px}
+  .meta{gap:2px}
+  
+  /* Tables minimal */
+  .table-wrap{font-size:0.8rem;border-radius:6px}
+  .table-wrap th,.table-wrap td{padding:4px 3px}
+  
+  /* Buttons compact */
+  .btn{padding:6px 10px;font-size:0.85rem;min-height:36px;border-radius:6px}
+}
+
+/* Extra small mobile */
+@media (max-width:360px){
+  .content{padding:4px}
+  .card{padding:6px;border-radius:4px}
+  .card.panel{padding:6px}
+  
+  .kpis{gap:6px}
+  .kpi{gap:6px;text-align:center}
+  .kpi .bubble{width:28px;height:28px}
+  .kpi .bubble i{font-size:14px}
+  .kpi strong{font-size:0.85rem}
+  .kpi h3{font-size:0.65rem}
+  
+  .chart{height:120px;border-radius:4px}
+  
+  /* Ultra compact table */
+  .table-wrap{font-size:0.75rem;border-radius:4px}
+  .table-wrap th,.table-wrap td{padding:2px}
+  
+  .row{gap:6px}
+  .thumb{width:28px;height:28px;border-radius:4px}
+  
+  .btn{padding:4px 8px;font-size:0.8rem;min-height:32px;border-radius:4px}
+  .status{font-size:0.7rem;padding:2px 6px}
+  .badge{font-size:0.6rem;min-width:18px;height:14px;padding:0 3px}
+}
+

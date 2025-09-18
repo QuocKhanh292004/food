@@ -1,0 +1,21 @@
+/* Dashboard specific tweaks */
+.card.panel{padding:16px}
+.card.panel h2{font-weight:700}
+
+/* Kitchen status rows (like screenshot) */
+.kitchen-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--soft);border-radius:12px;background:#fff}
+.kitchen-chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.green{background:#10b981}
+.dot.blue{background:#3b82f6}
+.dot.orange{background:#f59e0b}
+
+/* Stock alert tag on right */
+.alert-tag{font-size:.75rem;font-weight:800;padding:4px 8px;border-radius:999px;border:1px solid #fecaca;background:#fff1f2;color:#b91c1c}
+.alert-tag.low{background:#fff7ed;border-color:#fde68a;color:#b45309}
+
+/* Chart canvas spacing */
+.chart canvas{max-width:100%}
+
+/* Ranking list numbers */
+.rank{width:28px;height:28px;border-radius:50%;background:#eef2ff;color:#445eee;display:grid;place-items:center;font-weight:800}
+

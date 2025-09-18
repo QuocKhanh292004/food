@@ -1,0 +1,597 @@
+/* CSS Variables */
+:root {
+  --color-primary: #ff6b35;
+  --color-secondary: #333;
+  --font-primary: "Arial", sans-serif;
+  --font-secondary: "Georgia", serif;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*---------- MOBILE-FIRST HEADER ----------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  height: 70px;
+}
+
+.header-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*---------- LOGO ----------*/
+.logo-header {
+  flex: 1;
+  text-align: center;
+}
+
+.logo-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  font-family: var(--font-secondary);
+}
+
+.logo-header h1 span {
+  color: var(--color-primary);
+}
+
+/*---------- HAMBURGER MENU BUTTON ----------*/
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10001;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger animation when active */
+.menu-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/*---------- MOBILE NAVIGATION ----------*/
+.nav-header {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.nav-header.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Bỏ backdrop màu đen */
+
+.nav-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.nav-header li {
+  border-bottom: 1px solid #f0f0f0;
+  background: #ffffff;
+}
+
+.nav-header li:last-child {
+  border-bottom: none;
+}
+
+.nav-header a {
+  display: block;
+  padding: 16px 30px;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #ffffff;
+}
+
+.nav-header a:hover {
+  background: #f8f9fa;
+  color: var(--color-primary);
+  padding-left: 35px;
+}
+
+.nav-header a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--color-primary);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-header a:hover::before {
+  transform: scaleY(1);
+}
+
+/*---------- USER CART - Hidden on mobile ----------*/
+.user-cart {
+  display: none;
+}
+
+/*---------- TABLET STYLES (768px+) ----------*/
+@media screen and (min-width: 768px) {
+  .header-block {
+    padding: 0 40px;
+    justify-content: center;
+  }
+
+  /* Điều chỉnh hamburger menu cho tablet */
+  .menu-toggle {
+    left: 40px;
+  }
+
+  /* Logo giữ nguyên ở giữa trên tablet */
+
+  .logo-header h1 {
+    font-size: 28px;
+  }
+
+  .user-cart {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .user-cart a {
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .user-cart a:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+  }
+}
+
+/*---------- DESKTOP STYLES (992px+) ----------*/
+@media screen and (min-width: 992px) {
+  .header-block {
+    padding: 0 60px;
+    justify-content: space-between;
+    position: static;
+  }
+
+  /* Hide hamburger menu on desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Reset logo to left alignment on desktop */
+  .logo-header {
+    flex: none;
+    text-align: left;
+    position: static;
+  }
+
+  /* Show navigation horizontally on desktop */
+  .nav-header {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+    z-index: auto;
+  }
+
+  .nav-header ul {
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+  }
+
+  .nav-header li {
+    border-bottom: none;
+    margin-left: 30px;
+  }
+
+  .nav-header a {
+    padding: 0 3px;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .nav-header a:hover {
+    background: transparent;
+    padding-left: 3px;
+  }
+
+  .nav-header a::before {
+    height: 2px;
+    width: 0;
+    bottom: -8px;
+    top: auto;
+    left: 0;
+    transform: none;
+    transition: width 0.3s ease;
+  }
+
+  .nav-header a:hover::before {
+    width: 100%;
+    transform: none;
+  }
+
+  /* Reset user-cart positioning */
+  .user-cart {
+    position: static;
+    transform: none;
+    gap: 20px;
+  }
+}
+
+/*---------- CONTENT OPTIMIZATION ----------*/
+main {
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 100%;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 140px;
+}
+
+.btn:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Sections */
+section {
+  padding: 40px 0;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/*---------- MOBILE RESPONSIVE UTILITIES ----------*/
+/* Prevent horizontal scrolling */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Image responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text responsive */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Form elements mobile-friendly */
+input,
+textarea,
+select {
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  min-height: 44px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+/* Table responsive */
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+/*---------- TABLET RESPONSIVE (768px+) ----------*/
+@media screen and (min-width: 768px) {
+  main {
+    padding: 40px;
+  }
+
+  .container {
+    max-width: 720px;
+    padding: 0 30px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  section h2 {
+    font-size: 32px;
+  }
+
+  section p {
+    font-size: 18px;
+  }
+}
+
+/*---------- DESKTOP RESPONSIVE (992px+) ----------*/
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding: 0 40px;
+  }
+
+  main {
+    padding: 60px;
+  }
+
+  .hero {
+    padding: 80px 40px;
+  }
+
+  .hero h2 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  section h2 {
+    font-size: 36px;
+  }
+
+  section p {
+    font-size: 18px;
+  }
+}
+
+/*---------- LARGE DESKTOP (1200px+) ----------*/
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/*---------- UTILITY CLASSES ----------*/
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+.mb-3 {
+  margin-bottom: 24px;
+}
+.mb-4 {
+  margin-bottom: 32px;
+}
+
+.mt-1 {
+  margin-top: 8px;
+}
+.mt-2 {
+  margin-top: 16px;
+}
+.mt-3 {
+  margin-top: 24px;
+}
+.mt-4 {
+  margin-top: 32px;
+}
+
+.p-1 {
+  padding: 8px;
+}
+.p-2 {
+  padding: 16px;
+}
+.p-3 {
+  padding: 24px;
+}
+.p-4 {
+  padding: 32px;
+}
+
+/* Hide/Show utilities for different screen sizes */
+.hide-mobile {
+  display: none;
+}
+
+.show-mobile {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .hide-tablet {
+    display: none;
+  }
+
+  .show-tablet {
+    display: block;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+
+  .show-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hide-desktop {
+    display: none;
+  }
+
+  .show-desktop {
+    display: block;
+  }
+
+  .hide-tablet {
+    display: block;
+  }
+
+  .show-tablet {
+    display: none;
+  }
+}

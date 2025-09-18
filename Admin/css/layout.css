@@ -1,0 +1,166 @@
+/* Layout */
+.layout{display:grid; grid-template-columns:260px 1fr; min-height:100vh}
+.sidebar{background:var(--sidebar); color:#fff; position:sticky; top:0; height:100vh; display:flex; flex-direction:column; z-index:20}
+.brand{display:flex; align-items:center; gap:10px; padding:16px 14px; border-bottom:1px solid rgba(255,255,255,.06)}
+.brand .brand-hamburger{display:inline-flex; flex-direction:column; gap:3px}
+.brand .brand-hamburger b{width:10px;height:2px;background:#fff;opacity:.5;border-radius:1px}
+.brand .logo{width:32px;height:32px;display:grid;place-items:center;border-radius:8px;background:linear-gradient(135deg,var(--primary),#3758f7)}
+.brand .logo i{font-size:20px;color:#fff}
+.brand .title{font-size:1rem;font-weight:800;letter-spacing:.2px}
+.btn.round{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
+.btn.round:hover{background:rgba(255,255,255,.08)}
+
+.nav{padding:8px 8px 16px;overflow:auto}
+/* Ẩn scrollbar trong sidebar nhưng vẫn cho phép cuộn */
+.sidebar .nav{ -ms-overflow-style: none; scrollbar-width: none; }
+.sidebar .nav::-webkit-scrollbar{ width:0; height:0; }
+
+.nav .group{font-size:.72rem;letter-spacing:.8px;color:#94a3b8; padding:10px 10px 6px}
+.nav a{display:flex;align-items:center;gap:10px;color:#cbd5e1;padding:10px 12px;border-radius:12px}
+.nav a .icon{width:20px;display:inline-flex;justify-content:center;font-size:18px}
+.nav a .badge{margin-left:auto;font-size:.7rem;background:rgba(255,255,255,.12);padding:2px 6px;border-radius:999px}
+.nav a:hover{background:var(--sidebar-2);color:#fff}
+.nav a.active{background:linear-gradient(135deg,#1c2a4a,#0b1220);color:#fff;border:1px solid rgba(255,255,255,.08)}
+.nav .foot{margin-top:auto;padding:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);color:#d1d5db;padding:6px 10px;border-radius:999px;font-size:.75rem}
+
+/* User avatar + logout in sidebar */
+.user-box{margin:8px; padding:12px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+.user-row{display:flex; align-items:center; gap:10px; margin-bottom:10px}
+.user-avatar{width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,.2)}
+.user-meta{display:flex; flex-direction:column; gap:2px}
+.user-name{color:#fff}
+.sidebar .logout-btn{width:100%; justify-content:center; background:var(--danger); color:#fff; border-color:transparent}
+.sidebar .logout-btn:hover{filter:brightness(1.05)}
+
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:15}
+
+.main{display:flex;flex-direction:column;min-width:0}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.topbar-left{display:flex;align-items:center;gap:10px}
+.mobile-menu-btn{display:none;width:36px;height:36px;border-radius:10px;border:1px solid var(--soft);background:var(--bg-2);position:relative}
+.mobile-menu-btn .hamburger,.mobile-menu-btn::before,.mobile-menu-btn::after{content:"";position:absolute;left:8px;right:8px;height:2px;background:#1f2937;border-radius:1px}
+.mobile-menu-btn .hamburger{top:17px}
+.mobile-menu-btn::before{top:11px}
+.mobile-menu-btn::after{top:23px}
+
+.actions{display:flex;align-items:center;gap:8px}
+.search{display:flex;align-items:center;gap:8px;background:var(--bg-2);border:1px solid var(--soft);padding:8px 10px;border-radius:10px;min-width:280px;max-width:100%}
+.search i{color:var(--muted)}
+.search input{border:none;outline:none;background:transparent;min-width:0;width:100%}
+.avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#5b7cfa,#3f5efb);color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:var(--shadow)}
+
+/* Dark Theme Layout Adjustments */
+[data-theme="dark"] .mobile-menu-btn .hamburger,
+[data-theme="dark"] .mobile-menu-btn::before,
+[data-theme="dark"] .mobile-menu-btn::after {
+  background:#f8fafc;
+}
+
+[data-theme="dark"] .search input {
+  color:var(--text);
+}
+
+[data-theme="dark"] .search input::placeholder {
+  color:var(--muted);
+}
+
+/* Mobile-First Responsive Design */
+
+/* Large screens optimization */
+@media (max-width:1400px){
+  .topbar{padding:12px 14px}
+  .search{min-width:240px}
+}
+
+/* Tablet and below */
+@media (max-width:1100px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:fixed;left:-280px;width:260px;transition:left .25s ease;z-index:25}
+  .sidebar.open{left:0}
+  .sidebar-overlay{display:block;opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .sidebar.open + .sidebar-overlay{opacity:1;pointer-events:auto}
+  .mobile-menu-btn{display:inline-block}
+  .topbar{padding:10px 12px}
+}
+
+/* Large mobile */
+@media (max-width:768px){
+  .topbar{padding:8px 10px;flex-wrap:wrap;gap:6px}
+  .topbar-left{flex:1;min-width:0}
+  .actions{flex-wrap:wrap;gap:6px}
+  
+  /* Search optimization */
+  .search{min-width:0;flex:1;max-width:220px}
+  .search input{font-size:16px} /* Prevent iOS zoom */
+  
+  /* Button text hiding */
+  .actions .btn span{display:none}
+  .actions .btn{padding:8px;min-width:40px;height:40px}
+  
+  /* Title sizing */
+  #routeTitle{font-size:1.1rem}
+  .topbar-left small{font-size:0.8rem}
+}
+
+/* Medium mobile */
+@media (max-width:640px){
+  .topbar{padding:6px 8px}
+  .actions{gap:4px}
+  
+  .search{max-width:180px}
+  .search input{padding:4px 0}
+  
+  /* Brand mobile adjustments */
+  .brand{padding:12px 8px}
+  .brand .title{font-size:0.9rem}
+  .brand .logo{width:28px;height:28px}
+  
+  /* Navigation compact */
+  .nav{padding:6px}
+  .nav a{padding:8px 10px}
+  .nav .group{padding:8px 10px 4px;font-size:0.7rem}
+}
+
+/* Small mobile */
+@media (max-width:480px){
+  .topbar{padding:6px;flex-direction:column;align-items:stretch;gap:6px}
+  .topbar-left{justify-content:space-between}
+  .actions{justify-content:center;order:2}
+  
+  .search{max-width:100%;order:1;margin-bottom:4px}
+  
+  /* Sidebar mobile adjustments */
+  .sidebar{width:280px;left:-300px}
+  .brand{padding:10px 6px}
+  .user-box{margin:6px;padding:8px}
+  
+  #routeTitle{font-size:1rem}
+  .topbar-left small{display:none}
+  
+  /* Action buttons very compact */
+  .actions .btn{padding:6px;width:36px;height:36px}
+  .avatar{width:32px;height:32px;font-size:0.8rem}
+}
+
+/* Extra small mobile */
+@media (max-width:360px){
+  .topbar{padding:4px}
+  .search{padding:6px 8px}
+  
+  .brand{padding:8px 4px}
+  .brand .title{font-size:0.85rem}
+  .brand .logo{width:24px;height:24px}
+  .brand .logo i{font-size:14px}
+  
+  .nav{padding:4px}
+  .nav a{padding:6px 8px;font-size:0.9rem}
+  .nav .group{font-size:0.65rem;padding:6px 8px 2px}
+  
+  .user-box{margin:4px;padding:6px}
+  .user-avatar{width:32px;height:32px}
+  
+  .actions .btn{width:32px;height:32px;padding:4px}
+  .avatar{width:28px;height:28px;font-size:0.7rem}
+}
+
